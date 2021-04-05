@@ -1,0 +1,475 @@
+* {
+    margin: 0;
+    /*we don't want browser's margin*/
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Baloo Chettan 2', cursive;
+    line-height: 1.5;
+}
+
+
+/*Titles*/
+
+.title-text {
+    font-size: 40px;
+    text-align: center;
+}
+
+
+/*Navigation bar*/
+
+nav {
+    background: orange;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav .mainMenu {
+    display: flex;
+    list-style: none;
+}
+
+nav .mainMenu li a {
+    display: inline-block;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+nav .mainMenu li a:hover {
+    background: rgb(255, 94, 0);
+}
+
+nav .openMenu {
+    font-size: 2rem;
+    margin: 20px;
+    display: none;
+    cursor: pointer;
+}
+
+nav .mainMenu .closeMenu,
+.icons i {
+    font-size: 2rem;
+    display: none;
+    cursor: pointer;
+}
+
+.fa-facebook:hover {
+    color: rgb(0, 110, 255);
+}
+
+.fa-twitter:hover {
+    color: rgb(86, 154, 243);
+}
+
+.fa-instagram:hover {
+    color: rgb(255, 0, 191);
+}
+
+.fa-github:hover {
+    color: rgb(255, 123, 0);
+}
+
+nav .logo {
+    margin: 6px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+@media(max-width: 800px) {
+    nav .mainMenu {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: orange;
+        transition: top 1s ease;
+        display: none;
+    }
+    nav .mainMenu .closeMenu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    nav .openMenu {
+        display: block;
+    }
+    nav .mainMenu li a:hover {
+        background: none;
+        color: red;
+        font-size: 1.6rem;
+    }
+    .icons i {
+        display: inline-block;
+        padding: 12px;
+    }
+}
+
+
+/*End of Navigation bar*/
+
+
+/* Header */
+
+.header {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('imagesHome/image1.jpg') center/cover no-repeat fixed;
+    margin-top: auto;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+.hero .title {
+    color: white;
+    font-size: 70px;
+}
+
+.hero-button {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 13px 20px;
+    border-radius: 200px;
+    font-weight: bold;
+    background: orange;
+    color: white;
+    cursor: pointer;
+    border: 2px solid orange;
+    margin-top: 10px;
+}
+
+.hero-button:hover {
+    /*Schimba culoarea butonului cand dai cu mouse ul pe el*/
+    background: white;
+    color: orange;
+    border: 2px solid transparent;
+}
+
+
+/*End of Header*/
+
+
+/*Categories section*/
+
+#about {
+    padding: 40px;
+}
+
+.about {
+    margin: 30px 0;
+    display: flex;
+}
+
+.about-icon .fas {
+    font-size: 60px;
+    color: orange;
+    margin-right: 20px;
+}
+
+.about-subtitle {
+    text-transform: capitalize;
+    color: orange;
+    font-size: 35px;
+}
+
+.about-info {
+    margin-top: 10px;
+    line-height: 1.5;
+}
+
+.about-icon:hover .fas,
+.about-subtitle:hover {
+    transition: transform 2s ease, color 2s ease;
+    transform: translateY(-10px);
+    color: red;
+    cursor: pointer;
+}
+
+
+/*To make it responsive and display nice*/
+
+@media screen and (min-width: 576px) {
+    .about-center {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .about {
+        flex: 0 0 calc(50% - 16px);
+    }
+}
+
+@media screen and (min-width: 972px) {
+    .about {
+        flex: 0 0 calc(33.3% - 16px);
+    }
+}
+
+
+/*End of categories*/
+
+
+/*Why us? Section*/
+
+.menu-image {
+    min-height: 80vh;
+    background: url(imagesHome/image2.jpeg) center/cover fixed no-repeat;
+}
+
+.menu-text {
+    min-height: 80vh;
+    align-items: center;
+    background: orange;
+    columns: black;
+    padding: 40px 0;
+}
+
+.menu-text-center {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.menu-text h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.menu-text p {
+    margin: 20px 0;
+    line-height: 2;
+}
+
+.menu-text a {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 13px 20px;
+    border-radius: 200px;
+    font-weight: bold;
+    background: rgb(10, 10, 10);
+    color: orange;
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.menu-text a:hover {
+    color: orange;
+    background: white;
+    border: none;
+}
+
+@media screen and (min-width:76px) {
+    .menu {
+        display: flex;
+    }
+    .menu-text {
+        flex: 0 0 30%;
+    }
+    .menu-image {
+        flex: 0 0 70%;
+        clip-path: polygon(0 0, 100% 0, 50% 100%, 0 100%);
+    }
+    .menu {
+        background: orange;
+    }
+}
+
+
+/*End of Why us Section*/
+
+
+/*Numbers Section*/
+
+.number {
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url(imagesHome/image3.jpeg)center/cover no-repeat fixed;
+    padding: 60px 0;
+    color: white;
+}
+
+.number p {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.number:hover {
+    color: yellow;
+}
+
+.number .fas {
+    font-size: 60px;
+    margin: 20px 0;
+}
+
+.number h3 {
+    text-transform: uppercase;
+}
+
+@media screen and (min-width: 576px) {
+    #numbers {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width:992px) {
+    #numbers {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+
+/*End Of Numbers Section*/
+
+
+/*Cards*/
+
+#food {
+    padding: 20px;
+}
+
+.food-container {
+    max-width: 90vw;
+    margin: 0 auto;
+}
+
+.food-card {
+    position: relative;
+    background: linear-gradient(rgba(205, 96, 0, 0.7), rgba(205, 96, 0, 0.7));
+    margin: 20px 0;
+    color: black;
+    overflow: hidden;
+    padding: 3px;
+    border-radius: 16px;
+    border: 1px solid orange;
+    box-shadow: 2px 3px 1px 1px #cd6100;
+}
+
+#food img {
+    width: 100%;
+    min-height: 100%;
+    display: block;
+    transition: transform 4s;
+}
+
+.img-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 4s;
+}
+
+.img-footer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+    font-size: 20px;
+    opacity: 0;
+    color: black;
+    transition: opacity 4s;
+}
+
+.img-text h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.food-card:hover img {
+    opacity: 0.4;
+    transform: scale(1.3);
+}
+
+.food-card:hover .img-text,
+.food-card:hover .img-footer {
+    opacity: 1;
+}
+
+.food-button {
+    display: inline-block;
+    background: black;
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: 12px 32px;
+    color: white;
+    font-weight: bold;
+    border-radius: 180px;
+    cursor: pointer;
+    margin-top: 16px;
+    transition: all 0.3s, ease-in-out;
+    font-size: 18px;
+    outline: none;
+}
+
+.food-button:hover {
+    color: orange;
+    background: white;
+    border: black;
+    outline: none;
+}
+
+.fas {
+    font-size: 30px;
+}
+
+@media screen and (min-width:576px) {
+    .food-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 16px;
+    }
+}
+
+@media screen and (min-width:992px) {
+    .food-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 16px;
+    }
+}
+
+
+/*End of Cards*/
+
+
+/*Footer*/
+
+.footer {
+    background: black;
+    text-align: center;
+}
+
+.footer .text {
+    text-transform: uppercase;
+    color: white;
+    font-size: 24px;
+    margin-top: 20px;
+}
