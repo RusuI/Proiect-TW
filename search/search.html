@@ -1,0 +1,2401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--<div>Icons made by <a href="https://www.flaticon.com/authors/ultimatearm" title="ultimatearm">ultimatearm</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Recipe | WhaF</title>
+
+    <link rel="stylesheet" href="search.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/9f5ebffa29.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!--Navigation Bar-->
+    <nav>
+        <div class="logo">
+            <h1>Welcome!</h1>
+        </div>
+        <div class="openMenu">
+            <div onclick="menu()"><i class="fa fa-bars"></i></div>
+            <div class="filter-options-content">
+                <a href="#">Home</a>
+                <a href="#">About us</a>
+                <a href="#">See most popular</a>
+                <a href="#">Add Recipe</a>
+                <a href="login.html">My Profile</a>
+                <div id="src-button" onclick="search()"><a href="#">Search</a></div>
+            </div>
+        </div>
+        <ul class="mainMenu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">See most popular</a></li>
+            <li><a href="#">Add Recipe</a></li>
+            <li><a href="login.html">My Profile</a></li>
+            <div class="closeMenu">
+                <i class="fa fa-times"></i>
+            </div>
+            <span class="icons">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-github"></i>
+            </span>
+        </ul>
+    </nav>
+
+    <!--End of Navigation Bar-->
+
+    <!--Side Bar-->
+
+    <aside id="myAside">
+        <!--custom check marks-->
+        <div>
+            <ul class="src-menu">
+                <li id="wantedButton" onclick="switchVisible(0)">
+                    Wanted
+                </li>
+                <li id="unwantedButton" onclick="switchVisible(1)">
+                    Unwanted
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div id="wanted" style="padding:2% 0 2% 0; text-align:center;">
+                <h1>Enter your ingredients:</h1>
+            </div>
+            <div id="unwanted">
+                <h1>Enter ingredients you don't want:</h1>
+            </div>
+            <article class="src-article" onclick="displayIngredients(0)">
+                <div class="src-type-icon">
+                    <img class="src-icon" src="image_search/vegetable.png" alt="Vegetables" />
+                </div>
+
+                <div class="src-type">
+                    <p>Vegetables</p>
+                </div>
+                <div class="src-plus">
+                    <p>+</p>
+                </div>
+            </article>
+            <div class="src-ingredients">
+                <form class="tags">
+                    <div class="col">
+                        <input type="checkbox" id="artichoke" name="artichoke">
+                        <label for="artichoke">artichoke</label>
+                        <input type="checkbox" id="arugula" name="arugula">
+                        <label for="arugula">arugula</label>
+                        <input type="checkbox" id="asparagus" name="asparagus">
+                        <label for="asparagus">asparagus</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="avocado" name="avocado">
+                        <label for="avocado">avocado</label>
+
+                        <input type="checkbox" id="bamboo" name="bamboo">
+                        <label for="bamboo">bamboo shoot</label>
+
+                        <input type="checkbox" id="basil" name="basil">
+                        <label for="basil">basil</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="beansprouts" name="beansprouts">
+                        <label for="beansprouts">bean sprouts</label>
+
+                        <input type="checkbox" id="beet" name="beet">
+                        <label for="beet">beet</label>
+
+                        <input type="checkbox" id="bok choy" name="bok choy">
+                        <label for="bok choy">bok choy</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="broccoli" name="broccoli">
+                        <label for="broccoli">broccoli</label>
+
+                        <input type="checkbox" id="brussels" name="brussels">
+                        <label for="brussels">brussels sprout</label>
+
+                        <input type="checkbox" id="butternut" name="butternut">
+                        <label for="butternut">butternut</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="cabbage" name="cabbage">
+                        <label for="cabbage">cabbage</label>
+
+                        <input type="checkbox" id="carrot" name="carrot">
+                        <label for="carrot">carrot</label>
+
+                        <input type="checkbox" id="cauliflower" name="cauliflower">
+                        <label for="cauliflower">cauliflower</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="celery" name="celery">
+                        <label for="celery">celery</label>
+
+                        <input type="checkbox" id="chard" name="chard">
+                        <label for="chard">chard</label>
+
+                        <input type="checkbox" id="chinesebroccoli" name="chinesebroccoli">
+                        <label for="chinesebroccoli">chinese broccoli</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="cilantro" name="cilantro">
+                        <label for="cilantro">cilantro</label>
+
+                        <input type="checkbox" id="corn" name="corn">
+                        <label for="corn">corn</label>
+
+                        <input type="checkbox" id="cress" name="cress">
+                        <label for="cress">cress</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="cucumber" name="cucumber">
+                        <label for="cucumber">cucumber</label>
+
+                        <input type="checkbox" id="daikon" name="daikon">
+                        <label for="daikon">daikon</label>
+
+                        <input type="checkbox" id="dulse" name="dulse">
+                        <label for="dulse">dulse</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="eggplant" name="eggplant">
+                        <label for="eggplant">eggplant</label>
+
+                        <input type="checkbox" id="endive" name="endive">
+                        <label for="endive">endive</label>
+
+                        <input type="checkbox" id="garlic" name="garlic">
+                        <label for="garlic">garlic</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="horseradish" name="horseradish">
+                        <label for="horseradish">horseradish</label>
+
+                        <input type="checkbox" id="kale" name="kale">
+                        <label for="kale">kale</label>
+
+                        <input type="checkbox" id="kohlrabi" name="kohlrabi">
+                        <label for="kohlrabi">kohlrabi</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="leek" name="leek">
+                        <label for="leek">leek</label>
+
+                        <input type="checkbox" id="lettuce" name="lettuce">
+                        <label for="lettuce">lettuce</label>
+
+                        <input type="checkbox" id="mushroom" name="mushroom">
+                        <label for="mushroom">mushroom</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="okra" name="okra">
+                        <label for="okra">okra</label>
+
+                        <input type="checkbox" id="olive" name="olive">
+                        <label for="olive">olive</label>
+
+                        <input type="checkbox" id="onion" name="onion">
+                        <label for="onion">onion</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="parsley" name="parsley">
+                        <label for="parsley">parsley</label>
+
+                        <input type="checkbox" id="parsnip" name="parsnip">
+                        <label for="parsnip">parsnip</label>
+
+                        <input type="checkbox" id="potato" name="potato">
+                        <label for="potato">potato</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="pumpkin" name="pumpkin">
+                        <label for="pumpkin">pumpkin</label>
+
+                        <input type="checkbox" id="radish" name="radish">
+                        <label for="radish">radish</label>
+
+                        <input type="checkbox" id="redonion" name="redonion">
+                        <label for="redonion">red onion</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="seaweed" name="seaweed">
+                        <label for="seaweed">seaweed</label>
+
+                        <input type="checkbox" id="spinach" name="spinach">
+                        <label for="spinach">spinach</label>
+
+                        <input type="checkbox" id="sweetpotato" name="sweetpotato">
+                        <label for="sweetpotato">sweet potato</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="tomato" name="tomato">
+                        <label for="tomato">tomato</label>
+
+                        <input type="checkbox" id="turnip" name="turnip">
+                        <label for="turnip">turnip</label>
+
+                        <input type="checkbox" id="zucchini" name="zucchini">
+                        <label for="zucchini">zucchini</label>
+                    </div>
+                    <!--<input type="checkbox" id="" name="">
+            <label for=""></label>-->
+                </form>
+            </div>
+            <article class="src-article" onclick="displayIngredients(1)">
+                <div class="src-type-icon">
+                    <img class="src-icon" src="image_search/fruits.png" alt="Fruits" />
+                </div>
+                <div class="src-type">
+                    <p>Fruits</p>
+                </div>
+                <div class="src-plus">
+                    <p>+</p>
+                </div>
+            </article>
+            <div class="src-ingredients">
+                <form class="tags">
+                    <div class="col">
+                        <input type="checkbox" id="lemon" name="lemon">
+                        <label for="lemon">lemon</label>
+
+                        <input type="checkbox" id="apple" name="apple">
+                        <label for="apple">apple</label>
+
+                        <input type="checkbox" id="banana" name="banana">
+                        <label for="banana">banana</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="lime" name="lime">
+                        <label for="lime">lime</label>
+
+                        <input type="checkbox" id="strawberry" name="strawberry">
+                        <label for="strawberry">strawberry</label>
+
+                        <input type="checkbox" id="pineapple" name="pineapple">
+                        <label for="pineapple">pineapple</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="orange" name="orange">
+                        <label for="orange">orange</label>
+
+                        <input type="checkbox" id="blueberry" name="blueberry">
+                        <label for="blueberry">blueberry</label>
+
+                        <input type="checkbox" id="raisin" name="raisin">
+                        <label for="raisin">raisin</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="coconut" name="coconut">
+                        <label for="coconut">coconut</label>
+
+                        <input type="checkbox" id="grape" name="grape">
+                        <label for="grape">grape</label>
+
+                        <input type="checkbox" id="peach" name="peach">
+                        <label for="peach">peach</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="raspberry" name="raspberry">
+                        <label for="raspberry">raspberry</label>
+
+                        <input type="checkbox" id="cranberry" name="cranberry">
+                        <label for="cranberry">cranberry</label>
+
+                        <input type="checkbox" id="mango" name="mango">
+                        <label for="mango">mango</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="pear" name="pear">
+                        <label for="pear">pear</label>
+
+                        <input type="checkbox" id="blackberry" name="blackberry">
+                        <label for="blackberry">blackberry</label>
+
+                        <input type="checkbox" id="cherry" name="cherry">
+                        <label for="cherry">cherry</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="watermelon" name="watermelon">
+                        <label for="watermelon">watermelon</label>
+
+                        <input type="checkbox" id="berries" name="berries">
+                        <label for="berries">berries</label>
+
+                        <input type="checkbox" id="kiwi" name="kiwi">
+                        <label for="kiwi">kiwi</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="grapefruit" name="grapefruit">
+                        <label for="grapefruit">grapefruit</label>
+
+                        <input type="checkbox" id="mandarin" name="mandarin">
+                        <label for="mandarin">mandarin</label>
+
+                        <input type="checkbox" id="craisins" name="craisins">
+                        <label for="craisins">craisins</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="cantaloupe" name="cantaloupe">
+                        <label for="cantaloupe">cantaloupe</label>
+
+                        <input type="checkbox" id="plum" name="plum">
+                        <label for="plum">plum</label>
+
+                        <input type="checkbox" id="apricot" name="apricot">
+                        <label for="apricot">apricot</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="clementine" name="clementine">
+                        <label for="clementine">clementine</label>
+
+                        <input type="checkbox" id="pomegranate" name="pomegranate">
+                        <label for="pomegranate">pomegranate</label>
+
+                        <input type="checkbox" id="nectarine" name="nectarine">
+                        <label for="nectarine">nectarine</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="fig" name="fig">
+                        <label for="fig">fig</label>
+
+                        <input type="checkbox" id="tangerine" name="tangerine">
+                        <label for="tangerine">tangerine</label>
+
+                        <input type="checkbox" id="papaya" name="papaya">
+                        <label for="papaya">papaya</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="rhubarb" name="rhubarb">
+                        <label for="rhubarb">rhubarb</label>
+
+                        <input type="checkbox" id="passionfruit" name="passionfruit">
+                        <label for="passionfruit">passionfruit</label>
+
+                        <input type="checkbox" id="guava" name="guava">
+                        <label for="guava">guava</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="persimmons" name="persimmons">
+                        <label for="persimmons">persimmons</label>
+
+                        <input type="checkbox" id="lychee" name="lychee">
+                        <label for="lychee">lychee</label>
+
+                        <input type="checkbox" id="lingonberry" name="lingonberry">
+                        <label for="lingonberry">lingon berry</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="tangelos" name="tangelos">
+                        <label for="tangelos">tangelos</label>
+
+                        <input type="checkbox" id="kumquat" name="kumquat">
+                        <label for="kumquat">kumquat</label>
+
+                        <input type="checkbox" id="starfruit" name="starfruit">
+                        <label for="starfruit ">starfruit</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="quince" name="quince">
+                        <label for="quince">quince</label>
+                    </div>
+                </form>
+            </div>
+            <article class="src-article" onclick="displayIngredients(2)">
+                <div class="src-type-icon">
+                    <img class="src-icon" src="image_search/meat.png" alt="Meats" />
+                </div>
+                <div class="src-type">
+                    <p>Meats</p>
+                </div>
+                <div class="src-plus">
+                    <p>+</p>
+                </div>
+            </article>
+            <div class="src-ingredients">
+                <form class="tags">
+                    <div class="col">
+                        <input type="checkbox" id="chickenbreast" name="chickenbreast">
+                        <label for="chickenbreast">chicken breast</label>
+
+                        <input type="checkbox" id="groundbeef" name="groundbeef">
+                        <label for="groundbeef">ground beef</label>
+
+                        <input type="checkbox" id="bacon" name="bacon">
+                        <label for="bacon">bacon</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="sausage" name="sausage">
+                        <label for="sausage">sausage</label>
+
+                        <input type="checkbox" id="beefsteak" name="beefsteak">
+                        <label for="beefsteak">beef steak</label>
+
+                        <input type="checkbox" id="ham" name="ham">
+                        <label for="ham">ham</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="hotdog" name="hotdog">
+                        <label for="hotdog">hot dog</label>
+
+                        <input type="checkbox" id="porkchops" name="porkchops">
+                        <label for="porkchops">pork chops</label>
+
+                        <input type="checkbox" id="chickenthighs" name="chickenthighs">
+                        <label for="chickenthighs">chicken thighs</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="groundturkey" name="groundturkey">
+                        <label for="groundturkey">ground turkey</label>
+
+                        <input type="checkbox" id="turkey" name="turkey">
+                        <label for="turkey">turkey</label>
+
+                        <input type="checkbox" id="pork" name="pork">
+                        <label for="pork">pork</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="pepperoni" name="pepperoni">
+                        <label for="pepperoni">pepperoni</label>
+
+                        <input type="checkbox" id="wholechicken" name="wholechicken">
+                        <label for="wholechicken">whole chicken</label>
+
+                        <input type="checkbox" id="chickenleg" name="chickenleg">
+                        <label for="chickenleg">chicken leg</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="groundpork" name="groundpork">
+                        <label for="groundpork">ground pork</label>
+
+                        <input type="checkbox" id="chorizo" name="chorizo">
+                        <label for="chorizo">chorizo</label>
+
+                        <input type="checkbox" id="chickenwings" name="chickenwings">
+                        <label for="chickenwings">chicken wings</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="beefroast" name="beefroast">
+                        <label for="beefroast">bee froast</label>
+
+                        <input type="checkbox" id="polishsausage" name="polishsausage">
+                        <label for="polishsausage">polish sausage</label>
+
+                        <input type="checkbox" id="salami" name="salami">
+                        <label for="salami">salami</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="porkroast" name="porkroast">
+                        <label for="porkroast">pork roast</label>
+
+                        <input type="checkbox" id="porkribs" name="porkribs">
+                        <label for="porkribs">pork ribs</label>
+
+                        <input type="checkbox" id="venison" name="venison">
+                        <label for="venison">venison</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="porkshoulder" name="porkshoulder">
+                        <label for="porkshoulder">pork shoulder</label>
+
+                        <input type="checkbox" id="bologna" name="bologna">
+                        <label for="bologna">bologna</label>
+
+                        <input type="checkbox" id="bratwurst" name="bratwurst">
+                        <label for="bratwurst">brat wurst</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="prosciutto" name="prosciutto">
+                        <label for="prosciutto">prosciutto</label>
+
+                        <input type="checkbox" id="lamb" name="lamb">
+                        <label for="lamb">lamb</label>
+
+                        <input type="checkbox" id="cornedbeef" name="cornedbeef">
+                        <label for="cornedbeef">corned beef</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="lambchops" name="lambchops">
+                        <label for="lambchops">lamb chops</label>
+
+                        <input type="checkbox" id="pancetta" name="pancetta">
+                        <label for="pancetta">pancetta</label>
+
+                        <input type="checkbox" id="groundlamb" name="groundlamb">
+                        <label for="groundlamb">ground lamb</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="beefribs" name="beefribs">
+                        <label for="beefribs">beef ribs</label>
+
+                        <input type="checkbox" id="duck" name="duck">
+                        <label for="duck">duck</label>
+
+                        <input type="checkbox" id="porkbelly" name="porkbelly">
+                        <label for="porkbelly">pork belly</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="beefliver" name="beefliver">
+                        <label for="beefliver">beef liver</label>
+
+                        <input type="checkbox" id="canadianbacon" name="canadianbacon">
+                        <label for="canadianbacon">canadian bacon</label>
+
+                        <input type="checkbox" id="veal" name="veal">
+                        <label for="veal">veal</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="chickengiblets" name="chickengiblets">
+                        <label for="chickengiblets">chicken giblets</label>
+
+                        <input type="checkbox" id="lambshoulder" name="lambshoulder">
+                        <label for="lambshoulder">lamb shoulder</label>
+
+                        <input type="checkbox" id="deer" name="deer">
+                        <label for="deer">deer</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="pastrami" name="pastrami">
+                        <label for="pastrami">pastrami</label>
+
+                        <input type="checkbox" id="rabbit" name="rabbit">
+                        <label for="rabbit">rabbit</label>
+
+                        <input type="checkbox" id="vealcutlet" name="vealcutlet">
+                        <label for="vealcutlet">veal cutlet</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="marrowbones" name="marrowbones">
+                        <label for="marrowbones">marrow bones</label>
+
+                        <input type="checkbox" id="goose" name="goose">
+                        <label for="goose">goose</label>
+
+                        <input type="checkbox" id="chickentenders" name="chickentenders">
+                        <label for="chickentenders">chicken tenders</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="quail" name="quail">
+                        <label for="quail">quail</label>
+
+                        <input type="checkbox" id="oxtail" name="oxtail">
+                        <label for="oxtail">ox tail</label>
+
+                        <input type="checkbox" id="pheasant" name="pheasant">
+                        <label for="pheasant">pheasant</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="lambliver" name="lambliver">
+                        <label for="lambliver">lamb liver</label>
+
+                        <input type="checkbox" id="moose" name="moose">
+                        <label for="moose">moose</label>
+
+                        <input type="checkbox" id="turkeyliver" name="turkeyliver">
+                        <label for="turkeyliver">turkey liver</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="porkliver" name="porkliver">
+                        <label for="porkliver">pork liver</label>
+
+                        <input type="checkbox" id="foiegras" name="foiegras">
+                        <label for="foiegras">foie gras</label>
+
+                        <input type="checkbox" id="liversausage" name="liversausage">
+                        <label for="liversausage">liver sausage</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="wildboar" name="wildboar">
+                        <label for="wildboar">wild boar</label>
+
+                        <input type="checkbox" id="snail" name="snail">
+                        <label for="snail">snail</label>
+
+                        <input type="checkbox" id="pigeon" name="pigeon">
+                        <label for="pigeon">pigeon</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="duckliver" name="duckliver">
+                        <label for="duckliver">duck liver</label>
+
+                        <input type="checkbox" id="gooseliver" name="gooseliver">
+                        <label for="gooseliver">goose liver</label>
+
+                        <input type="checkbox" id="ostrich" name="ostrich">
+                        <label for="ostrich">ostrich</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="soppressata" name="soppressata">
+                        <label for="soppressata">soppressata</label>
+
+                        <input type="checkbox" id="alligator" name="alligator">
+                        <label for="alligator">alligator</label>
+                    </div>
+                </form>
+            </div>
+            <article class="src-article" onclick="displayIngredients(3)">
+                <div class="src-type-icon">
+                    <img class="src-icon" src="image_search/fish.png" alt="Fish" />
+                </div>
+                <div class="src-type">
+                    <p>Fish</p>
+                </div>
+                <div class="src-plus">
+                    <p>+</p>
+                </div>
+            </article>
+            <div class="src-ingredients">
+                <form class="tags">
+                    <div class="col">
+                        <input type="checkbox" id="salmon" name="salmon">
+                        <label for="salmon">salmon</label>
+
+                        <input type="checkbox" id="tilapia" name="tilapia">
+                        <label for="tilapia">tilapia</label>
+
+                        <input type="checkbox" id="cod" name="cod">
+                        <label for="cod">cod</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="anchovy" name="anchovy">
+                        <label for="anchovy">anchovy</label>
+
+                        <input type="checkbox" id="smokedsalmon" name="smokedsalmon">
+                        <label for="smokedsalmon">smoked salmon</label>
+
+                        <input type="checkbox" id="sardines" name="sardines">
+                        <label for="sardines">sardines</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="tunasteak" name="tunasteak">
+                        <label for="tunasteak">tuna steak</label>
+
+                        <input type="checkbox" id="whitefish" name="whitefish">
+                        <label for="whitefish">white fish</label>
+
+                        <input type="checkbox" id="halibut" name="halibut">
+                        <label for="halibut">halibut</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="trout" name="trout">
+                        <label for="trout">trout</label>
+
+                        <input type="checkbox" id="haddock" name="haddock">
+                        <label for="haddock">haddock</label>
+
+                        <input type="checkbox" id="flounder" name="flounder">
+                        <label for="flounder">flounder</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="catfish" name="catfish">
+                        <label for="catfish">catfish</label>
+
+                        <input type="checkbox" id="mahimahi" name="mahimahi">
+                        <label for="mahimahi">mahimahi</label>
+
+                        <input type="checkbox" id="mackerel" name="mackerel">
+                        <label for="mackerel">mackerel</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="sole" name="sole">
+                        <label for="sole">sole</label>
+
+                        <input type="checkbox" id="seabass" name="seabass">
+                        <label for="seabass">seabass</label>
+
+                        <input type="checkbox" id="redsnapper" name="redsnapper">
+                        <label for="redsnapper">redsnapper</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="swordfish" name="swordfish">
+                        <label for="swordfish">swordfish</label>
+
+                        <input type="checkbox" id="pollock" name="pollock">
+                        <label for="pollock">pollock</label>
+
+                        <input type="checkbox" id="herring" name="herring">
+                        <label for="herring">herring</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="caviar" name="caviar">
+                        <label for="caviar">caviar</label>
+
+                        <input type="checkbox" id="monkfish" name="monkfish">
+                        <label for="monkfish">monkfish</label>
+
+                        <input type="checkbox" id="rockfish" name="rockfish">
+                        <label for="rockfish">rockfish</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="pike" name="pike">
+                        <label for="pike">pike</label>
+
+                        <input type="checkbox" id="barramundi" name="barramundi">
+                        <label for="barramundi">barramundi</label>
+
+                        <input type="checkbox" id="eel" name="eel">
+                        <label for="eel">eel</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="bluefish" name="bluefish">
+                        <label for="bluefish">blue fish</label>
+
+                        <input type="checkbox" id="carp" name="carp">
+                        <label for="carp">carp</label>
+
+                        <input type="checkbox" id="cuttlefish" name="cuttlefish">
+                        <label for="cuttlefish">cuttlefish</label>
+                    </div>
+                </form>
+            </div>
+            <article class="src-article" onclick="displayIngredients(4)">
+                <div class="src-type-icon">
+                    <img class="src-icon" src="image_search/shrimp.png" alt="Seafood" />
+                </div>
+                <div class="src-type">
+                    <p>Seafood</p>
+                </div>
+                <div class="src-plus">
+                    <p>+</p>
+                </div>
+            </article>
+            <div class="src-ingredients">
+                <form class="tags">
+                    <div class="col">
+                        <input type="checkbox" id="shrimp" name="shrimp">
+                        <label for="shrimp">shrimp</label>
+
+                        <input type="checkbox" id="crab" name="crab">
+                        <label for="crab">crab</label>
+
+                        <input type="checkbox" id="prawns" name="prawns">
+                        <label for="prawns">prawns</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="scallop" name="scallop">
+                        <label for="scallop">scallop</label>
+
+                        <input type="checkbox" id="clam" name="clam">
+                        <label for="clam">clam</label>
+
+                        <input type="checkbox" id="lobster" name="lobster">
+                        <label for="lobster">lobster</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="oyster" name="oyster">
+                        <label for="oyster">oyster</label>
+
+                        <input type="checkbox" id="squid" name="squid">
+                        <label for="squid">squid</label>
+
+                        <input type="checkbox" id="calamari" name="calamari">
+                        <label for="calamari">calamari</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="octopus" name="octopus">
+                        <label for="octopus">octopus</label>
+
+                        <input type="checkbox" id="conch" name="conch">
+                        <label for="conch">conch</label>
+
+                        <input type="checkbox" id="seaurchin" name="seaurchin">
+                        <label for="seaurchin">seaurchin</label>
+                    </div>
+                </form>
+            </div>
+            <article class="src-article" onclick="displayIngredients(5)">
+                <div class="src-type-icon">
+                    <img class="src-icon" src="image_search/food.png" alt="Dairy" />
+                </div>
+                <div class="src-type">
+                    <p>Dairy</p>
+                </div>
+                <div class="src-plus">
+                    <p>+</p>
+                </div>
+            </article>
+            <div class="src-ingredients">
+                <form class="tags">
+                    <div class="col">
+                        <input type="checkbox" id="butter" name="butter">
+                        <label for="butter">butter</label>
+
+                        <input type="checkbox" id="egg" name="egg">
+                        <label for="egg">egg</label>
+
+                        <input type="checkbox" id="milk" name="milk ">
+                        <label for="milk">milk</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="parmesan" name="parmesan ">
+                        <label for="parmesan">parmesan</label>
+
+                        <input type="checkbox" id="cheddar" name="cheddar">
+                        <label for="cheddar">cheddar</label>
+
+                        <input type="checkbox" id="americancheese" name="americancheese ">
+                        <label for="americancheese">american cheese</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="sourcream " name="sourcream">
+                        <label for="sourcream ">sour cream</label>
+
+                        <input type="checkbox" id="creamcheese" name="creamcheese">
+                        <label for="creamcheese">cream cheese</label>
+
+                        <input type="checkbox" id="mozzarella" name="mozzarella">
+                        <label for="mozzarella">mozzarella</label>
+                    </div>
+                    <div class="col">
+
+                        <input type="checkbox" id="yogurt" name="yogurt ">
+                        <label for="yogurt">yogurt</label>
+
+                        <input type="checkbox" id="cream" name="cream">
+                        <label for="cream">cream</label>
+
+                        <input type="checkbox" id="whippedcream" name="whippedcream">
+                        <label for="whippedcream ">whipped cream</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="feta" name="feta">
+                        <label for="feta ">feta</label>
+
+                        <input type="checkbox" id="condensedmilk" name="condensedmilk ">
+                        <label for="condensedmilk">condensed milk</label>
+
+                        <input type="checkbox" id="cottagecheese" name="cottagecheese">
+                        <label for="cottagecheese">cottage cheese</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="icecream" name="icecream ">
+                        <label for="icecream">ice cream</label>
+
+                        <input type="checkbox" id="swisscheese" name="swisscheese">
+                        <label for="swisscheese">swiss cheese</label>
+
+                        <input type="checkbox" id="velveeta " name="velveeta ">
+                        <label for="velveeta">velveeta</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="frosting" name="frosting">
+                        <label for="frosting">frosting</label>
+
+                        <input type="checkbox" id="ricotta" name="ricotta">
+                        <label for="ricotta">ricotta</label>
+
+                        <input type="checkbox" id="goatcheese" name="goatcheese ">
+                        <label for="goatcheese">goat cheese</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="provolone" name="provolone">
+                        <label for="provolone">provolone</label>
+
+                        <input type="checkbox" id="bluecheese" name="bluecheese">
+                        <label for="bluecheese">blue cheese</label>
+
+                        <input type="checkbox" id="colbycheese" name="colbycheese">
+                        <label for="colbycheese">colby cheese</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="softcheese" name="softcheese">
+                        <label for="softcheese">soft cheese</label>
+
+                        <input type="checkbox" id="gouda" name="gouda">
+                        <label for="gouda">gouda</label>
+
+                        <input type="checkbox" id="brie" name="brie">
+                        <label for="brie">brie</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="cremefraiche" name="cremefraiche">
+                        <label for="cremefraiche">creme fraiche</label>
+
+                        <input type="checkbox" id="cheesesoup" name="cheesesoup">
+                        <label for="cheesesoup">cheese soup</label>
+
+                        <input type="checkbox" id="gruyere" name="gruyere">
+                        <label for="gruyere">gruyere</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="pecorinocheese" name="pecorinocheese">
+                        <label for="pecorinocheese">pecorino cheese</label>
+
+                        <input type="checkbox" id="quesofrescocheese" name="quesofrescocheese">
+                        <label for="quesofrescocheese">queso fresco cheese</label>
+
+                        <input type="checkbox" id="hardcheese" name="hardcheese">
+                        <label for="hardcheese">hard cheese</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="havarticheese" name="havarticheese">
+                        <label for="havarticheese">havarti cheese</label>
+
+                        <input type="checkbox" id="mascarpone" name="mascarpone">
+                        <label for="mascarpone">mascarpone</label>
+
+                        <input type="checkbox" id="neufchatel" name="neufchatel">
+                        <label for="neufchatel">neufchatel</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="camembertcheese" name="camembertcheese">
+                        <label for="camembertcheese">camembert cheese</label>
+
+                        <input type="checkbox" id="garlicherbcheese" name="garlicherbcheese">
+                        <label for="garlicherbcheese">garlicherb cheese</label>
+
+                        <input type="checkbox" id="manchego" name="manchego">
+                        <label for="manchego">manchego</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="stiltoncheese" name="stiltoncheese ">
+                        <label for="stiltoncheese">stilton cheese</label>
+
+                        <input type="checkbox" id="jarlsbergcheese" name="jarlsbergcheese">
+                        <label for="jarlsbergcheese">jarlsberg cheese</label>
+
+                        <input type="checkbox" id="bocconcinicheese" name="bocconcinicheese">
+                        <label for="bocconcinicheese">bocconcini cheese</label>
+                    </div>
+                    <div class="col">
+
+                        <input type="checkbox" id="longhorncheese" name="longhorncheese">
+                        <label for="longhorncheese">longhorn cheese</label>
+
+                        <input type="checkbox" id="raclettecheese" name="raclettecheese">
+                        <label for="raclettecheese">raclette cheese</label>
+
+                        <input type="checkbox" id="lancashirecheese" name="lancashirecheese">
+                        <label for="lancashirecheese">lancashire cheese</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="cheshirecheese" name="cheshirecheese">
+                        <label for="cheshirecheese">cheshire cheese</label>
+                    </div>
+                </form>
+            </div>
+            <article class="src-article " onclick="displayIngredients(6) ">
+                <div class="src-type-icon ">
+                    <img class="src-icon " src="image_search/soy-milk.png " alt="Dairy Alternatives " />
+                </div>
+                <div class="src-type ">
+                    <p>Dairy Alternatives</p>
+                </div>
+                <div class="src-plus ">
+                    <p>+</p>
+                </div>
+            </article>
+            <div class="src-ingredients">
+                <form class="tags">
+                    <div class="col">
+                        <input type="checkbox" id="margarine" name="margarine">
+                        <label for="margarine">margarine</label>
+
+                        <input type="checkbox" id="coconutmilk" name="coconutmilk">
+                        <label for="coconutmilk">coconut milk</label>
+
+                        <input type="checkbox" id="almondmilk" name="almondmilk">
+                        <label for="almondmilk">almond milk</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="soymilk" name="soymilk">
+                        <label for="soymilk">soy milk</label>
+
+                        <input type="checkbox" id="ricemilk" name="ricemilk">
+                        <label for="ricemilk">rice milk</label>
+                    </div>
+                </form>
+            </div>
+
+            <article class="src-article " onclick="displayIngredients(7) ">
+                <div class="src-type-icon ">
+                    <img class="src-icon " src="image_search/peas.png " alt="Legumes " />
+                </div>
+                <div class="src-type ">
+                    <p>Legumes</p>
+                </div>
+                <div class="src-plus ">
+                    <p>+</p>
+                </div>
+            </article>
+
+            <div class="src-ingredients">
+                <form class="tags">
+                    <div class="col">
+                        <input type="checkbox" id="tofu" name="tofu">
+                        <label for="tofu">tofu</label>
+
+                        <input type="checkbox" id="greenbeans" name="greenbeans">
+                        <label for="greenbeans">green beans</label>
+
+                        <input type="checkbox" id="peas" name="peas">
+                        <label for="peas">peas</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="blackbeans" name="blackbeans">
+                        <label for="blackbeans">black beans</label>
+
+                        <input type="checkbox" id="chickpea" name="chickpea">
+                        <label for="chickpea">chick pea</label>
+
+                        <input type="checkbox" id="lentil" name="lentil">
+                        <label for="lentil">lentil</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="hummus" name="hummus">
+                        <label for="hummus">hummus</label>
+
+                        <input type="checkbox" id="chilibeans" name="chilibeans">
+                        <label for="chilibeans">chili beans</label>
+
+                        <input type="checkbox" id="limabeans" name="limabeans">
+                        <label for="limabeans">lima beans</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="pintobeans" name="pintobeans">
+                        <label for="pintobeans">pinto beans</label>
+
+                        <input type="checkbox" id="edamame" name="edamame">
+                        <label for="edamame">edamame</label>
+
+                        <input type="checkbox" id="splitpeas" name="splitpeas">
+                        <label for="splitpeas">split peas</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="soybeans" name="soybeans">
+                        <label for="soybeans">soy beans</label>
+
+                        <input type="checkbox" id="cannellinibeans" name="cannellinibeans">
+                        <label for="cannellinibeans">cannellini beans</label>
+
+                        <input type="checkbox" id="redbeans" name="redbeans">
+                        <label for="redbeans">red beans</label>
+                    </div>
+                </form>
+            </div>
+            <article class="src-article " onclick="displayIngredients(8) ">
+                <div class="src-type-icon ">
+                    <img class="src-icon " src="image_search/bake.png " alt="Baking and Grains " />
+                </div>
+                <div class="src-type ">
+                    <p>Baking and Grains</p>
+                </div>
+                <div class="src-plus ">
+                    <p>+</p>
+                </div>
+            </article>
+            <div class="src-ingredients">
+                <form class="tags">
+                    <div class="col">
+                        <input type="checkbox" id="rice" name="rice">
+                        <label for="rice">rice</label>
+
+                        <input type="checkbox" id="pasta" name="pasta">
+                        <label for="pasta">pasta</label>
+
+                        <input type="checkbox" id="flour" name="flour">
+                        <label for="flour">flour</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="bread" name="bread">
+                        <label for="bread">bread</label>
+
+                        <input type="checkbox" id="bakingpowder" name="bakingpowder">
+                        <label for="bakingpowder">bakingpowder</label>
+
+                        <input type="checkbox" id="bakingsoda" name="bakingsoda">
+                        <label for="bakingsoda">baking soda</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="breadcrumbs" name="breadcrumbs">
+                        <label for="breadcrumbs">breadcrumbs</label>
+
+                        <input type="checkbox" id="cornstarch" name="cornstarch">
+                        <label for="cornstarch">cornstarch</label>
+
+                        <input type="checkbox" id="rolledoats" name="rolledoats">
+                        <label for="rolledoats">rolledoats</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="noodle" name="noodle">
+                        <label for="noodle">noodle</label>
+
+                        <input type="checkbox" id="flourtortillas" name="flourtortillas">
+                        <label for="flourtortillas">flour tortillas</label>
+
+                        <input type="checkbox" id="pancakemix" name="pancakemix">
+                        <label for="pancakemix">pancake mix</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="yeast" name="yeast">
+                        <label for="yeast">yeast</label>
+
+                        <input type="checkbox" id="cracker" name="cracker">
+                        <label for="cracker">cracker</label>
+
+                        <input type="checkbox" id="brownrice" name="brownrice">
+                        <label for="brownrice">brown rice</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="cakemix" name="cakemix">
+                        <label for="cakemix">cake mix</label>
+
+                        <input type="checkbox" id="saltines" name="saltines">
+                        <label for="saltines">saltines</label>
+
+                        <input type="checkbox" id="popcorn" name="popcorn">
+                        <label for="popcorn">popcorn</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="corntortillas" name="corntortillas">
+                        <label for="corntortillas">corn tortillas</label>
+
+                        <input type="checkbox" id="ramen" name="ramen">
+                        <label for="ramen">ramen</label>
+
+                        <input type="checkbox" id="cereal" name="cereal">
+                        <label for="cereal">cereal</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="biscuits" name="biscuits">
+                        <label for="biscuits">biscuits</label>
+
+                        <input type="checkbox" id="piecrust" name="piecrust">
+                        <label for="piecrust">pie crust</label>
+
+                        <input type="checkbox" id="coconutflake" name="coconutflake">
+                        <label for="coconutflake">coconut flake</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="breadflour" name="breadflour">
+                        <label for="breadflour">bread flour</label>
+
+                        <input type="checkbox" id="croutons" name="croutons">
+                        <label for="croutons">croutons</label>
+
+                        <input type="checkbox" id="pizzadough" name="pizzadough">
+                        <label for="pizzadough">pizza dough</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="bagel" name="bagel">
+                        <label for="bagel">bagel</label>
+
+                        <input type="checkbox" id="hotdogbun" name="hotdogbun">
+                        <label for="hotdogbun">hot dog bun</label>
+
+                        <input type="checkbox" id="multigrainbread" name="multigrainbread">
+                        <label for="multigrainbread">multigrain bread</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="potatoflakes" name="potatoflakes">
+                        <label for="potatoflakes">potato flakes</label>
+
+                        <input type="checkbox" id="pretzel" name="pretzel">
+                        <label for="pretzel">pretzel</label>
+
+                        <input type="checkbox" id="cornbread" name="cornbread">
+                        <label for="cornbread">corn bread</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="cornflour" name="cornflour">
+                        <label for="cornflour">corn flour</label>
+
+                        <input type="checkbox" id="coconutflour" name="coconutflour">
+                        <label for="coconutflour">coconut flour</label>
+
+                        <input type="checkbox" id="pita" name="pita">
+                        <label for="pita">pita</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="risotto" name="risotto">
+                        <label for="risotto">risotto</label>
+
+                        <input type="checkbox" id="muffinmix" name="muffinmix">
+                        <label for="muffinmix">muffin mix</label>
+
+                        <input type="checkbox" id="bicarbonateofsoda" name="bicarbonateofsoda">
+                        <label for="bicarbonateofsoda">bicarbonate of soda</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="ravioli" name="ravioli">
+                        <label for="ravioli">ravioli</label>
+
+                        <input type="checkbox" id="wheat" name="wheat">
+                        <label for="wheat">wheat</label>
+
+                        <input type="checkbox" id="riceflour" name="riceflour">
+                        <label for="riceflour">rice flour</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="polenta" name="polenta">
+                        <label for="polenta">polenta</label>
+
+                        <input type="checkbox" id="baguette" name="baguette">
+                        <label for="baguette">baguette</label>
+
+                        <input type="checkbox" id="gnocchi" name="gnocchi">
+                        <label for="gnocchi">gnocchi</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="vermicelli" name="vermicelli">
+                        <label for="vermicelli">vermicelli</label>
+
+                        <input type="checkbox" id="semolina" name="semolina">
+                        <label for="semolina">semolina</label>
+
+                        <input type="checkbox" id="wheatgerm" name="wheatgerm">
+                        <label for="wheatgerm">wheat germ</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="buckwheat" name="buckwheat">
+                        <label for="buckwheat">buckwheat</label>
+
+                        <input type="checkbox" id="croissants" name="croissants">
+                        <label for="croissants">croissants</label>
+
+                        <input type="checkbox" id="breaddough" name="breaddough">
+                        <label for="breaddough">bread dough</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="yeastflake" name="yeastflake">
+                        <label for="yeastflake">yeast flake</label>
+
+                        <input type="checkbox" id="pierogi" name="pierogi">
+                        <label for="pierogi">pierogi</label>
+
+                        <input type="checkbox" id="rye" name="rye">
+                        <label for="rye">rye</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="tapiocaflour" name="tapiocaflour">
+                        <label for="tapiocaflour">tapioca flour</label>
+
+                        <input type="checkbox" id="potatostarch" name="potatostarch">
+                        <label for="potatostarch">potato starch</label>
+
+                        <input type="checkbox" id="breadsticks" name="breadsticks">
+                        <label for="breadsticks">bread sticks</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="ciabatta" name="ciabatta">
+                        <label for="ciabatta">ciabatta</label>
+
+                        <input type="checkbox" id="starch" name="starch">
+                        <label for="starch">starch</label>
+
+                        <input type="checkbox" id="wholewheatflour" name="wholewheatflour">
+                        <label for="wholewheatflour">whole wheat flour</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="sourdoughstarter" name="sourdoughstarter">
+                        <label for="sourdoughstarter">sour dough starter</label>
+
+                        <input type="checkbox" id="wafer" name="wafer">
+                        <label for="wafer">wafer</label>
+
+                        <input type="checkbox" id="challah" name="challah">
+                        <label for="challah">challah</label>
+                    </div>
+                </form>
+            </div>
+            <article class="src-article " onclick="displayIngredients(9) ">
+                <div class="src-type-icon ">
+                    <img class="src-icon " src="image_search/seasoning.png " alt="Seasonings " />
+                </div>
+                <div class="src-type ">
+                    <p>Seasonings</p>
+                </div>
+                <div class="src-plus ">
+                    <p>+</p>
+                </div>
+            </article>
+            <div class="src-ingredients">
+                <form class="tags">
+                    <div class="col">
+                        <input type="checkbox" id="cinnamon" name="cinnamon">
+                        <label for="cinnamon">cinnamon</label>
+
+                        <input type="checkbox" id="vanilla" name="vanilla">
+                        <label for="vanilla">vanilla</label>
+
+                        <input type="checkbox" id="garlicpowder" name="garlicpowder">
+                        <label for="garlicpowder">garlic powder</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="paprika" name="paprika">
+                        <label for="paprika">paprika</label>
+
+                        <input type="checkbox" id="oregano" name="oregano">
+                        <label for="oregano">oregano</label>
+
+                        <input type="checkbox" id="chilipowder" name="chilipowder">
+                        <label for="chilipowder">chili powder</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="cumin" name="cumin">
+                        <label for="cumin">cumin</label>
+
+                        <input type="checkbox" id="cayenne" name="cayenne">
+                        <label for="cayenne">cayenne</label>
+
+                        <input type="checkbox" id="thyme" name="thyme">
+                        <label for="thyme">thyme</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="onionpowde" name="onionpowde">
+                        <label for="onionpowde">onion powder</label>
+
+                        <input type="checkbox" id="nutmeg" name="nutmeg">
+                        <label for="nutmeg">nutmeg</label>
+
+                        <input type="checkbox" id="currypowder" name="currypowder">
+                        <label for="currypowder">curry powder</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="bayleaf" name="bayleaf">
+                        <label for="bayleaf">bayleaf</label>
+
+                        <input type="checkbox" id="tacoseasoning" name="tacoseasoning">
+                        <label for="tacoseasoning">taco seasoning</label>
+
+                        <input type="checkbox" id="clove" name="clove">
+                        <label for="clove">clove</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="turmeric" name="turmeric">
+                        <label for="turmeric">turmeric</label>
+
+                        <input type="checkbox" id="chive" name="chive">
+                        <label for="chive">chive</label>
+
+                        <input type="checkbox" id="peppercorn" name="peppercorn">
+                        <label for="peppercorn">pepper corn</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="cajunseasoning" name="cajunseasoning">
+                        <label for="cajunseasoning">cajun seasoning</label>
+
+                        <input type="checkbox" id="coriander" name="coriander">
+                        <label for="coriander">coriander</label>
+
+                        <input type="checkbox" id="celerysalt" name="celerysalt">
+                        <label for="celerysalt">celery salt</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="steakseasoning" name="steakseasoning">
+                        <label for="steakseasoning">steak seasoning</label>
+
+                        <input type="checkbox" id="poultryseasoning" name="poultryseasoning">
+                        <label for="poultryseasoning">poultry seasoning</label>
+
+                        <input type="checkbox" id="chilepowder" name="chilepowder">
+                        <label for="chilepowder">chile powder</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="cardamom" name="cardamom">
+                        <label for="cardamom">cardamom</label>
+
+                        <input type="checkbox" id="tarragon" name="tarragon">
+                        <label for="tarragon">tarragon</label>
+
+                        <input type="checkbox" id=garammasala "" name="garammasala">
+                        <label for="garammasala">garammasala</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="marjoram" name="marjoram">
+                        <label for="marjoram">marjoram</label>
+
+                        <input type="checkbox" id="mustardseed" name="mustardseed">
+                        <label for="mustardseed">mustard seed</label>
+
+                        <input type="checkbox" id="celeryseed" name="celeryseed">
+                        <label for="celeryseed">celery seed</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="saffron" name="saffron">
+                        <label for="saffron">saffron</label>
+
+                        <input type="checkbox" id="onionflake" name="onionflake">
+                        <label for="onionflake">onion flake</label>
+
+                        <input type="checkbox" id="dillseed" name="dillseed">
+                        <label for="dillseed">dill seed</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="fennelseed" name="fennelseed">
+                        <label for="fennelseed">fennel seed</label>
+
+                        <input type="checkbox" id="cacao" name="cacao">
+                        <label for="cacao">cacao</label>
+
+                        <input type="checkbox" id="staranise" name="staranise">
+                        <label for="staranise">staranise</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="aniseed" name="aniseed">
+                        <label for="aniseed">ani seed</label>
+
+                        <input type="checkbox" id="lavender" name="lavender">
+                        <label for="lavender">lavender</label>
+
+                        <input type="checkbox" id="lemonbalm" name="lemonbalm">
+                        <label for="lemonbalm">lemon balm</label>
+                    </div>
+                    <div class="col">
+
+                        <input type="checkbox" id="bouillon" name="bouillon">
+                        <label for="bouillon">bouillon</label>
+
+                        <input type="checkbox" id="groundginger" name="groundginger">
+                        <label for="groundginger">ground ginger</label>
+
+                        <input type="checkbox" id="sesameseed" name="sesameseed">
+                        <label for="sesameseed">sesame seed</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="liquidsmoke" name="liquidsmoke">
+                        <label for="liquidsmoke">liquid smoke</label>
+
+                        <input type="checkbox" id="poppyseed" name="poppyseed">
+                        <label for="poppyseed">poppy seed</label>
+
+                        <input type="checkbox" id="balsamicglaze" name="balsamicglaze">
+                        <label for="balsamicglaze">balsamic glaze</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="miso" name="miso">
+                        <label for="miso">miso</label>
+
+                        <input type="checkbox" id="wasabi" name="wasabi">
+                        <label for="wasabi">wasabi</label>
+
+                        <input type="checkbox" id="rosewater" name="rosewater">
+                        <label for="rosewater">rose water</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="jamaicanjerkspice" name="jamaicanjerkspice">
+                        <label for="jamaicanjerkspice">jamaican jerkspice</label>
+
+                        <input type="checkbox" id="mustardpowder" name="mustardpowder">
+                        <label for="mustardpowder">mustard powder</label>
+
+                        <input type="checkbox" id="mangopowder" name="mangopowder">
+                        <label for="mangopowder">mango powder</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="matchapowder" name="matchapowder">
+                        <label for="matchapowder">matcha powder</label>
+
+                        <input type="checkbox" id="cassia" name="cassia">
+                        <label for="cassia">cassia</label>
+                    </div>
+
+                </form>
+            </div>
+            <article class="src-article " onclick="displayIngredients(10) ">
+                <div class="src-type-icon ">
+                    <img class="src-icon " src="image_search/sauces.png " alt="Sauces " />
+                </div>
+                <div class="src-type ">
+                    <p>Sauces</p>
+                </div>
+                <div class="src-plus ">
+                    <p>+</p>
+                </div>
+            </article>
+            <div class="src-ingredients">
+                <form class="tags">
+                    <div class="col">
+                        <input type="checkbox" id="mayonnaise" name="mayonnaise">
+                        <label for="mayonnaise">mayonnaise</label>
+
+                        <input type="checkbox" id="ketchup" name="ketchup">
+                        <label for="ketchup">ketchup</label>
+
+                        <input type="checkbox" id="mustard" name="mustard">
+                        <label for="mustard">mustard</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="vinegar" name="vinegar">
+                        <label for="vinegar">vinegar</label>
+
+                        <input type="checkbox" id="balsamicvinegar" name="balsamicvinegar">
+                        <label for="balsamicvinegar">balsamic vinegar</label>
+
+                        <input type="checkbox" id="soysauce" name="soysauce">
+                        <label for="soysauce">soy sauce</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="worcestershire" name="worcestershire">
+                        <label for="worcestershire">worcestershire</label>
+
+                        <input type="checkbox" id="hotsauce" name="hotsauce">
+                        <label for="hotsauce">hot sauce</label>
+
+                        <input type="checkbox" id="barbecuesauce" name="barbecuesauce">
+                        <label for="barbecuesauce">barbecue sauce</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="ranchdressing" name="ranchdressing">
+                        <label for="ranchdressing">ranch dressing</label>
+
+                        <input type="checkbox" id="winevinegar" name="winevinegar">
+                        <label for="winevinegar">wine vinegar</label>
+
+                        <input type="checkbox" id="cidervinegar" name="cidervinegar">
+                        <label for="cidervinegar">cider vinegar</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="ricevinegar" name="ricevinegar">
+                        <label for="ricevinegar">rice vinegar</label>
+
+                        <input type="checkbox" id="saladdressing" name="saladdressing">
+                        <label for="saladdressing">salad dressing</label>
+
+                        <input type="checkbox" id="tabasco" name="tabasco">
+                        <label for="tabasco">tabasco</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="fishsauce" name="fishsauce">
+                        <label for="fishsauce">fish sauce</label>
+
+                        <input type="checkbox" id="teriyaki" name="teriyaki">
+                        <label for="teriyaki">teriyaki</label>
+
+                        <input type="checkbox" id="steaksauce" name="steaksauce">
+                        <label for="steaksauce">steak sauce</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="enchiladasauce" name="enchiladasauce">
+                        <label for="enchiladasauce">enchilada sauce</label>
+
+                        <input type="checkbox" id="oystersauce" name="oystersauce">
+                        <label for="oystersauce">oyster sauce</label>
+
+                        <input type="checkbox" id="honeymustard" name="honeymustard">
+                        <label for="honeymustard">honey mustard</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="caesardressing" name="caesardressing">
+                        <label for="caesardressing">caesar dressing</label>
+
+                        <input type="checkbox" id="mirin" name="mirin">
+                        <label for="mirin">mirin</label>
+
+                        <input type="checkbox" id="bluecheesedressing" name="bluecheesedressing">
+                        <label for="bluecheesedressing">blue cheese dressing</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="sweetandsoursauce" name="sweetandsoursauce">
+                        <label for="sweetandsoursauce">sweet and sour sauce</label>
+
+                        <input type="checkbox" id="picantesauce" name="picantesauce">
+                        <label for="picantesauce">picante sauce</label>
+
+                        <input type="checkbox" id="buffalosauce" name="buffalosauce">
+                        <label for="buffalosauce">buffalo sauce</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="tartarsauce" name="tartarsauce">
+                        <label for="tartarsauce">tartar sauce</label>
+
+                        <input type="checkbox" id="marsala" name="marsala">
+                        <label for="marsala">marsala</label>
+
+                        <input type="checkbox" id="tzatzikisauce" name="tzatzikisauce">
+                        <label for="tzatzikisauce">tzatziki sauce</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="sesamedressing" name="sesamedressing">
+                        <label for="sesamedressing">sesame dressing</label>
+
+                        <input type="checkbox" id="ponzu" name="ponzu">
+                        <label for="ponzu">ponzu</label>
+
+                        <input type="checkbox" id=yuzujuice "" name="yuzujuice">
+                        <label for="yuzujuice">yuzu juice</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="creamsauce" name="creamsauce">
+                        <label for="creamsauce">cream sauce</label>
+
+                        <input type="checkbox" id="tomatosauce" name="tomatosauce">
+                        <label for="tomatosauce">tomato sauce</label>
+
+                        <input type="checkbox" id="tomatopaste" name="tomatopaste">
+                        <label for="tomatopaste">tomato paste</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="salsa" name="salsa">
+                        <label for="salsa">salsa</label>
+
+                        <input type="checkbox" id="pesto" name="pesto">
+                        <label for="pesto">pesto</label>
+
+                        <input type="checkbox" id="beefgravy" name="beefgravy">
+                        <label for="beefgravy">beef gravy</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="currypaste" name="currypaste">
+                        <label for="currypaste">curry paste</label>
+
+                        <input type="checkbox" id="chickengravy" name="chickengravy">
+                        <label for="chickengravy">chicken gravy</label>
+
+                        <input type="checkbox" id="cranberrysauce" name="cranberrysauce">
+                        <label for="cranberrysauce">cranberry sauce</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="turkey gravy" name="turkeygravy">
+                        <label for="turkeygravy">turkey gravy</label>
+
+                        <input type="checkbox" id="mushroomgravy" name="mushroomgravy">
+                        <label for="mushroomgravy">mushroom gravy</label>
+
+                        <input type="checkbox" id="oniongravy" name="oniongravy">
+                        <label for="oniongravy">onion gravy</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="porkgravy" name="porkgravy">
+                        <label for="porkgravy">pork gravy</label>
+                    </div>
+                </form>
+            </div>
+            <article class="src-article " onclick="displayIngredients(11) ">
+                <div class="src-type-icon ">
+                    <img class="src-icon " src="image_search/peanut.png " alt="Nuts " />
+                </div>
+                <div class="src-type ">
+                    <p>Nuts</p>
+                </div>
+                <div class="src-plus ">
+                    <p>+</p>
+                </div>
+            </article>
+            <div class="src-ingredients">
+                <form class="tags">
+                    <div class="col">
+                        <input type="checkbox" id="almond" name="almond">
+                        <label for="almond">almond</label>
+
+                        <input type="checkbox" id="walnut" name="walnut">
+                        <label for="walnut">walnut</label>
+
+                        <input type="checkbox" id="pecan" name="pecan">
+                        <label for="pecan">pecan</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="peanut" name="peanut">
+                        <label for="peanut">peanut</label>
+
+                        <input type="checkbox" id="cashew" name="cashew">
+                        <label for="cashew">cashew</label>
+
+                        <input type="checkbox" id="pistachio" name="pistachio">
+                        <label for="pistachio">pistachio</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="hazelnut" name="hazelnut">
+                        <label for="hazelnut">hazelnut</label>
+
+                        <input type="checkbox" id="macadamia" name="macadamia">
+                        <label for="macadamia">macadamia</label>
+
+                        <input type="checkbox" id="chestnut" name="chestnut">
+                        <label for="chestnut">chestnut</label>
+                    </div>
+                </form>
+            </div>
+            <article class="src-article " onclick="displayIngredients(12) ">
+                <div class="src-type-icon ">
+                    <img class="src-icon " src="image_search/olive-oil.png " alt="Oils " />
+                </div>
+                <div class="src-type ">
+                    <p>Oils</p>
+                </div>
+                <div class="src-plus ">
+                    <p>+</p>
+                </div>
+            </article>
+            <div class="src-ingredients">
+                <form class="tags">
+                    <div class="col">
+                        <input type="checkbox" id="oliveoil" name="oliveoil">
+                        <label for="oliveoil">olive oil</label>
+
+                        <input type="checkbox" id="vegetableoil" name="vegetableoil">
+                        <label for="vegetableoil">vegetable oil</label>
+
+                        <input type="checkbox" id="cookingspray" name="cookingspray">
+                        <label for="cookingspray">cooking spray</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="canolaoil" name="canolaoil">
+                        <label for="canolaoil">canola oil</label>
+
+                        <input type="checkbox" id="sesameoil" name="sesameoil">
+                        <label for="sesameoil">sesame oil</label>
+
+                        <input type="checkbox" id="coconutoil" name="coconutoil">
+                        <label for="coconutoil">coconut oil</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="peanutoil" name="peanutoil">
+                        <label for="peanutoil">peanut oil</label>
+
+                        <input type="checkbox" id="sunfloweroil" name="sunfloweroil">
+                        <label for="sunfloweroil">sunflower oil</label>
+
+                        <input type="checkbox" id="grapeseedoil" name="grapeseedoil">
+                        <label for="grapeseedoil">grape seed oil</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="cornoil" name="cornoil">
+                        <label for="cornoil">corn oil</label>
+
+                        <input type="checkbox" id="almondoil" name="almondoil">
+                        <label for="almondoil">almond oil</label>
+
+                        <input type="checkbox" id="avocadooil" name="avocadooil">
+                        <label for="avocadooil">avocado oil</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="walnutoil" name="walnutoil">
+                        <label for="walnutoil">walnut oil</label>
+
+                        <input type="checkbox" id="hazelnutoil" name="hazelnutoil">
+                        <label for="hazelnutoil">hazelnut oil</label>
+
+                        <input type="checkbox" id="palmoil" name="palmoil">
+                        <label for="palmoil">palm oil</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="soyoil" name="soyoil">
+                        <label for="soyoil">soy oil</label>
+
+                        <input type="checkbox" id="mustardoil" name="mustardoil">
+                        <label for="mustardoil">mustard oil</label>
+
+                        <input type="checkbox" id="pistachiooil" name="pistachiooil">
+                        <label for="pistachiooil">pistachio oil</label>
+                    </div>
+                </form>
+            </div>
+            <article class="src-article " onclick="displayIngredients(13) ">
+                <div class="src-type-icon ">
+                    <img class="src-icon " src="image_search/honey.png " alt="Sweeteners " />
+                </div>
+                <div class="src-type ">
+                    <p>Sweeteners</p>
+                </div>
+                <div class="src-plus ">
+                    <p>+</p>
+                </div>
+            </article>
+            <div class="src-ingredients">
+                <form class="tags">
+                    <div class="col">
+                        <input type="checkbox" id="sugar" name="sugar">
+                        <label for="sugar">sugar</label>
+
+                        <input type="checkbox" id="brownsugar" name="brownsugar">
+                        <label for="brownsugar">brown sugar</label>
+
+                        <input type="checkbox" id="honey" name="honey">
+                        <label for="honey">honey</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="molasses" name="molasses">
+                        <label for="molasses">molasses</label>
+
+                        <input type="checkbox" id="maplesyrup" name="maplesyrup">
+                        <label for="maplesyrup">maple syrup</label>
+
+                        <input type="checkbox" id="cornsyrup" name="cornsyrup">
+                        <label for="cornsyrup">corn syrup</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="confectionerssugar" name="confectionerssugar">
+                        <label for="confectionerssugar">confectioner's sugar</label>
+
+
+                        <input type="checkbox" id="artificialsweetene" name="artificialsweetene">
+                        <label for="artificialsweetene">artificial sweetener</label>
+                    </div>
+                </form>
+            </div>
+            <article class="src-article " onclick="displayIngredients(14) ">
+                <div class="src-type-icon ">
+                    <img class="src-icon " src="image_search/alcohol.png " alt="Alcohol " />
+                </div>
+                <div class="src-type ">
+                    <p>Alcohol</p>
+                </div>
+                <div class="src-plus ">
+                    <p>+</p>
+                </div>
+            </article>
+            <div class="src-ingredients">
+                <form class="tags">
+                    <div class="col">
+                        <input type="checkbox" id="whitewine" name="whitewine">
+                        <label for="whitewine">white wine</label>
+
+                        <input type="checkbox" id="beer" name="beer">
+                        <label for="beer">beer</label>
+
+                        <input type="checkbox" id="redwine" name="redwine">
+                        <label for="redwine">red wine</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="vodka" name="vodka">
+                        <label for="vodka">vodka</label>
+
+                        <input type="checkbox" id="rum" name="rum">
+                        <label for="rum">rum</label>
+
+                        <input type="checkbox" id="whiskey" name="whiskey">
+                        <label for="whiskey">whiskey</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="tequila" name="tequila">
+                        <label for="tequila">tequila</label>
+
+                        <input type="checkbox" id="sherry" name="sherry">
+                        <label for="sherry">sherry</label>
+
+                        <input type="checkbox" id="bourbon" name="bourbon">
+                        <label for="bourbon">bourbon</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="liqueur" name="liqueur">
+                        <label for="liqueur">liqueur</label>
+
+                        <input type="checkbox" id="brandy" name="brandy">
+                        <label for="brandy">brandy</label>
+
+                        <input type="checkbox" id="gin" name="gin">
+                        <label for="gin">gin</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="kahlua" name="kahlua">
+                        <label for="kahlua">kahlua</label>
+
+                        <input type="checkbox" id="champagne" name="champagne">
+                        <label for="champagne">champagne</label>
+
+                        <input type="checkbox" id="amaretto" name="amaretto">
+                        <label for="amaretto">amaretto</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="cabernetsauvignon" name="cabernetsauvignon">
+                        <label for="cabernetsauvignon">cabernet sauvignon</label>
+
+                        <input type="checkbox" id="vermouth" name="vermouth">
+                        <label for="vermouth">vermouth</label>
+
+                        <input type="checkbox" id="maraschino" name="maraschino">
+                        <label for="maraschino">maraschino</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="sake" name="sake">
+                        <label for="sake">sake</label>
+
+                        <input type="checkbox" id="schnapps" name="schnapps">
+                        <label for="schnapps">schnapps</label>
+
+                        <input type="checkbox" id="cognac" name="cognac">
+                        <label for="cognac">cognac</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="chocolateliqueur" name="chocolateliqueur">
+                        <label for="chocolateliqueur">chocolate liqueur</label>
+
+                        <input type="checkbox" id="burgundywine" name="burgundywine">
+                        <label for="burgundywine">burgundy wine</label>
+
+                        <input type="checkbox" id="limoncello" name="limoncello">
+                        <label for="limoncello">limoncello</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="bloodymary" name="bloodymary">
+                        <label for="bloodymary">bloodymary</label>
+
+                        <input type="checkbox" id="absinthe" name="absinthe">
+                        <label for="absinthe">absinthe</label>
+                    </div>
+                </form>
+            </div>
+            <article class="src-article " onclick="displayIngredients(15) ">
+                <div class="src-type-icon ">
+                    <img class="src-icon " src="image_search/chocolate.png " alt="Deserts and Snacks " />
+                </div>
+                <div class="src-type ">
+                    <p>Deserts and Snacks</p>
+                </div>
+                <div class="src-plus ">
+                    <p>+</p>
+                </div>
+            </article>
+            <div class="src-ingredients">
+                <form class="tags">
+                    <div class="col">
+                        <input type="checkbox" id="chocolate" name="chocolate">
+                        <label for="chocolate">chocolate</label>
+
+                        <input type="checkbox" id="applesauce" name="applesauce">
+                        <label for="applesauce">apple sauce</label>
+
+                        <input type="checkbox" id="strawberryjam" name="strawberryjam">
+                        <label for="strawberryjam">strawberry jam</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="grahamcracker" name="grahamcracker">
+                        <label for="grahamcracker">graham cracker</label>
+
+                        <input type="checkbox" id="marshmallow" name="marshmallow">
+                        <label for="marshmallow">marshmallow</label>
+
+                        <input type="checkbox" id="chocolatesyrup" name="chocolatesyrup">
+                        <label for="chocolatesyrup">chocolate syrup</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="potatochips" name="potatochips">
+                        <label for="potatochips">potato chips</label>
+
+                        <input type="checkbox" id="nutella" name="nutella">
+                        <label for="nutella">nutella</label>
+
+                        <input type="checkbox" id="raspberryjam" name="raspberryjam">
+                        <label for="raspberryjam">raspberry jam</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="darkchocolate" name="darkchocolate">
+                        <label for="darkchocolate">dark chocolate</label>
+
+                        <input type="checkbox" id="chocolatechips" name="chocolatechips">
+                        <label for="chocolatechips">chocolate chips</label>
+
+                        <input type="checkbox" id="jam" name="jam">
+                        <label for="jam">jam</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="whitechocolate" name="whitechocolate">
+                        <label for="whitechocolate">white chocolate</label>
+
+                        <input type="checkbox" id="browniemix" name="browniemix">
+                        <label for="browniemix">brownie mix</label>
+
+                        <input type="checkbox" id="jello" name="jello">
+                        <label for="jello">jello</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="caramel" name="caramel">
+                        <label for="caramel">caramel</label>
+
+                        <input type="checkbox" id="chocolatepowder" name="chocolatepowder">
+                        <label for="chocolatepowder">chocolate powder</label>
+
+                        <input type="checkbox" id="cornchips" name="cornchips">
+                        <label for="cornchips">corn chips</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="cookies" name="cookies">
+                        <label for="cookies">cookies</label>
+
+                        <input type="checkbox" id="apricotjam" name="apricotjam">
+                        <label for="apricotjam">apricot jam</label>
+
+                        <input type="checkbox" id="oreo" name="oreo">
+                        <label for="oreo">oreo</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="doritos" name="doritos">
+                        <label for="doritos">doritos</label>
+
+                        <input type="checkbox" id="blueberryjam" name="blueberryjam">
+                        <label for="blueberryjam">blueberry jam</label>
+
+                        <input type="checkbox" id="cherryjam" name="cherryjam">
+                        <label for="cherryjam">cherry jam</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="plumjam" name="plumjam">
+                        <label for="plumjam">plum jam</label>
+
+                        <input type="checkbox" id="cinnamonroll" name="cinnamonroll">
+                        <label for="cinnamonroll">cinnamon roll</label>
+
+                        <input type="checkbox" id="fudge" name="fudge">
+                        <label for="fudge">fudge</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="chillijam" name="chillijam">
+                        <label for="chillijam">chilli jam</label>
+
+                        <input type="checkbox" id="gummyworms" name="gummyworms">
+                        <label for="gummyworms">gummy worms</label>
+
+                        <input type="checkbox" id="doughnut" name="doughnut">
+                        <label for="doughnut">doughnut</label>
+                    </div>
+
+                </form>
+            </div>
+            <article class="src-article " onclick="displayIngredients(16) ">
+                <div class="src-type-icon ">
+                    <img class="src-icon " src="image_search/beverage.png " alt="Beverage " />
+                </div>
+                <div class="src-type ">
+                    <p>Beverages</p>
+                </div>
+                <div class="src-plus ">
+                    <p>+</p>
+                </div>
+            </article>
+            <div class="src-ingredients">
+                <form class="tags">
+                    <div class="col">
+                        <input type="checkbox" id="coffee" name="coffee">
+                        <label for="coffee">coffee</label>
+
+                        <input type="checkbox" id="orangejuice" name="orangejuice">
+                        <label for="orangejuice">orange juice</label>
+
+                        <input type="checkbox" id="tea" name="tea">
+                        <label for="tea">tea</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="applejuice" name="applejuice">
+                        <label for="applejuice">apple juice</label>
+
+                        <input type="checkbox" id="tomatojuice" name="tomatojuice">
+                        <label for="tomatojuice">tomato juice</label>
+
+                        <input type="checkbox" id="coke" name="coke">
+                        <label for="coke">coke</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="chocolatemilk" name="chocolatemilk">
+                        <label for="chocolatemilk">chocolate milk</label>
+
+                        <input type="checkbox" id="pineapplejuice" name="pineapplejuice">
+                        <label for="pineapplejuice">pineapple juice</label>
+
+                        <input type="checkbox" id="lemonade" name="lemonade">
+                        <label for="lemonade">lemonade</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="espresso" name="espresso">
+                        <label for="espresso">espresso</label>
+
+                        <input type="checkbox" id="fruitjuice" name="fruitjuice">
+                        <label for="fruitjuice">fruit juice</label>
+
+                        <input type="checkbox" id="gingerale" name="gingerale">
+                        <label for="gingerale">ginger ale</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="sprite" name="sprite">
+                        <label for="sprite">sprite</label>
+
+                        <input type="checkbox" id="cherryjuice" name="cherryjuice">
+                        <label for="cherryjuice">cherry juice</label>
+
+                        <input type="checkbox" id="pepsi" name="pepsi">
+                        <label for="pepsi">pepsi</label>
+                    </div>
+                    <div class="col">
+                        <input type="checkbox" id="mountaindew" name="mountaindew">
+                        <label for="mountaindew">mountaindew</label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </aside>
+
+    <!--End of Side Bar-->
+
+    <main>
+        <section id="filter-recipes">
+            <div class="filter-container">
+                <button class="filter-menus" onclick="displayOptions(1)">Dificulty</button>
+                <div class="filter-options-content">
+                    <a href="#">Easy</a>
+                    <a href="#">Medium</a>
+                    <a href="#">Difficult</a>
+                </div>
+            </div>
+            <div class="filter-container">
+                <button class="filter-menus" onclick="displayOptions(2)">Preparation Time</button>
+                <div class="filter-options-content">
+                    <a href="#">Around 2h</a>
+                    <a href="#">Around 1h</a>
+                    <a href="#">Around 30 min</a>
+                    <a href="#">Around 10 min</a>
+                </div>
+            </div>
+            <div class="filter-container">
+                <button class="filter-menus" onclick="displayOptions(3)">Cooking Time</button>
+                <div class="filter-options-content">
+                    <a href="#">Around 2h</a>
+                    <a href="#">Around 1h</a>
+                    <a href="#">Around 30 min</a>
+                    <a href="#">Around 10 min</a>
+                </div>
+            </div>
+            <div class="filter-container">
+                <button class="filter-menus" onclick="displayOptions(4)">Servings</button>
+                <div class="filter-options-content">
+                    <a href="#">1 servings</a>
+                    <a href="#">2-3 servings</a>
+                    <a href="#">4-5 servings</a>
+                    <a href="#">6-8 servings</a>
+                </div>
+            </div>
+            <div class="filter-container">
+                <button class="filter-menus" onclick="displayOptions(5)">Diet</button>
+                <div class="filter-options-content">
+                    <a href="#">Vegan</a>
+                    <a href="#">Vegetarian</a>
+                    <a href="#">Pescatarian</a>
+                    <a href="#">Gluten Free</a>
+                    <a href="#">Lactose Free</a>
+                </div>
+            </div>
+            <div class="filter-container">
+                <button class="filter-menus" onclick="displayOptions(6)">Meal Type</button>
+                <div class="filter-options-content">
+                    <a href="#">Bread</a>
+                    <a href="#">Breakfast</a>
+                    <a href="#">Cake</a>
+                    <a href="#">Deserts</a>
+                    <a href="#">Dinner</a>
+                    <a href="#">Drinks</a>
+                    <a href="#">For Kids</a>
+                    <a href="#">Lunch</a>
+                    <a href="#">Salad</a>
+                    <a href="#">Sandwich</a>
+                    <a href="#">Soup</a>
+                </div>
+            </div>
+            <div class="filter-container">
+                <button class="filter-menus" onclick="displayOptions(7)">Cuisine</button>
+                <div class="filter-options-content">
+                    <a href="#">Chinese</a>
+                    <a href="#">French</a>
+                    <a href="#">German</a>
+                    <a href="#">Indian</a>
+                    <a href="#">Thai</a>
+                    <a href="#">Mediterranean</a>
+                    <a href="#">Mexican</a>
+                    <a href="#">Asian</a>
+                    <a href="#">European</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="user-src">
+            <h1>You Searched For:</h1>
+            <div class="tag">
+                <p>
+                    <a href="#"> <i class="fas fa-times"></i></a>
+                    tomato
+                </p>
+            </div>
+            <div class="tag">
+                <p>
+                    <a href="#"> <i class="fas fa-times"></i></a>
+                    potato
+                </p>
+            </div>
+            <div class="tag">
+                <p>
+                    <a href="#"> <i class="fas fa-times"></i></a>
+                    milk
+                </p>
+            </div>
+            <div class="tag">
+                <p>
+                    <a href="#"> <i class="fas fa-times"></i></a>
+                    Easy
+                </p>
+            </div>
+        </section>
+        <section id="result">
+            <div class="result-wrapper">
+                <!-- single item -->
+                <div class="single-result">
+                    <div class="container">
+                        <img src="image_Search/about-img.jpg" alt="result image" class="result-img">
+                        <a href="#"><i class="fas fa-circle"
+                                style="color: red;font-size: 150%;margin: 2%; display:none;"></i></a>
+                        <a href="javascript:void();"><i class="fab fa-gratipay" onclick="liked(0)"></i></a>
+                        <a href="#"><i class="fas fa-plus-circle"></i></a>
+                    </div>
+                    <div class="single-result-content">
+                        <div class="single-result-top">
+                            <span>
+                                <i class="fas fa-star" style="margin-right: -0.5rem; margin-left:-0.4rem;"></i>
+                                <i class="fas fa-star" style="margin-right: -0.5rem;"></i>
+                                <i class="fas fa-star" style="margin-right: -0.5rem;"></i>
+                                <i class="far fa-star" style="margin-right: -0.5rem;"></i>
+                                <i class="far fa-star" style="margin-right: -0.5rem;"></i>
+                            </span>
+                            <span>
+                                <i class="fas fa-user"></i> John Doe
+                            </span>
+                            <span>
+                                <i class="fas fa-clock"></i> 18 Oct
+                            </span>
+                            <span>
+                                <i class="fas fa-comment"></i> 57
+                            </span>
+                        </div>
+
+                        <h2 class="text-large">Lemon-Ricotta Pancakes</h2>
+                        <p class="text-light">If These Pancakes Were Any Lighter, They Would Float Off The Plate--And I Didn't Even Separate The Eggs And Whip The Whites. Also, I Used Water Instead Of Milk--And I Liked Them Better That Way. I Like To Serve These With A Pat
+                            Of Butter, A Pinch Of Lemon Zest, And A Drizzle Of Maple Syrup.</p>
+                        <a href="#" class="btn-link">Read More</a>
+                    </div>
+                </div>
+                <!-- end of single item -->
+                <!-- single item -->
+                <div class="single-result">
+                    <div class="container">
+                        <img src="image_Search/about-img.jpg" alt="result image" class="result-img">
+                        <a href="#"><i class="fas fa-circle"
+                            style="color: red;font-size: 150%;margin: 2%; display:none;"></i></a>
+                        <a href="javascript:void();"><i class="fab fa-gratipay" onclick="liked(1)"></i></a>
+                        <a href="#"><i class="fas fa-plus-circle"></i></a>
+                    </div>
+                    <div class="single-result-content">
+                        <div class="single-result-top">
+                            <span>
+                                <i class="fas fa-star" style="margin-right: -0.5rem; margin-left:-0.4rem;"></i>
+                                <i class="fas fa-star" style="margin-right: -0.5rem;"></i>
+                                <i class="fas fa-star" style="margin-right: -0.5rem;"></i>
+                                <i class="far fa-star" style="margin-right: -0.5rem;"></i>
+                                <i class="far fa-star" style="margin-right: -0.5rem;"></i>
+                            </span>
+                            <span>
+                                <i class="fas fa-user"></i> John Doe
+                            </span>
+                            <span>
+                                <i class="fas fa-clock"></i> 18 Oct
+                            </span>
+                            <span>
+                                <i class="fas fa-comment"></i> 57
+                            </span>
+                        </div>
+
+                        <h2 class="text-large">Lemon-Ricotta Pancakes</h2>
+                        <p class="text-light">If These Pancakes Were Any Lighter, They Would Float Off The Plate--And I Didn't Even Separate The Eggs And Whip The Whites. Also, I Used Water Instead Of Milk--And I Liked Them Better That Way. I Like To Serve These With A Pat
+                            Of Butter, A Pinch Of Lemon Zest, And A Drizzle Of Maple Syrup.</p>
+                        <a href="#" class="btn-link">Read More</a>
+                    </div>
+                </div>
+                <!-- end of single item -->
+                <!-- single item -->
+                <div class="single-result">
+                    <div class="container">
+                        <img src="image_Search/about-img.jpg" alt="result image" class="result-img">
+                        <a href="#"><i class="fas fa-circle"
+                                style="color: red;font-size: 150%;margin: 2%; display:none;"></i></a>
+                        <a href="javascript:void();"><i class="fab fa-gratipay" onclick="liked(2)"></i></a>
+                        <a href="#"><i class="fas fa-plus-circle"></i></a>
+                    </div>
+                    <div class="single-result-content">
+                        <div class="single-result-top">
+                            <span>
+                                <i class="fas fa-star" style="margin-right: -0.5rem; margin-left:-0.4rem;"></i>
+                                <i class="fas fa-star" style="margin-right: -0.5rem;"></i>
+                                <i class="fas fa-star" style="margin-right: -0.5rem;"></i>
+                                <i class="far fa-star" style="margin-right: -0.5rem;"></i>
+                                <i class="far fa-star" style="margin-right: -0.5rem;"></i>
+                            </span>
+                            <span>
+                                <i class="fas fa-user"></i> John Doe
+                            </span>
+                            <span>
+                                <i class="fas fa-clock"></i> 18 Oct
+                            </span>
+                            <span>
+                                <i class="fas fa-comment"></i> 57
+                            </span>
+                        </div>
+
+                        <h2 class="text-large">Lemon-Ricotta Pancakes</h2>
+                        <p class="text-light">If These Pancakes Were Any Lighter, They Would Float Off The Plate--And I Didn't Even Separate The Eggs And Whip The Whites. Also, I Used Water Instead Of Milk--And I Liked Them Better That Way. I Like To Serve These With A Pat
+                            Of Butter, A Pinch Of Lemon Zest, And A Drizzle Of Maple Syrup.</p>
+                        <a href="#" class="btn-link">Read More</a>
+                    </div>
+                </div>
+                <!-- end of single item -->
+                <!-- single item -->
+                <div class="single-result">
+                    <div class="container">
+                        <img src="image_Search/about-img.jpg" alt="result image" class="result-img">
+                        <a href="#"><i class="fas fa-circle"
+                                style="color: red;font-size: 150%;margin: 2%; display:none;"></i></a>
+                        <a href="javascript:void();"><i class="fab fa-gratipay" onclick="liked(3)"></i></a>
+                        <a href="#"><i class="fas fa-plus-circle"></i></a>
+                    </div>
+                    <div class="single-result-content">
+                        <div class="single-result-top">
+                            <span>
+                                <i class="fas fa-star" style="margin-right: -0.5rem; margin-left:-0.4rem;"></i>
+                                <i class="fas fa-star" style="margin-right: -0.5rem;"></i>
+                                <i class="fas fa-star" style="margin-right: -0.5rem;"></i>
+                                <i class="far fa-star" style="margin-right: -0.5rem;"></i>
+                                <i class="far fa-star" style="margin-right: -0.5rem;"></i>
+                            </span>
+                            <span>
+                                <i class="fas fa-user"></i> John Doe
+                            </span>
+                            <span>
+                                <i class="fas fa-clock"></i> 18 Oct
+                            </span>
+                            <span>
+                                <i class="fas fa-comment"></i> 57
+                            </span>
+                        </div>
+
+                        <h2 class="text-large">Lemon-Ricotta Pancakes</h2>
+                        <p class="text-light">If These Pancakes Were Any Lighter, They Would Float Off The Plate--And I Didn't Even Separate The Eggs And Whip The Whites. Also, I Used Water Instead Of Milk--And I Liked Them Better That Way. I Like To Serve These With A Pat
+                            Of Butter, A Pinch Of Lemon Zest, And A Drizzle Of Maple Syrup.</p>
+                        <a href="#" class="btn-link">Read More</a>
+                    </div>
+                </div>
+                <!-- end of single item -->
+            </div>
+            </div>
+        </section>
+    </main>
+
+    <!--Footer section-->
+
+    <footer class="footer ">
+        <div class="section-center ">
+            <p class="text ">
+                &copy; <span>What The Food Project</span>
+            </p>
+        </div>
+    </footer>
+
+
+
+    <!--End of Cards Section-->
+
+    <script src="search.js "></script>
+
+</body>
+
+</html>
