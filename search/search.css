@@ -449,6 +449,24 @@ main {
     right: 0;
 }
 
+.result-time {
+    position: absolute;
+    color: orangered;
+    margin-right: 1%;
+    font-size: 130%;
+    bottom: 0;
+    right: 0;
+}
+
+.result-diff {
+    position: absolute;
+    color: orange;
+    margin-left: 1%;
+    font-size: 130%;
+    bottom: 0;
+    left: 0;
+}
+
 @media screen and (min-width: 1200px) {
     .result-wrapper {
         grid-template-columns: repeat(4, 1fr);
