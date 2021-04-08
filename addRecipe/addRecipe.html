@@ -7,14 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WhaF</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400;600&display=swap" rel="stylesheet">
     <!-- aos css cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
     <!-- google fonts cdn link  -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500&family=Roboto:wght@100;300;400;500&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;500&family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet">
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
@@ -35,18 +34,19 @@
         </div>
         <div class="openMenu"><i class="fa fa-bars"></i></div>
         <ul class="mainMenu">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="faq.html">Help</a></li>
             <li><a href="#">See most popular</a></li>
-            <li><a href="#">Get started</a></li>
+            <li><a href="search.html">Get started</a></li>
             <li><a href="#">Add recipe</a></li>
-            <li><a href="#">My Profile</a></li>
+            <li><a href="profile.html">My Profile</a></li>
 
-           <li><div class="closeMenu">
-                <i class="fa fa-times"></i>
-            </div>
-        </li> 
-    <li> <span class="icons">
+            <li>
+                <div class="closeMenu">
+                    <i class="fa fa-times"></i>
+                </div>
+            </li>
+            <li> <span class="icons">
                 <i class="fab fa-facebook"></i>
                 <i class="fab fa-instagram"></i>
                 <i class="fab fa-twitter"></i>
@@ -64,7 +64,7 @@
             <!-- order section starts  -->
 
             <section class="order" id="order">
-                <div >
+                <div>
                     <h1 class="heading" data-aos="fade-down"> Add a recipe</h1>
                 </div>
 
@@ -72,8 +72,7 @@
 
                     <form action="/action_page.php" data-aos="fade-up">
                         <input type="text" placeholder="Recipe name" class="box">
-                        <textarea name="1" id="1" cols="30" rows="10" class="box address"
-                            placeholder="Short description"></textarea>
+                        <textarea name="1" id="1" cols="30" rows="10" class="box address" placeholder="Short description"></textarea>
                         <input type="number" placeholder="Preparation time" class="box">
                         <input type="number" placeholder="Cooking time" class="box">
                         <input type="number" placeholder="Serves" class="box">
@@ -82,14 +81,13 @@
                         <div class="ingredient">
 
                             <div class="label">
-                                <div><label class="label-wrapper"></label>
+                                <div><label class="label-wrapper">
                                         ingredients:
 
                                         <!---->
+                                    </label>
                                 </div>
-                                <!----><input data-testid="input" maxlength="55"
-                                    placeholder="Add ingredient, e.g. flour" type="text" autocomplete="off"
-                                    class="add-ingredient" tabindex="1">
+                                <!----><input data-testid="input" maxlength="55" placeholder="Add ingredient, e.g. flour" type="text" autocomplete="off" class="add-ingredient" tabindex="1">
 
                             </div>
 
@@ -97,7 +95,7 @@
                                     amount
                                 </label>
 
-                                    <!---->
+                                <!---->
                             </div>
                             <input class="input" placeholder="0" type="number" max="10000" min="0" tabindex="1">
 
@@ -167,8 +165,7 @@
                                     </label>
                                 </div>
                                 <!---->
-                                <textarea name="ingredient" data-testid="input" maxlength="500" cols="30" rows="10"
-                                    class="add-ingredient" placeholder="Add step, e.g. Step 1. ...."></textarea>
+                                <textarea name="ingredient" data-testid="input" maxlength="500" cols="30" rows="10" class="add-ingredient" placeholder="Add step, e.g. Step 1. ...."></textarea>
 
                             </div>
                             <!---->
@@ -183,11 +180,11 @@
 
                     </form>
                     <div class="photo" data-aos="fade-left">
-                        <h2 >Upload your photo</h2>
+                        <h2>Upload your photo</h2>
 
                         <form action="/action_page.php" class="upload">
                             <input type="file" id="myFile" name="filename">
-                            <input type="submit" class="btn">
+
                         </form>
                     </div>
                 </div>
@@ -217,15 +214,13 @@
     <!-- aos js cdn link  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <!--End of Cards Section-->
-    <script src="./app.js"></script>
+    <script src="./recipe.js"></script>
 
     <script>
-
         AOS.init({
             delay: 400,
             duration: 1000
         })
-
     </script>
 </body>
 
