@@ -1,44 +1,27 @@
-@import url(https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400;600&display=swap);
+
 
 *{
     font-family:  'Baloo Chettan 2', cursive;
     margin:0; padding:0;
-    box-sizing: border-box;
     text-decoration: none;
-    outline: none; border:none;
+     border:none;
     text-transform: capitalize;
     transition:all .2s linear;
 }
 
-h1, h3{
-    font-family: 'Baloo Chettan 2', cursive;
-}
-
-
 html{
-    font-size: 62.5%;
+    font-size: 70%;
     overflow-x: hidden;
 }
 
 body{
+    
     background-image: url(images/170027400_486360609168797_768503438886779207_n.jpg);
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
     overflow-x: hidden;
     /* height:200rem; */
-}
-
-html::-webkit-scrollbar{
-    width:1.4rem;
-}
-
-html::-webkit-scrollbar-track{
-    background:#333;
-}
-
-html::-webkit-scrollbar-thumb{
-    background:var(--yellow);
 }
 
 container{
@@ -48,18 +31,18 @@ container{
     max-width: 960px;
     padding-right: 10px;
     padding-left:  10px;
-    font-family: 'Baloo Chettan 2', cursive;
+   
   
 }
 
 .box-container{
+   
     border-radius: 5rem;
     margin-right: auto;
     margin-left:  auto;
     max-width: 960px;
     padding-right: 10px;
     padding-left:  10px;
-    font-family: 'Baloo Chettan 2', cursive;
 }
 
 
@@ -74,6 +57,7 @@ container{
 /*Navigation bar*/
 
 nav {
+   
     background: orange;
     color: #fff;
     display: flex;
@@ -188,7 +172,7 @@ h2{
     color: rgb(255, 255, 255);
 }
 .heading span{
-    color:var(--yellow);
+    color:yellow;
 }
 
 .btn{
@@ -281,8 +265,8 @@ h2{
 
 
 .upload{
-    font-family: 'Baloo Chettan 2', cursive
-    font-size: 7px;;
+    
+    font-size:7px;
 }
 
 .ingred{
@@ -295,6 +279,7 @@ h2{
    
 }
 .input{
+    font-family:  'Baloo Chettan 2', cursive;
     padding: 1rem;
     margin: 1rem 0;
     font-size: 1.5rem;
@@ -322,7 +307,7 @@ h2{
 
 
 .label-wrapper{
-   
+    font-family:  'Baloo Chettan 2', cursive;
     font-size: 15px;
     color: rgb(255, 255, 255);
 }
