@@ -686,7 +686,7 @@ main {
 /*Footer*/
 
 .footer {
-    position: fixed;
+    position: relative;
     height: 5%;
     Width: 100%;
     bottom: 0;
