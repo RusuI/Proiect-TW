@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>WhaF | Documentatie</title>
+    <link rel="icon" href="images/pizza.png">
+
+    <link rel="stylesheet" href="css/scholarly.min.css">
+    <script src="js/scholarly.min.js"></script>
+    <script src="https://kit.fontawesome.com/9f5ebffa29.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Proiect WhatF</h1>
+    </header>
+
+    <div role="contentinfo">
+
+        <ol role="directory">
+            <li><a href="#introducere">Introducere</a>
+                <ol role="directory">
+                    <li><a href="#scop">Scop</a>
+                        <li><a href="#public">Conventiile documentelor</a></li>
+                        <li><a href="#domeniu">Publicul destinat</a></li>
+                        <li><a href="#aplicare">Domeniul de aplicare al produsului</a></li>
+
+                </ol>
+                </li>
+                <li><a href="#descriere">Descriere generala</a>
+                    <ol role="directory">
+                        <li><a href="#perspectiva">Perspectiva produsului</a></li>
+                        <li><a href="#functiile">Functiile produsului</a></li>
+                        <li><a href="#clasele-utilizatori">Clase de utilizator și caracteristici</a>
+                            <ol role="directory">
+                                <li> <a href="#unlogged">Utilizatori fara cont</a></li>
+                                <li><a href="#logged">Utilizatori cu cont</a></li>
+                            </ol>
+                        </li>
+                        <li><a href="#mediu-operare">Mediul de operare</a></li>
+                    </ol>
+                </li>
+                <li><a href="#interfata">Cerinte de interfata externa</a>
+                    <ol role="directory">
+                        <li><a href="#interfeteutil">Interfete utilizator</a>
+                            <ol role="directory">
+                                <li><a href="#home">Home Page</a></li>
+                                <li><a href="#help">Help Page</a></li>
+                                <li><a href="#popular">See Most Popular</a></li>
+                                <li><a href="#search">Search</a></li>
+                                <li><a href="#recipe">Recipe</a></li>
+                                <li><a href="#login">Log In and Register</a></li>
+                                <li><a href="#profile">Profile</a></li>
+                                <li><a href="#addrecipe">Add Recipe</a></li>
+                                <li><a href="#favorites">Favorites</a></li>
+                                <li><a href="#history">History</a></li>
+                                <li><a href="#myrecipes">My Recipes</a></li>
+                                <li><a href="#settings">Profile Settings</a></li>
+
+                            </ol>
+                        </li>
+                        <li><a href="#caracteristici">Caracteristicile sistemului</a></li>
+                        <li><a href="#specificatii">Specificatii tehnice & tehnologii</a></li>
+                    </ol>
+                </li>
+                <li><a href="#imbunatatiri">Imbunatatiri</a></li>
+                <li><a href="#referinte">Referinte</a></li>
+        </ol>
+        <h3>Autori</h3>
+
+        <h4>Izvoreanu Valeria & Murariu Cristina-Andreea & Rusu Ioana</h4>
+
+
+    </div>
+
+    <section id="introducere">
+
+        <h2>Introducere</h2>
+        <section id="scop">
+            <h3>Scop</h3>
+
+            <p>Produsul a căror specificații sunt prezentate în acest document constă într-o aplicație web de rețete culinare bazată pe filtrarea unor ingrediente alese de utilizator,în funcție și de alte specificații precum timpul de preparare,dificultate,ingrediente
+                nedorite etc.</p>
+            <p> În momentul actual, aplicația este în stadiul incipent,motiv pentru care este prima versiune de utilizare. Scopul aplicației este de a le oferi utilizatorilor săi o modalitate simplă și eficientă de a căuta,salva,și de a realiza diverse rețete
+                pe baza criteriilor selectate.</p>
+
+        </section>
+
+        <section id="public">
+            <h3>Conventiile documentelor</h3>
+
+            <p>Principala convenție de realizare a acestui document constă în utilizarea template-ului Scholarly HTML. [1] </p>
+
+        </section>
+        <section id="domeniu">
+            <h3>Publicul destinat</h3>
+
+            <p>Documentul SRS prezent este adresat în principiu cadrelor didactice responsabile de evaluarea proiectului din cadrul disciplinei Tehnologii Web. Extinzând aria, acesta poate fi transformat într-un document adresat potențialilor utilizatori,
+                sau chiar investitori ce și-ar dori utilizarea aplicației pe termen lung. </p>
+
+        </section>
+        <section id="aplicare">
+            <h3>Domeniul de aplicare al produsului</h3>
+
+            <p>Aplicația Web ”WhaF” descrisă în cadrul acestui document are ca și scop ușurarea căutării de rețete specifice pentru utilizatorii acesteia.</p>
+            <p> Unul dintre marile avantaje ale acestei aplicații constă în eficiența filtrării rețetelor și a reducerii timpului de căutare de care are parte utilizatorul,întrucât acesta își poate alege specificațiile pe care și le dorește pentru rețetele
+                pe care le caută.</p>
+            <p>Practic, scopul principal este ca utilizatorul să-și valorifice timpul pentru a prepara o rețetă fix pe baza ingredientelor pe care le dorește, în loc de a căuta în mod obișnuit. În ceea ce privește posibile strategii de bussines, aplicația
+                ar putea reprezenta un intermediar între brand-urile și furnizorii de anumite produse alimentare,ustensile,restaurante relevante pentru conținutul pe care îl caută. </p>
+
+        </section>
+    </section>
+    <section id="descriere">
+        <h2>Descriere generala</h2>
+        <section id="perspectiva">
+            <h3>Perspectiva produsului</h3>
+
+            <p> Proiectul WhaF este un produs nou,individual, aparut in contextul evaluarii la disciplina Tehnologii Web. Ideea a fost aleasa in urma consultarii listei de proiecte pusa la dispozitie de catre coordonatorul de laborator, Amariei Ciprian.</p>
+            <p> Practic, proiectul nostru vine cu o idee inovatoare si ca un inlocuitor pentru serviciile deja existente de cautare de retete,ca de exemple blog-uri cu specific culinar,site-uri web ce ofera ca si continut o suita de retete, oferind metode
+                mai eficiente bazate pe recomandari.</p>
+
+        </section>
+
+        <section id="functiile">
+            <h3>Functiile produsului</h3>
+
+            <p>WhaF vine cu o suită de funcționalități, precum: </p>
+            <ul>
+                <li>Cautarea de retete dupa o lista de ingredinte si alte criterii;</li>
+                <li>Posibilitatea de creare a unui cont, ce ofera beneficii in plus utilizatorului;</li>
+                <li>Salvarea unor retete in sectiunea de favorite;</li>
+                <li>Accesarea istoricului privind interactiunea cu aplicatia;</li>
+                <li>Vizualizarea unei sectiuni de retete/ingrediente populare precum si a unei sectiuni de ingrediente evitate;</li>
+                <li>Posibilitatea adresarii de intrebari cu privire la nelamuririle legate de aplicatie;</li>
+                <li>Posibilitatea adaugarii unei retete proprii;</li>
+                <li>Marcarea unei retete ca si preparata prin incarcarea unei poze cu rezultatul final; </li>
+            </ul>
+            <img src="imaginiDocumentatie/diagrama_TW.png" alt="">
+
+        </section>
+        <section id="clase-utilizatori">
+            <h3>Clasele de utilizatori si caracteristici</h3>
+
+            <p>Utilizatorii de impart in 2 clase principale:</p>
+            <ol>
+                <li id="unlogged">Utilizatori fara cont
+                    <ul>
+                        <li>Acesti utilizatori nu doresc sa isi creeze un cont pentru ca pricipalul lor scop este doar cautatea de retete pe baza unor ingrediente;</li>
+                        <li>Din puncte de vedere al folosirii aplicatiei, frecventa utilizatorilor pe site este redusa;</li>
+                        <li>Rezultatele si preferintele ultimei cautari vor fi salvate la nivel de browser;</li>
+                    </ul>
+                </li>
+                <li id="logged">Utilizatori care detin un cont – accesarea contului de pe aplicatia web ofera beneficii care pot diferentia utilizatorii in alte clase:
+                    <ul>
+                        <li>clasa de utilizatori care doar sunt in cautarea de retete, care isi pot salva retele intr-o sectiune de favorite, pot recreea retele postate de alti utilizatori si pot posta retele personale;</li>
+                        <li>clasa de utilizatori experimentati in domeniu, precum bucatari profesionisti, care isi pot promova retele si eventual o afacere sau un blog personal prin intermediul platformei noastre.</li>
+                    </ul>
+                </li>
+            </ol>
+
+        </section>
+        <section id="mediu-operare">
+            <h3>Mediul de operare</h3>
+
+            <p>Aplicatia este in prima faza destinata utilizarii in cadrul browser-ulu, pe un sistem de operare de tip Windows, pe orice versiune.</p>
+
+        </section>
+    </section>
+    <section id="interfata">
+        <h2>Cerinte de interfata externa</h2>
+        <section id="interfeteutil">
+            <h3>Interfete Utilizator</h3>
+            <section id="home">
+                <h3>Home Page</h3>
+                <img src="imaginiDocumentatie/home1.png" alt="" style="height: 80%; width: 60%;">
+                <p>HomePage-ul reprezintă prima interacțiune a utilizatorului cu aplicația ”WhaF”. Display-ul conține o bară de navigare(ce ulterior va fi prezentă și pe restul paginilor asociate) având următoarele funcționalități :</p>
+
+                <ul>
+                    <li>HELP – buton ce conduce utilizatorul către pagina de ”Frequently Asked Questions”</li>
+                    <li>SEE MOST POPULAR – buton ce conduce utilizatorul către pagina cu același nume</li>
+                    <li>GET STARTED – butonul care oferă utilizatorului principala funcționalitate a aplicației : căutarea de rețete pe baza unor ingrediente</li>
+                    <li>JOIN US – butonul ce conduce utilizatorul către formularul de Sign In/ Sign Up pentru autentificarea în cadrul aplicației,respectiv, înregistrarea la aceasta</li>
+                    <li>PICK INGREDIENTS este un buton interactiv care are aceeași funcționalitate cu cea a opțiunii ”GET STARTED” . Cel din urmă este prezent de mai multe ori în cadrul paginii de Home,pentru a-i oferi utilizatorului posibilitatea de căutare
+                        de ingrediente din mai multe părți</li>
+                </ul>
+                <img src="imaginiDocumentatie/home2.png" alt="" style="height: 80%; width: 60%;">
+                <img src="imaginiDocumentatie/home3.png" alt="" style="height: 80%; width: 60%;">
+            </section>
+            <section id="help">
+                <h3>Help Page - Frequently asked questions</h3>
+                <img src="imaginiDocumentatie/faq1.png" alt="" style="height: 80%; width: 60%;">
+                <img src="imaginiDocumentatie/faq2.png" alt="" style="height: 80%; width: 60%;">
+
+                <ul>
+                    <li>In sectiunea de FAQ, utilizatorul poate sa vizualizeze intrebarile si raspunsurile corespunzatoaredeja existente </li>
+                    <li>Mai apoi, acesta poate sa incarce propriile sale intrebari prin completarea unui camp cu numele sau si altul cu intrebarea propriu zisa</li>
+
+                </ul>
+            </section>
+            <section id="popular">
+                <h3>See Most Popular</h3>
+                <img src="imaginiDocumentatie/popular1.png" alt="" style="height: 80%; width: 60%;">
+                <p>Aceasta pagina poate fi accesata de orice utilizator. Aici este posibil sa:</p>
+
+                <ul>
+                    <li>Vezi retetele/ ingredientele populare si ingredientele nepopulare</li>
+                    <li>Descarci clasamentul in format HTML, CSV, si JSON</li>
+                    <li>Adaugi o reteta la favorite: <i class="fab fa-gratipay" style="color: black;"></i></li>
+
+                </ul>
+            </section>
+            <section id="search">
+                <h3>Search</h3>
+                <img src="imaginiDocumentatie/search1.png" alt="" style="height: 80%; width: 60%;">
+                <p>Pentru a cauta o reteta un utilizator poate:</p>
+
+                <ul>
+                    <li>Sa selecteze ingredientele pe care le vrea (Wanted) si pe care nu (Unwanted) din Side Bar. Pentru o filtrare mai complexa el poate selecta nivelul de dificulatate, timpul de preparare, timpul de gatire si numarul de portii.</li>
+                    <li>Sa elimine niste criterii adaugate anterior facand click pe x de pe tag.</li>
+                </ul>
+                <img src="imaginiDocumentatie/search2.png" alt="" style="height: 50%; width: 30%;">
+                <p>In partea de main apar retetele ce se potrivesc cautarii, utilizatorul poate:</p>
+                <ul>
+                    <li>Sa adauge reteta la favorite: <i class="fab fa-gratipay" style="color: black;"></i></li>
+                    <li>Sa adauge o poza cu reteta si sa o marcheze ca preparate: <i class="fas fa-plus-circle" style="color: black;"></i></li>
+                    <li>Sa acceseze pagina retetei (Read more)</li>
+                </ul>
+            </section>
+            <section id="recipe">
+                <h3>Recipe</h3>
+                <img src="imaginiDocumentatie/recipe1.png" alt="" style="height: 80%; width: 60%;">
+                <p>Atunci cand utilizatorul acceseaza pagina de profil a unei retete, acesta are acces la urmatoarete functionalitati:</p>
+
+                <ul>
+                    <li>Poate accesa pagina de profil a persoanei care a incarcat reteta</li>
+                    <li>Poate marca o reteta ca si “salvata” pentru a avea acces ulterior la ea din sectiunea de retete salvate</li>
+                    <li>Sectiunea de review care indica si numarul de poze incarcare cu rezultatul retetei face trimite catre sectiunea de galerie unde se afla toate imaginile incarcare de utilizatori</li>
+                </ul>
+                <img src="imaginiDocumentatie/recipe2.png" alt="" style="height: 80%; width: 60%;">
+                <p>In sectiunea de galerie, utilizatorul poate vizualiza numele persoanei care a incarcat poza, precum si o scurta descriere sau recenzie asupra rezultatului.</p>
+
+                <img src="imaginiDocumentatie/recipe3.png" alt="" style="height: 80%; width: 60%;">
+                <p>In aceasta sectiune, utilizatorul poate incarca o poza cu rezultatul final al retetei, introducand numele si o scurta descriere. Acesta selecteaza poza de pe propriul dispozitiv.</p>
+
+            </section>
+            <section id="login">
+                <h3>Log In and Register</h3>
+                <img src="imaginiDocumentatie/login1.png" alt="" style="height: 80%; width: 60%;">
+                <img src="imaginiDocumentatie/login2.png" alt="" style="height: 80%; width: 60%;">
+                <ul>
+                    <li>Este accesibilă utilizatorului prin intermediul butonului JOIN US din bara de navigare și conține un formular de logare în cazul în care utilizatorul are deja un cont creat, respecitv un formular de înregistrare în caz contrar </li>
+                    <li>Utilizatorul se va putea loga și prin intermediul altor platforme sociale asociate </li>
+                    <li>Butonul ”Sign In” redirecționează utilizatorul către pagina sa de profil</li>
+                    <li>Butonul ”Sign Up” redirecționează utilizatorul către pagina de setări a profilului pentru a realiza diverse alte modificări</li>
+                </ul>
+
+            </section>
+            <section id="profile">
+                <h3>Profile</h3>
+                <img src="imaginiDocumentatie/profile1.png" alt="" style="height: 80%; width: 60%;">
+                <img src="imaginiDocumentatie/profile2.png" alt="" style="height: 80%; width: 60%;">
+                <ul>
+                    <li>Odată ce utilizatorul își accesează contul și implicit profilul, acesta va avea în plus posibilitatea de adăugare a unei rețete proprii pe baza unui formular indicat prin butonul ADD RECIPE</li>
+                    <li>PROFILE SETTINGS – butonul oferă utilizatorului posibilitatea de a-și modifica setările privind informațiile despre contul său</li>
+                    <li>LOG OUT – se realizează delogarea din aplicație </li>
+                    <li>SEE FAVORITES – oferă posibilitatea de a-ți vizualiza o listă cu rețete salvate la favorite </li>
+                    <li>SEE HISTORY – ofera posibilitatea de a-ți vizualiza istoricul activității tale în cadrul aplicației </li>
+                    <li>SEE RECIPES - oferă posibilitatea de a accesa o secțiune în care vor fi salvate rețetele pe care utilizatorul le încarcă în aplicație</li>
+                </ul>
+
+            </section>
+            <section id="addrecipe">
+                <h3>Add Recipe</h3>
+                <img src="imaginiDocumentatie/addrecipe1.png" alt="" style="height: 80%; width: 60%;">
+                <img src="imaginiDocumentatie/addrecipe2.png" alt="" style="height: 80%; width: 60%;">
+                <img src="imaginiDocumentatie/addrecipe3.png" alt="" style="height: 80%; width: 60%;">
+                <ul>
+                    <li>Un utilizator poate incarca o reteta proprie, completand campurile aferente cu diferite informatii precum, nume, descriere, timp preparare etc.</li>
+                    <li>De asemenea este obligatoriu de incarcat una sau mai multe poze cu produsul. </li>
+                    <li>Lista de ingrediente si de pasi de prepapare va fi realizata prin adaugarea acestora prin intermediul butonului Add To List </li>
+                    <li>Reteta va fi incarcata prin intermediul butonului Post Now </li>
+                </ul>
+
+            </section>
+            <section id="favorites">
+                <h3>Favorites</h3>
+                <img src="imaginiDocumentatie/favorites.png" alt="" style="height: 80%; width: 60%;">
+                <p>Pagina de favorite : </p>
+                <ul>
+                    <li>Reprezintă strict o listă de rețete pe care utilizatorul le-a salvat pentru vizualizare ulterioară, având posibilitatea de a le elimina în orice moment din această listă</li>
+                    <li>Opțiunea de ”Read More” îl va conduce pe acesta către pagina rețetei respective. </li>
+                </ul>
+
+            </section>
+            <section id="history">
+                <h3>History</h3>
+                <img src="imaginiDocumentatie/history.png" alt="" style="height: 80%; width: 60%;">
+                <p>Aceasta pagina poate fi accesata de un utilizator logat. Aici un utilizatorul poate: </p>
+                <ul>
+                    <li>Sa vada data si ora cand a realizat o anumita operatie</li>
+                    <li>Sa filtreze istoricul in dependenta de operatie (Liked, Delted, Added, Completed, Searches)</li>
+                    <li>Sa filtreze istoricul in dependenta de cad a fost realizata operatia, ii sunt accesibile informatiile pana la o luna in urma. </li>
+                </ul>
+
+            </section>
+            <section id="myrecipes">
+                <h3>My Recipes</h3>
+                <img src="imaginiDocumentatie/myrecipes.png" alt="" style="height: 80%; width: 60%;">
+                <p>Aceasta pagina poate fi accesata de un utilizator logat. Aici un utilizatorul poate: </p>
+                <ul>
+                    <li>Similar paginii de Favorite, o serie de rețete pe care utilizatorul le încarcă în cadrul aplicației și care devin disponibile și pentru ceilalți utilizatori. </li>
+                    <li>Butonul de ”See Recipe” va conține un link ce conduce către pagina rețetei respective.</li>
+                </ul>
+
+            </section>
+            <section id="settings">
+                <h3>Account Settings</h3>
+                <img src="imaginiDocumentatie/settings.png" alt="" style="height: 80%; width: 60%;">
+                <p>Aceasta pagina poate fi accesata de un utilizator logat. Aici un utilizatorul poate să-și schimbe setarile profilului, cum ar fi numele, descrierea, emailul si poza de profil. Pentru a dinaliza operațiunea trebuie să facă click pe butonul
+                    Upload.
+                </p>
+
+            </section>
+
+        </section>
+
+        <section id="caracteristici">
+            <h2>Caracteristicile sistemului</h2>
+
+            <ul>
+                <li>Posibiliatea de <b>creare a unui cont</b> este una dintre caracteristicile principale ale sistemului, întrucât oferă utilizatorului funcționalități în plus (opțiunea de adăugare rețetă,o listă de favorite, vizualizarea unui istoric etc.)
+                    . Informațiile despre un utilizator care își crează cont sunt salvate într-un server de baze de date, în timp ce preferințele ultimei căutări ale unui utilizator neautentificat sunt salvate la nivel de browser . Prin înregistrarea
+                    în aplicație a unei persoane, se populează respectiva bază de date cu noi date.</li>
+                <li>În cadrul <b>paginii de profil</b> a unui utilizator, modificarea setărilor contului va duce la modificarea anumitor date din serverul de baze de date.</li>
+                <li><b>Cautare de retete</b> : Aceasta functionalitate are o prioritate maxima, reprezentand esenta aplicatiei. Utilizatorul (logat sau nelogat) poate selecta ingredientele pe care le doreste si cele care ii displac, nivelul de dificultate,
+                    timpul de pregatire si gatire a mancarii si numarul de portii. Va fi folosit un algoritm de cautare cat mai eficient pentru a-I oferi utilizatorului retete care minimizeaza numarul de ingrediente suplimentare necesare(TBD). Pentru
+                    ca aplicatia sa functioneze cat mai rapid va fi folosit Ajax, astfel, nu se va reincarca pagina din nou, ci doar se vor adauga sau sterge retetele noi ce indeplinesc criteriile adaugate treptat. Daca un utilizator nu este logat, preferintele
+                    ultimei cautari vor fi salvate la nivel de browser, cu ajutorul cookies-urilor. Daca el este logat acestea vor fi salvate in istoricul lui.</li>
+                <li><b>Istoric</b> : Aceasta functionalitate are o prioritate medie, deoarece ii va permite utilizatorului logat sa se reintoarca la cautarile recente pentru a replica o cautare dorita. Aceasta optiune este doar pentru un utilizator ce are
+                    deja cont. De asemenea, el va putea vedea alte operatii pe care le-a facut ca si adaugarea unor retete la Favorite, stergerea ei, adaugarea unei retete noi si completarea unei retete. El va avea optiunea sa le filtreze in dependenta
+                    de ce cauta.
+                </li>
+                <li><b>Populare</b> : Aceasta functionalitate are o prioritate redusa. Utilizatorul(logat/nelogat) poate accesa aceasta –pagina pentru a vedea cele mai populare retete/ingrediente si cele mai nedorite ingrediente. Retetele populare vor fi
+                    identificate dupa numarul de oameni care au preparat reteta. Ingredientele populare/nepopulare vor fi determinate dupa numarul de cate ori a fost marcat ca dezirabil sau nedezirabil in operatia de cautare. De asemenea va fi posibila
+                    descarcare clasamentelor in format HTML, CSV si JSON(TBD).
+                </li>
+                <li><b>Postarea unei poze cu propriul preparat</b> : Functionalitatea postarii unei fotografii cu produsul realizat are o prioritate mare, intrucat popularitatea unei retete este determinata de numarul de poze incarcate de utilizatori, pe
+                    pagina unei retete. In acest caz de va face o inserare de informatii in baza de date, mai exact o imagine insotita de datele celui care incarca.</li>
+                <li><b>Trimiterea unei intrebari</b> : Prioritatea acestei functionalitati este medie. Ea vine ca un serviciu adresat utilizatorilor care au nelamuri in legatura cu pagina web sau orice tip de problema sesizata.</li>
+                <li>In cadrul modificării <b>listei de favorite</b> (adaugare / stergere de reteta) se va folosi,ca si in cazul <b>cautarii unei retete</b>, Ajax-ul pentru modificarea rapida,eficienta a paginii respective in urma operatiilor de stergere/adaugare.
+                    Similar si pentru modificarea paginii de <b>”My Recipes”</b>.</li>
+
+            </ul>
+
+        </section>
+        <section id="specificatii">
+            <h2>Specificatii tehnice & tehnologii utilizate</h2>
+
+            <p>Ca și componente software și servicii adiționale pentru aplicația ”WhaF”, vom folosi :</p>
+            <ol>
+                <li><b>XAMPP for Windows 8.0.3.</b> – pachet de programe free software, open-source și cross-platform web server care conține un server HTTP (respectiv Apache), o bază de date MySQL și un interpretor pentru scripturile scrise în PHP. [2]</li>
+                <li><b>Biblioteca AOS (Animate On Scroll Library)</b> – bibliotecă de animație cu defilare folosită în cadrul CSS3, utilă pentru a anima orice element de pe site-ul web în timpul delrulării.In vederea utilizarii acestei biblioteci, se va descarca
+                    foaia de stil impreuna cu fisierele JS, folosint un CDN. Dupa initializarea bibliotecii,utilizand functia specifica AOS.init(),trebuie sa adaugam atributele specifice.Pentru a utiliza animații de bază trebuie doar să adăugați data-aos
+                    = "animation_name" la elementele dvs. HTML. Există mai multe tipuri de animații din care puteți alege. De exemplu, puteți adăuga animații de estompare precum „fade”, „fade-up” și „fade-down-left”. În mod similar, puteți adăuga și animații
+                    flip și slide, cum ar fi „flip-up”, „flip-left”, „slide-down” și „slide-right”. [3][5]</li>
+                <li><b>AJAX </b>– folosit pentru crearea părții interactive a aplicației prin utilizarea de HTML, CSS, XML. [4]</li>
+                <li>Pentru salvarea ultimelor căutări ale utilizatorilor care nu își creează cont în cadrul aplicației, vor fi folosite<b>cookie-urile</b> pentru stocarea datelor acestora la nivelul browserului.</li>
+                <li>Pentru clasamentele legate de preferințe, cele mai populare ingrediente/rețete (sau cele mai evitate) se vor oferi clasamente în format HTML, CSV si JSON.</li>
+                <li>Protocolul de comunicare pentru serverul de rețea folosit este protocolul HTTP. </li>
+                <li>În ceea ce privește arhitectura aplicației, aceasta va fi proiectată pe baza MVC, iar informațiile utilizatorilor vor fi ferite de atacuri prin folosirea tehnicii de prevenire SQLInjection.</li>
+            </ol>
+
+        </section>
+    </section>
+    <section id="imbunatatiri">
+        <h2>Pentru a imbunatati acest proiect, ar putea fi implementate urmatoarele aspecte:</h2>
+        <ul>
+            <li>Imbunatatirea nivelului de securitate – odată cu crearea unui cont, sa fie necesara activarea acestuia pe baza unui email de validare trimis automat</li>
+            <li>Adaugarea de functionalitati precum : sectiune de comentarii, chat personal/ trimiterea de mesaje private , optiunea de ”follow” a unui utilizator pentru a primi notificari atunci cand acesta incarca retete noi</li>
+            <li>Imbunatatirea partii de front-end prin crearea de aspecte interactive </li>
+            <li>Crearea versiunii mobile a aplicatiei</li>
+            <li>Adaugarea de reclame</li>
+        </ul>
+    </section>
+    <section id="referinte">
+        <h2>Referinte text :</h2>
+        <ul>
+            <li><a href="https://w3c.github.io/scholarly-html/"> [1] </a>Scholarly HTML</li>
+            <li><a href="https://www.apachefriends.org/ro/index.html"> [2] </a>XAMPP</li>
+            <li><a href="https://michalsnik.github.io/aos/"> [3] </a>AOS</li>
+            <li><a href="https://www.w3schools.com/xml/ajax_intro.asp"> [4] </a>AJAX</li>
+            <li><a href="https://www.sitepoint.com/cool-scroll-animations-made-easy-aos-library/"> [5] </a>AOS Tutorial</li>
+        </ul>
+
+        <h2>Altele</h2>
+        <ul>
+            <li>
+                <a href="https://github.com/rick4470/IEEE-SRS-Tempate#revision-history"> SRS-Template</a>
+
+            </li>
+            <li>
+                <a href="hhttps://w3c.github.io/scholarly-html/"> Scholarly HTML</a>
+
+            </li>
+            <li>
+                <a href="https://developer.mozilla.org/en-US/"> Developer Mozilla</a>
+
+            </li>
+        </ul>
+    </section>
+
+
+</body>
+
+</html>
