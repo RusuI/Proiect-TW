@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/loginstyle.css">
+    <title>Login | WhaF</title>
+    <link rel="icon" href="../images/pizza.png">
+</head>
+
+<body>
+    <!-- Container -->
+    <div class="container" id="container">
+        <!-- Row -->
+        <div class="row">
+            <!-- Sign Up -->
+            <div class="col align-center flex-col sign-up">
+                <div class="form-wrapper align-center">
+                    <form class="form sign-up">
+                        <div class="input-group">
+                            <i class="bx bxs-user"></i>
+                            <input type="text" placeholder="Username">
+                        </div>
+                        <div class="input-group">
+                            <i class="bx bx-mail-send"></i>
+                            <input type="email" placeholder="Email">
+                        </div>
+                        <div class="input-group">
+                            <i class="bx bxs-lock-alt"></i>
+                            <input type="password" placeholder="Password">
+                        </div>
+                        <div class="input-group">
+                            <i class="bx bxs-lock-alt"></i>
+                            <input type="password" placeholder="Confirm password">
+                        </div>
+                        <button>Sign Up</button>
+                        <p>
+                            <span>Already have an account?</span>
+                            <b id="sign-in">Sign In here</b>
+                        </p>
+                    </form>
+                </div>
+
+                <div class="form-wrapper">
+                    <div class="social-list align-center sign-up">
+                        <div class="align-center facebook-bg">
+                            <i class="bx bxl-facebook"></i>
+                        </div>
+                        <div class="align-center google-bg">
+                            <i class="bx bxl-google"></i>
+                        </div>
+                        <div class="align-center twitter-bg">
+                            <i class="bx bxl-twitter"></i>
+                        </div>
+                        <div class="align-center insta-bg">
+                            <i class="bx bxl-instagram-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Sign Up -->
+            <!-- Sign In -->
+            <div class="col align-center flex-col sign-in">
+                <div class="form-wrapper align-center">
+                    <form class="form sign-in" method="POST" action="../includes/loginhandler.php">
+                        <div class="input-group">
+                            <i class="bx bxs-user"></i>
+                            <input type="text" placeholder="Username" name="username">
+                        </div>
+                        <div class="input-group">
+                            <i class="bx bxs-lock-alt"></i>
+                            <input type="password" placeholder="Password" name="password">
+                        </div>
+                        <button type="submit" class="link-button">
+                            <span style="text-decoration: none; color:white;">Sign In</span>
+                        </button>
+                        <p>
+                            <b>Forgot password?</b>
+                        </p>
+                        <p>
+                            <span> Don't have an account? </span>
+                            <b id="sign-up">Sign Up here</b>
+                        </p>
+                    </form>
+                </div>
+
+                <div class="form-wrapper">
+                    <div class="social-list align-center sign-in">
+                        <div class="align-center facebook-bg">
+                            <i class="bx bxl-facebook"></i>
+                        </div>
+                        <div class="align-center google-bg">
+                            <i class="bx bxl-google"></i>
+                        </div>
+                        <div class="align-center twitter-bg">
+                            <i class="bx bxl-twitter"></i>
+                        </div>
+                        <div class="align-center insta-bg">
+                            <i class="bx bxl-instagram-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Sign In -->
+        </div>
+        <!-- End Row -->
+        <!-- Content Section -->
+        <div class="row content-row">
+            <!-- Sign In Content -->
+            <div class="col align-items flex-col">
+                <div class="text sign-in">
+                    <h2>Welcome Back!</h2>
+                    <p>
+                        Sign in into your account and have fun cooking!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sign Up Content -->
+            <div class="col align-items flex-col">
+                <div class="text sign-up">
+                    <h2>Join our comunity!</h2>
+                    <p>
+                        If you don't have an account yet, register to have multiple benefits and become part of the comunity!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Container -->
+    <!-- Script -->
+    <script src="../javascript/login.js"></script>
+</body>
+
+</html>
