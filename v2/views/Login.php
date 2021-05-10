@@ -66,7 +66,7 @@
             <!-- Sign In -->
             <div class="col align-center flex-col sign-in">
                 <div class="form-wrapper align-center">
-                    <form class="form sign-in" method="POST" action="../includes/loginhandler.php">
+                    <form class="form sign-in" method="POST" action="../includes/LoginHandler.php">
                         <div class="input-group">
                             <i class="bx bxs-user"></i>
                             <input type="text" placeholder="Username" name="username">
