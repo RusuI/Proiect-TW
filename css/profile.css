@@ -1,0 +1,455 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Baloo Chettan 2', cursive;
+    line-height: 1.5;
+    height: 100%;
+    background: #f6f5f5;
+}
+
+
+/*Navigation bar*/
+
+nav {
+    background: orange;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav .mainMenu {
+    display: flex;
+    list-style: none;
+}
+
+nav .mainMenu li a {
+    display: inline-block;
+    padding: 15px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+nav .mainMenu li a:hover {
+    background: rgb(255, 94, 0);
+}
+
+nav .openMenu {
+    font-size: 2rem;
+    margin: 20px;
+    display: none;
+    cursor: pointer;
+}
+
+nav .mainMenu .closeMenu,
+.icons i {
+    font-size: 2rem;
+    display: none;
+    cursor: pointer;
+}
+
+.fa-facebook:hover {
+    color: rgb(0, 110, 255);
+}
+
+.fa-twitter:hover {
+    color: rgb(86, 154, 243);
+}
+
+.fa-instagram:hover {
+    color: rgb(255, 0, 191);
+}
+
+.fa-github:hover {
+    color: rgb(255, 123, 0);
+}
+
+nav .logo {
+    margin: 6px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+@media(max-width: 800px) {
+    nav .mainMenu {
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: orange;
+        transition: top 1s ease;
+        display: none;
+    }
+    nav .mainMenu .closeMenu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    nav .openMenu {
+        display: block;
+    }
+    nav .mainMenu li a:hover {
+        background: none;
+        color: red;
+        font-size: 1.6rem;
+    }
+    .icons i {
+        display: inline-block;
+        padding: 12px;
+    }
+}
+
+
+/*End of Navigation bar*/
+
+.section {
+    width: 100%;
+    height: 95vh;
+    position: relative;
+}
+
+.text-container p:nth-child(1) {
+    font-family: 'Baloo Chettan 2', cursive;
+    font-weight: bold;
+    color: darkorange;
+    font-size: 22px;
+}
+
+.text-container p:nth-child(2) {
+    font-family: 'Baloo Chettan 2', cursive;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: white;
+    font-size: 60px;
+    line-height: 30px;
+}
+
+.text-container p {
+    line-height: 0px;
+    margin: 45px 0px 25px;
+}
+
+.text-container {
+    position: absolute;
+    left: 13%;
+    top: 42%;
+    transform: translate(-13%, -42%);
+}
+
+.text-container .my-button {
+    width: 130px;
+    height: 42px;
+    border-radius: 10px;
+    font-family: 'Baloo Chettan 2', cursive;
+    font-weight: bold;
+    font-size: 14px;
+    outline: none;
+    margin: 0px 10px;
+}
+
+.start-btn {
+    border: 2px solid #373636;
+    color: #373636;
+    background-color: rgb(236, 235, 235);
+    padding: 1% 4%;
+    border-radius: 6px;
+}
+
+.start-btn:hover {
+    background: orange;
+    color: white;
+}
+
+.my-button:active {
+    transform: scale(1.1);
+    /*click on button and it gets bigger*/
+}
+
+.about-container {
+    width: 80%;
+    height: 330px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    margin: -7% auto 20px auto;
+    position: relative;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.about-container img {
+    height: 250px;
+}
+
+.about-text {
+    width: 500px;
+}
+
+.about-text p:nth-child(1) {
+    color: orange;
+    font-family: 'Baloo Chettan 2', cursive;
+    font-weight: bold;
+    font-size: 23px;
+    line-height: 0px;
+    margin-bottom: 10px;
+}
+
+.about-text p:nth-child(2),
+.about-text p:nth-child(3) {
+    color: #7e7d7d;
+    font-family: 'Baloo Chettan 2', cursive;
+    font-size: 16px;
+}
+
+.about-text .my-button {
+    width: 130px;
+    height: 42px;
+    border-radius: 10px;
+    background-color: orange;
+    color: white;
+    font-family: 'Baloo Chettan 2', cursive;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 2% 5%;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+.about-text .my-button:hover {
+    background-color: black;
+    color: white;
+}
+
+.services {
+    height: 600px;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('imagesProfile/bg.jpeg') center/cover no-repeat fixed;
+    padding: 2% 10% 0px 10%;
+}
+
+.services-text p:nth-child(1) {
+    font-family: 'Baloo Chettan 2', cursive;
+    font-weight: bold;
+    color: orange;
+    font-size: 30px;
+    line-height: 0px;
+    margin-bottom: 30px;
+}
+
+.services-text p:nth-child(2) {
+    font-family: 'Baloo Chettan 2', cursive;
+    font-weight: bold;
+    color: white;
+    font-size: 15px;
+    line-height: 5px;
+    margin-bottom: 20px;
+}
+
+.services-text p:nth-child(3) {
+    font-family: 'Baloo Chettan 2', cursive;
+    color: white;
+}
+
+.services-text {
+    width: 500px;
+    margin: 50px 0px;
+}
+
+.box-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-1,
+.box-2,
+.box-3 {
+    width: 300px;
+    height: 320px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box-1 span,
+.box-2 span,
+.box-3 span {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    font-family: 'Baloo Chettan 2', cursive;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.box-1 p:nth-child(2),
+.box-2 p:nth-child(2),
+.box-3 p:nth-child(2) {
+    color: brown;
+    font-weight: bold;
+    font-family: 'Baloo Chettan 2', cursive;
+    font-size: 30px;
+    line-height: 5px;
+    margin-bottom: 10px;
+}
+
+.box-1 p:nth-child(3),
+.box-2 p:nth-child(3),
+.box-3 p:nth-child(3) {
+    font-family: 'Baloo Chettan 2', cursive;
+    color: black;
+    text-align: center;
+    width: 230px;
+    margin: 0px 0px 20px 0px;
+}
+
+.box-1 .my-button,
+.box-2 .my-button,
+.box-3 .my-button {
+    width: 130px;
+    height: 29px;
+    border-radius: 10px;
+    font-weight: bold;
+    background-color: orange;
+    text-decoration: none;
+    text-align: center;
+    padding-top: 3%;
+    color: white;
+    font-size: 14px;
+    outline: none;
+    border: none;
+}
+
+.box-1 .my-button:hover {
+    background-color: black;
+    color: white;
+}
+
+.box-2 .my-button:hover {
+    background-color: black;
+    color: white;
+}
+
+.box-3 .my-button:hover {
+    background-color: black;
+    color: white;
+}
+
+
+/*Footer*/
+
+.footer {
+    height: 5%;
+    Width: 100%;
+    bottom: 0;
+    background: black;
+    text-align: center;
+}
+
+.footer .text {
+    text-transform: uppercase;
+    color: white;
+    font-size: 24px;
+}
+
+
+/*Making it responsive*/
+
+@media(max-width:1000px) {
+    * {
+        box-sizing: border-box;
+    }
+    .text-container {
+        top: 46%;
+    }
+    .text-container .my-button {
+        margin: 5px;
+    }
+    .about-container {
+        width: 90%;
+        border-radius: 10px;
+    }
+    .about-container img {
+        height: 200px;
+    }
+    .about-text {
+        width: 400px;
+    }
+    .about-text p:nth-child(1) {
+        font-size: 20px;
+    }
+    .about-text p:nth-child(2) {
+        font-size: 10px;
+    }
+    .about-text p:nth-child(3),
+    .about-text p:nth-child(4) {
+        font-size: 14px;
+    }
+    .services {
+        padding: 2% 5% 0px 5%;
+    }
+    .box-container {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .services {
+        height: auto;
+    }
+    .box-1,
+    .box-2,
+    .box-3 {
+        flex-grow: 1;
+        margin: 10px;
+    }
+}
+
+@media(max-width:750px) {
+    .section {
+        background-image: none;
+        background-color: brown;
+    }
+    .text-container p:nth-child(2) {
+        margin-top: 10px;
+        line-height: 40px;
+        padding: 0px;
+    }
+    .text-container {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+    }
+    .about-container {
+        top: 0px;
+        flex-direction: column;
+        width: 90%;
+        height: auto;
+        padding: 30px 0px;
+        align-items: center;
+    }
+    .about-text {
+        margin-top: 10px;
+        width: 90%;
+        text-align: center;
+    }
+    .services-text {
+        width: 100%;
+    }
+}
