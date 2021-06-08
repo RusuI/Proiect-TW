@@ -14,6 +14,20 @@ if(emptyInputLogin($username,$password) !== false){ //if it's anything besides f
     exit();
 }
 
+
+if(emptyUserLogIn($username) !== false){ 
+
+    header("location: ../views/login.php?error=emptyuser");
+    exit();
+}
+
+
+if(emptyPasswordLogIn($username) !== false){
+
+    header("location: ../views/login.php?error=emptypassword");
+    exit();
+}
+
 login_user($connection,$username,$password);
 
 }else{

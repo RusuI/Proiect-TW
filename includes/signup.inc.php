@@ -1,5 +1,9 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 if(isset($_POST["submit"])){
     
 $username = $_POST["username"];
@@ -15,6 +19,30 @@ if(emptyInputSingup($username,$email,$password,$confpassword) !== false){ //if i
     header("location: ../views/signup.php?error=emptyinput");
     exit();
 }
+
+if(emptyUser($username) !== false){ 
+
+    header("location: ../views/signup.php?error=emptyuser");
+    exit();
+}
+
+if(emptyEmail($email) !== false){ 
+
+    header("location: ../views/signup.php?error=emptyemail");
+    exit();
+}
+if(emptyPassword($password) !== false){
+
+    header("location: ../views/signup.php?error=emptypassword");
+    exit();
+}
+
+if(emptyPasswordConf($confpassword) !== false){
+
+    header("location: ../views/signup.php?error=emptypasswordconf");
+    exit();
+}
+
 
 if(invalidUsername($username) !== false){ 
 
@@ -35,9 +63,15 @@ if(pwdMatch($password,$confpassword) !== false){
     exit();
 }
 
-if(userExists($connection,$username,$email) !== false){ 
+if(userExists($connection,$username) !== false){ 
 
     header("location: ../views/signup.php?error=usertaken");
+    exit();
+}
+
+if(emailExists($connection,$email) !== false){ 
+
+    header("location: ../views/signup.php?error=emailtaken");
     exit();
 }
 

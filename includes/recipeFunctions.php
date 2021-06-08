@@ -1,4 +1,32 @@
 <?php
+
+session_start();
+function emptyInputFAQ($username,$question){
+    $result = false;
+
+    if (empty($username) || empty($question)) {
+        $result = true;
+    }
+
+    return $result;
+}
+
+function sendQuestion($connection,$username,$question){
+
+    $question   = mysqli_real_escape_string($connection, $question);
+
+    $query = "INSERT INTO faq (user_id, question)";
+    $query .= "VALUES('{$_SESSION['id']}', '{$question}')";
+    $addQuestion = mysqli_query($connection, $query);
+    if(!$addQuestion ){
+        die("Query failed" . mysqli_error($connection));
+    }else{
+        header('Location: ../views/faq.php');
+        exit();
+    }
+}
+
+
 function getIngredients($connection, $category)
 {
     $sql = "SELECT * FROM ingredients WHERE category = ? ORDER BY name ASC;";
@@ -43,3 +71,19 @@ function displayIngredients($connection, $category)
      }
     if (($n - 1) % 3 != 0) echo '</div>'."\n";
 }
+
+
+function emptyInputRecipe($username, $email, $password, $confpassword)
+{
+    $result = false;
+
+    if (empty($username) || empty($email) || empty($password) || empty($confpassword)) {
+        $result = true;
+    }
+
+    return $result;
+}
+
+
+
+    
