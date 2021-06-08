@@ -22,6 +22,21 @@
             padding-top: 25px;
             padding-bottom: 25px;
         }
+
+        .error-msg {
+            color: #D8000C;
+            background-color: #FFD2D2;
+            margin: 5px 0px;
+            padding: 8px;
+            border-radius: .5em;
+            box-shadow: 1px 1px 3px #888;
+        }
+
+        .error-msg i {
+            margin: 8px 15px;
+            font-size: 15px;
+            vertical-align: middle;
+        }
     </style>
 </head>
 
@@ -33,12 +48,12 @@
         </div>
         <div class="openMenu"><i class="fa fa-bars"></i></div>
         <ul class="mainMenu">
-            <li><a href="../views/home.php">Home</a></li>
-            <li><a href="../views/faq.php">Help</a></li>
-            <li><a href="../views/popular.php">See most popular</a></li>
-            <li><a href="../views/search.php">Search</a></li>
-            <li><a href="../views/addRecipe.php">Add recipe</a></li>
-            <li><a href="../views/profile.php">My Profile</a></li>
+            <li><a href="home.php">Home</a></li>
+            <li><a href="faq.php">Help</a></li>
+            <li><a href="popular.php">See most popular</a></li>
+            <li><a href="search.php">Search</a></li>
+            <li><a href="addRecipe.php">Add recipe</a></li>
+            <li><a href="profile.php">My Profile</a></li>
             <li>
                 <div class="closeMenu"><i class="fa fa-times"></i></div>
                 <span class="icons">
@@ -66,39 +81,17 @@
                         <input type="file" id="myFile" name="file" style="border-bottom:0.5erm;">
                         <input type="submit" value="Update" class="btn" name="submit">
                         <?php
-                        if (isset($_GET["error"])) { //if we get error messages in the browser
+                        if (isset($_GET["error"])) {
                             if ($_GET["error"] == "emptyinput") {
-                                echo "<div style='color: #D8000C; background-color: #FFD2D2; margin: 5px 0px; padding: 8px; border-radius:.5em; box-shadow:1px 1px 3px #888;'>
-               <i class='fa fa-times-circle' style='margin:8px 15px; font-size: 15px; vertical-align:middle;'></i>
-               Fill in the fields to Update!
-            </div>";;
-                            } else if ($_GET["error"] == "uploadfailed") {
-                                echo "<div style='color: #D8000C; background-color: #FFD2D2; margin: 5px 0px; padding: 8px; border-radius:.5em; box-shadow:1px 1px 3px #888;'>
-            <i class='fa fa-times-circle' style='margin:8px 15px; font-size: 15px; vertical-align:middle;'></i>
-            Updating failed!
-         </div>";;
-                            } else if ($_GET["error"] == "notGoodType") {
-                                echo "<div style='color: #D8000C; background-color: #FFD2D2; margin: 5px 0px; padding: 8px; border-radius:.5em; box-shadow:1px 1px 3px #888;'>
-            <i class='fa fa-times-circle' style='margin:8px 15px; font-size: 15px; vertical-align:middle;'></i>
-             Choose another type of picture (jpg,jpeg,gif,png)!
-         </div>";;
-                            } else if ($_GET["error"] == "fileTooBig") {
-                                echo "<div style='color: #D8000C; background-color: #FFD2D2; margin: 5px 0px; padding: 8px; border-radius:.5em; box-shadow:1px 1px 3px #888;'>
-            <i class='fa fa-times-circle' style='margin:8px 15px; font-size: 15px; vertical-align:middle;'></i>
-            Picture size is too big!
-         </div>";;
+                                echo "<div class='error-msg'> <i class='fa fa-times-circle'></i> Fill in the fields to Update!</div>";
                             }
                         }
                         ?>
-
-
                     </form>
                 </div>
             </section>
         </div>
     </main>
-
-
     <!--Footer-->
     <footer class="footer ">
         <div class="section-center ">

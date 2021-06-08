@@ -20,6 +20,30 @@
             font-weight: 400;
             font-size: 2rem;
         }
+
+        .error-msg {
+            color: #cc0033;
+            display: inline-block;
+            font-size: 12px;
+            line-height: 15px;
+            margin: 5px 0 0;
+            font-family: 'Baloo Chettan 2';
+        }
+
+        .general-error {
+            color: #D8000C;
+            background-color: #FFD2D2;
+            margin: 5px 0px;
+            padding: 8px;
+            border-radius: .5em;
+            box-shadow: 1px 1px 3px #888;
+        }
+
+        .general-error i {
+            margin: 8px 15px;
+            font-size: 15px;
+            vertical-align: middle;
+        }
     </style>
 </head>
 
@@ -39,7 +63,7 @@
                         <?php
                         if (isset($_GET["error"])) {
                             if ($_GET["error"] == "emptyuser") {
-                                echo "<div style='color: #cc0033;  display: inline-block; font-size: 12px; line-height: 15px; margin: 5px 0 0; font-family: 'Baloo Chettan 2';'><p>Username cannot be empty!</p></div>";
+                                echo "<div class='error-msg'><p>Username cannot be empty!</p></div>";
                             }
                         }
                         ?>
@@ -50,37 +74,37 @@
                         <?php
                         if (isset($_GET["error"])) {
                             if ($_GET["error"] == "emptypassword") {
-                                echo "<div class='error-message' style='color: #cc0033;  display: inline-block; font-size: 12px; line-height: 15px; margin: 5px 0 0; font-family: 'Baloo Chettan 2''><p>Password cannot be empty!<p></div>";
+                                echo "<div class='error-msg'><p>Password cannot be empty!<p></div>";
                             }
                         }
                         ?>
                         <button type="submit" name="submit" class="link-button">
                             <span style="text-decoration: none; color:white;">Log In</span>
                         </button>
-                
+
                         <p>
                             <span> Don't have an account? </span>
                             <b id="sign-up"><a href="signup.php" class="no-underline" style="text-decoration: none; color:rgb(255, 69, 0);">Sign Up here</b>
                         </p>
-                    
-                    </form>
-                     <?php
 
-                        if (isset($_GET["error"])) {
-                            if ($_GET["error"] == "emptyinput") {
-                                echo "<div style='color: #D8000C; background-color: #FFD2D2; margin: 5px 0px; padding: 8px; border-radius:.5em; box-shadow:1px 1px 3px #888;'>
-                                <i class='fa fa-times-circle' style='margin:8px 15px; font-size: 15px; vertical-align:middle;'></i>
+                    </form>
+                    <?php
+
+                    if (isset($_GET["error"])) {
+                        if ($_GET["error"] == "emptyinput") {
+                            echo "<div class='general-error'>
+                                <i class='fa fa-times-circle'></i>
                                 Fill in the fields to Log In!
                              </div>";
-                            } else if ($_GET["error"] == "loginfailed") {
-                                echo "<div style='color: #D8000C; background-color: #FFD2D2; margin: 5px 0px; padding: 8px; border-radius:.5em; box-shadow:1px 1px 3px #888;'>
-                                <i class='fa fa-times-circle' style='margin:8px 10px; font-size: 8px; vertical-align:middle;'></i>
+                        } else if ($_GET["error"] == "loginfailed") {
+                            echo "<div class='general-error'>
+                                <i class='fa fa-times-circle'></i>
                                 Incorrect username or password!
                              </div>";
-                            }
                         }
+                    }
 
-                        ?>
+                    ?>
                 </div>
 
             </div>

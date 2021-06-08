@@ -1,6 +1,5 @@
-
-
-<?php include("../includes/config.php"); ?>
+<?php include("../includes/config.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,29 +34,29 @@
     <!--Navigation Bar-->
 
     <div class="section">
-        <nav>
-            <div class="logo">
-                <h2>Profile</h2>
-            </div>
-            <div class="openMenu"><i class="fa fa-bars"></i></div>
-            <ul class="mainMenu">
-                <li><a href="../views/home.php">Home</a></li>
-                <li><a href="../views/faq.php">Help</a></li>
-                <li><a href="../views/popular.php">See most popular</a></li>
-                <li><a href="../views/search.php">Search</a></li>
-                <li><a href="../views/addRecipe.php">Add recipe</a></li>
-                <li><a href="#">My Profile</a></li>
-                <li>
-                    <div class="closeMenu"><i class="fa fa-times"></i></div>
-                    <span class="icons">
-                        <i class="fab fa-facebook"></i>
-                        <i class="fab fa-instagram"></i>
-                        <i class="fab fa-twitter"></i>
-                        <i class="fab fa-github"></i>
-                    </span>
-                </li>
-            </ul>
-        </nav>
+    <nav>
+        <div class="logo">
+            <h2>Profile</h2>
+        </div>
+        <div class="openMenu"><i class="fa fa-bars"></i></div>
+        <ul class="mainMenu">
+            <li><a href="home.php">Home</a></li>
+            <li><a href="faq.php">Help</a></li>
+            <li><a href="popular.php">See most popular</a></li>
+            <li><a href="search.php">Search</a></li>
+            <li><a href="addRecipe.php">Add Recipe</a></li>
+            <li><a href='#'>My Profile</a></li>
+            <li>
+                <div class="closeMenu"><i class="fa fa-times"></i></div>
+                <span class="icons">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-github"></i>
+                </span>
+            </li>
+        </ul>
+    </nav>
 
         <!--End of Navigation Bar-->
 

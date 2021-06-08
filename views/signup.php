@@ -10,6 +10,42 @@
     <link rel="stylesheet" href="signup.css">
     <title>SignUp | WhaF</title>
     <link rel="icon" href="../images/pizza.png">
+
+    <style>
+        .error-msg {
+            color: #cc0033;
+            display: inline-block;
+            font-size: 12px;
+            line-height: 15px;
+            margin: 5px 0 0;
+            font-family: 'Baloo Chettan 2';
+        }
+
+        .error-msg-gen {
+            color: #D8000C;
+            background-color: #FFD2D2;
+            margin: 3px 0px;
+            padding: 5px;
+            border-radius: .5em;
+            box-shadow: 1px 1px 3px #888;
+        }
+
+        .success {
+            color: #4F8A10;
+            background-color: #DFF2BF;
+            margin: 3px 0px;
+            padding: 5px;
+            border-radius: .5em;
+            box-shadow: 1px 1px 3px #888;
+        }
+
+        .error-msg-gen i,
+        .success i {
+            margin: 8px 10px;
+            font-size: 5px;
+            vertical-align: middle;
+        }
+    </style>
 </head>
 
 <body>
@@ -28,11 +64,11 @@
                         <?php
                         if (isset($_GET["error"])) {
                             if ($_GET["error"] == "emptyuser") {
-                                echo "<div style='color: #cc0033;  display: inline-block; font-size: 12px; line-height: 15px; margin: 5px 0 0; font-family: 'Baloo Chettan 2';'><p>Username cannot be empty!</p></div>";
+                                echo "<div class='error-msg'><p>Username cannot be empty!</p></div>";
                             } else if ($_GET["error"] == "invalidusername") {
-                                echo "<div class='error-message' style='color: #cc0033;  display: inline-block; font-size: 12px; line-height: 15px; margin: 5px 0 0; font-family: 'Baloo Chettan 2''><p>Invalid username!<p></div>";
+                                echo "<div class='error-msg'><p>Invalid username!<p></div>";
                             } else if ($_GET["error"] == "usertaken") {
-                                echo "<div class='error-message' style='color: #cc0033;  display: inline-block; font-size: 12px; line-height: 15px; margin: 5px 0 0; font-family: 'Baloo Chettan 2''><p>Username already exists!<p></div>";
+                                echo "<div class='error-msg'><p>Username already exists!<p></div>";
                             }
                         }
                         ?>
@@ -43,11 +79,11 @@
                         <?php
                         if (isset($_GET["error"])) {
                             if ($_GET["error"] == "emptyemail") {
-                                echo "<div class='error-message' style='color: #cc0033;  display: inline-block; font-size: 12px; line-height: 15px; margin: 5px 0 0; font-family: 'Baloo Chettan 2''><p>Email cannot be empty!<p></div>";
+                                echo "<div class='error-mesg'><p>Email cannot be empty!<p></div>";
                             } else if ($_GET["error"] == "invalidemail") {
-                                echo "<div class='error-message' style='color: #cc0033;  display: inline-block; font-size: 12px; line-height: 15px; margin: 5px 0 0; font-family: 'Baloo Chettan 2''><p>Invalid email adress!<p></div>";
+                                echo "<div class='error-msg'><p>Invalid email adress!<p></div>";
                             } else if ($_GET["error"] == "emailtaken") {
-                                echo "<div class='error-message' style='color: #cc0033;  display: inline-block; font-size: 12px; line-height: 15px; margin: 5px 0 0; font-family: 'Baloo Chettan 2''><p>Email already exists!<p></div>";
+                                echo "<div class='error-msg'><p>Email already exists!<p></div>";
                             }
                         }
                         ?>
@@ -58,7 +94,7 @@
                         <?php
                         if (isset($_GET["error"])) {
                             if ($_GET["error"] == "emptypassword") {
-                                echo "<div class='error-message' style='color: #cc0033;  display: inline-block; font-size: 12px; line-height: 15px; margin: 5px 0 0; font-family: 'Baloo Chettan 2''><p>Password cannot be empty!<p></div>";
+                                echo "<div class='error-msg'><p>Password cannot be empty!<p></div>";
                             }
                         }
                         ?>
@@ -69,9 +105,9 @@
                         <?php
                         if (isset($_GET["error"])) {
                             if ($_GET["error"] == "pwddontmatch") {
-                                echo "<div class='error-message' style='color: #cc0033;  display: inline-block; font-size: 12px; line-height: 15px; margin: 5px 0 0; font-family: 'Baloo Chettan 2''><p>Passwords don't match!<p></div>";
+                                echo "<div class='error-msg'><p>Passwords don't match!<p></div>";
                             } else if ($_GET["error"] == "emptypasswordconf") {
-                                echo "<div class='error-message' style='color: #cc0033;  display: inline-block; font-size: 12px; line-height: 15px; margin: 5px 0 0; font-family: 'Baloo Chettan 2''><p>You also need to fill in this field!<p></div>";
+                                echo "<div class='error-msg'><p>You also need to fill in this field!<p></div>";
                             }
                         }
                         ?>
@@ -83,18 +119,18 @@
                         <?php
                         if (isset($_GET["error"])) {
                             if ($_GET["error"] == "signupfailed") {
-                                echo "<div style='color: #D8000C; background-color: #FFD2D2; margin: 3px 0px; padding: 5px; border-radius:.5em; box-shadow:1px 1px 3px #888;'>
-                                <i class='fa fa-times-circle' style='margin:8px 10px; font-size: 5px;  vertical-align:middle;'></i>
+                                echo "<div class='error-msg-gen'>
+                                <i class='fa fa-times-circle'></i>
                                 Oops! Something went wrong. Try again!
                              </div>";
                             } else if ($_GET["error"] == "emptyinput") {
-                                echo "<div style='color: #D8000C; background-color: #FFD2D2; margin: 3px 0px; padding: 5px; border-radius:.5em; box-shadow:1px 1px 3px #888;'>
-                                <i class='fa fa-times-circle' style='margin:8px 10px; font-size: 5px; vertical-align:middle;'></i>
+                                echo "<div class='error-msg-gen'>
+                                <i class='fa fa-times-circle'></i>
                                 Fill in the fields before submitting!
                              </div>";
-                            } else if ($_GET["error"] == "none"){
-                                echo "<div style='color: #4F8A10; background-color: #DFF2BF; margin: 3px 0px; padding: 5px; border-radius:.5em; box-shadow:1px 1px 3px #888;'>
-                                <i class='fa fa-times-circle' style='margin:8px 10px; font-size: 5px; vertical-align: middle;'></i>
+                            } else if ($_GET["error"] == "none") {
+                                echo "<div class='success'>
+                                <i class='fa fa-times-circle'></i>
                                 Signed up successfully!<b id='sign-in'><a href='login.php' class='no-underline' style='color: rgb(255, 69, 0); text-decoration: none' ;> Log In </a></b>and have fun!
                              </div>";
                             }
