@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 ?>
 
@@ -56,8 +56,7 @@ session_start();
             if (isset($_SESSION["id"])) {
 
                 echo "<li><a href='../views/profile.php'>My Profile</a></li>";
-            }
-            else{
+            } else {
                 echo "<li><a href='../views/login.php'>Join Us</a></li>";
             }
             ?>
@@ -76,7 +75,14 @@ session_start();
     <!--Header-->
     <header class="header">
         <div class="hero">
-            <h1 class="title">What's cookin'?</h1>
+            <?php
+            if (isset($_SESSION["id"])) {
+                echo "<h1 class='title'>What's cookin' , " . $_SESSION["username"] .  "?</h1>";
+            } else {
+                echo "<h1 class='title'>What's cookin'?</h1>";
+            }
+
+            ?>
             <a href="../views/search.php" class="hero-button pulsate">Pick Ingredients</a>
         </div>
     </header>

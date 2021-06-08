@@ -1,3 +1,6 @@
+
+
+<?php include("../includes/config.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,19 +35,45 @@
     <!--Navigation Bar-->
 
     <div class="section">
-       <?php
-       require 'navbar.php';
-       ?>
+        <nav>
+            <div class="logo">
+                <h2>Profile</h2>
+            </div>
+            <div class="openMenu"><i class="fa fa-bars"></i></div>
+            <ul class="mainMenu">
+                <li><a href="../views/home.php">Home</a></li>
+                <li><a href="../views/faq.php">Help</a></li>
+                <li><a href="../views/popular.php">See most popular</a></li>
+                <li><a href="../views/search.php">Search</a></li>
+                <li><a href="../views/addRecipe.php">Add recipe</a></li>
+                <li><a href="#">My Profile</a></li>
+                <li>
+                    <div class="closeMenu"><i class="fa fa-times"></i></div>
+                    <span class="icons">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-github"></i>
+                    </span>
+                </li>
+            </ul>
+        </nav>
 
         <!--End of Navigation Bar-->
 
         <!--Text-->
         <div class="text-container">
-            <p>Hello!</p>
+            <?php
+            if (!isset($_SESSION["username"])) {
+                echo "<p style='font-size: 30px;'>Hello!</p>";
+            } else {
+                echo "<p style='font-size: 30px;'>Hello " . $_SESSION["username"] . " !</p>";
+            }
+            ?>
             <p style="margin-bottom: 7%;">Enjoy your cooking!</p>
 
 
-            <a href="../views/search.php" class="start-btn">Get Started</a>
+            <a href="../views/search.php" class="start-btn" style="text-decoration: none;">Start Cooking</a>
 
         </div>
         <!--End of Text-->
@@ -53,26 +82,24 @@
     <!--About-->
     <div class="about-container">
 
-        <img src="../images/girl.jpeg" alt="">
+        <div> <?php echo '<img src="../imagesLogin/' . $row['image'] . '" alt="">' ?> </div>
 
         <div class="about-text">
             <p>About Me</p>
-            <p>Hi there, my name is Sara and I'm not a professional cooker but I enjoy letting my creativity free and trying to make the best out of what I have in my kitchen.</p>
-            <p style="margin-bottom: 2%;">I wish to get better at cooking and to exercise as many recipes as I can.</p>
+            <p style="margin-bottom: 2%;"><?php echo $row['description'] ?> </p>
             <a href="../views/settings.php" class="my-button">Profile Settings</a>
-            <a href="#" class="my-button">Log out</a>
+            <a href="../includes/logout.inc.php" class="my-button">Log out</a>
         </div>
     </div>
 
     <!--End of About-->
 
-    <!--Services-->
+    <!--Options-->
 
     <div class="services">
         <div class="services-text ">
-            <p>Menu</p>
             <p>Profile Options</p>
-            <p>Check out the options you have below for a great experience on our website!</p>
+            <p style="font-size: 25px; line-height: 20px;">Check out the options you have below for a great experience on our website!</p>
         </div>
         <!--Boxes-->
         <div class="box-container">
@@ -108,7 +135,7 @@
     </div>
 
 
-    <!--End of Services-->
+    <!--End of Options-->
 
     <!--Footer-->
 

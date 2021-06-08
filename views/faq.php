@@ -1,3 +1,4 @@
+<?php include("../includes/config.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,8 +37,17 @@
             <li><a href="#">Help</a></li>
             <li><a href="../views/popular.php">See most popular</a></li>
             <li><a href="../views/search.php">Search</a></li>
-            <li><a href="../views/addRecipe.php">Add recipe</a></li>
-            <li><a href="../views/login.php">My Profile</a></li>
+            <?php
+            if (isset($_SESSION["id"])) {
+
+                echo "<li><a href='../views/addRecipe.php'>Add Recipe</a></li>";
+                echo "<li><a href='../views/profile.php'>My Profile</a></li>";
+                
+            }
+            else{
+                echo "<li><a href='../views/login.php'>Join Us</a></li>";
+            }
+            ?>
             <li>
                 <div class="closeMenu"><i class="fa fa-times"></i></div>
                 <span class="icons">
@@ -57,28 +67,25 @@
         <h1>FAQ</h1>
 
         <div class="accordion" data-aos="fade-left">
+        <?php do{?> 
             <div class="accordion-item" data-aos="fade-right">
+            <?php if($row_faq['answer']!=NULL){ ?>
                 <div class="accordion-item-header">
-                    What if I'm not looking for any particular recipe?
+        
+                <?php  echo $row_faq['question']?>
                 </div>
                 <div class="accordion-item-body">
                     <div class="accordion-item-body-content">
-                        That is not a problem! We will recommend you recipes according to your past searches or you could visit the Most Popular section to see what people like.
+                    <?php  echo $row_faq['answer'] ?>
                     </div>
                 </div>
+                <?php } ?>
             </div>
-            <div class="accordion-item" data-aos="fade-left">
-                <div class="accordion-item-header">
-                    Do I have to create an account to use this app?
-                </div>
-                <div class="accordion-item-body">
-                    <div class="accordion-item-body-content">
-                        No, the app is accesible to use for anyone. You can search the recipes you want without logging in. But, we recommend creating an account to be able to add comments, add new recipes and save what recipes interest you.
-                    </div>
-                </div>
-            </div>
-
+            <?php } while ($row_faq = mysqli_fetch_assoc($faq_result)) ?>
         </div>
+
+
+      
     </div>
 
 
@@ -89,17 +96,35 @@
 
 <div class="row">
 
-    <form data-aos="fade-right" method="POST" action="../includes/faqhandler.php">
-        <input type="text" placeholder="your name" class="box" name="username">
-        <textarea name="question" id="1" cols="30" rows="10" class="box address" placeholder="your question"></textarea>
-        <input type="submit" value="Send" class="btn">
+    <form data-aos="fade-right"method="POST" action="../includes/faq.inc.php" >
+        <input type="text" placeholder="your name" class="box" name="username" id="name">
+        <textarea name="question" id="question" cols="30" rows="5" class="box address" placeholder="your question"></textarea>
+        <input type="submit" value="Send" class="btn" name="submit">
+
+
+        
     </form>
 
+
+
+    
 </div>
+<?php
+    if(isset($_GET["error"])){ //if we get error messages in the browser
+           if($_GET["error"] == "emptyinput"){
+               echo "<div style='color: #D8000C; background-color: #FFD2D2; margin: 5px 0px; padding: 8px; border-radius:.5em; box-shadow:1px 1px 3px #888;'>
+               <i class='fa fa-times-circle' style='margin:8px 15px; font-size: 30px; vertical-align:middle;'></i>
+               Fill in all the fields to Send!
+            </div>";;
+           }
+        }
+
+        ?>
 
 </section>
 
     <!-- ask section ends -->
+   
 
     <!--END OF FAQ-->
 

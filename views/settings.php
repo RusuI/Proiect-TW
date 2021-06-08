@@ -1,3 +1,5 @@
+<?php include("../includes/config.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,22 +58,42 @@
                     <h1 class="heading"> Account Settings</h1>
                 </div>
                 <div class="row">
-                    <form class="form-fr" method="POST" action="../includes/settingshandler.php">
-                        <input type="text" placeholder="Your Name" name="name" class="box">
-                        <textarea name="description" cols="30" rows="10" class="box address" placeholder="Short description"><?php  ?></textarea>
-                        <input type="email" name="email" class="box" placeholder="Email" >
-                        <input type="submit" value="Update" class="btn">
+                    <form class="form-fr" method="POST" action="../includes/settings.inc.php" enctype="multipart/form-data">
+                        <input type="text" placeholder="Your Name" name="name" class="box" value="<?php echo $row['username']; ?>">
+                        <textarea name="description" cols="30" rows="" class="box address" placeholder="Short description"><?php echo $row['description']; ?></textarea>
+                        <input type="email" name="email" class="box" placeholder="Email" value="<?php echo $row['email']; ?>">
+                        <h3 style="color: white;">Upload your profile picture</h3>
+                        <input type="file" id="myFile" name="file" style="border-bottom:0.5erm;">
+                        <input type="submit" value="Update" class="btn" name="submit">
+                        <?php
+                        if (isset($_GET["error"])) { //if we get error messages in the browser
+                            if ($_GET["error"] == "emptyinput") {
+                                echo "<div style='color: #D8000C; background-color: #FFD2D2; margin: 5px 0px; padding: 8px; border-radius:.5em; box-shadow:1px 1px 3px #888;'>
+               <i class='fa fa-times-circle' style='margin:8px 15px; font-size: 15px; vertical-align:middle;'></i>
+               Fill in the fields to Update!
+            </div>";;
+                            } else if ($_GET["error"] == "uploadfailed") {
+                                echo "<div style='color: #D8000C; background-color: #FFD2D2; margin: 5px 0px; padding: 8px; border-radius:.5em; box-shadow:1px 1px 3px #888;'>
+            <i class='fa fa-times-circle' style='margin:8px 15px; font-size: 15px; vertical-align:middle;'></i>
+            Updating failed!
+         </div>";;
+                            } else if ($_GET["error"] == "notGoodType") {
+                                echo "<div style='color: #D8000C; background-color: #FFD2D2; margin: 5px 0px; padding: 8px; border-radius:.5em; box-shadow:1px 1px 3px #888;'>
+            <i class='fa fa-times-circle' style='margin:8px 15px; font-size: 15px; vertical-align:middle;'></i>
+             Choose another type of picture (jpg,jpeg,gif,png)!
+         </div>";;
+                            } else if ($_GET["error"] == "fileTooBig") {
+                                echo "<div style='color: #D8000C; background-color: #FFD2D2; margin: 5px 0px; padding: 8px; border-radius:.5em; box-shadow:1px 1px 3px #888;'>
+            <i class='fa fa-times-circle' style='margin:8px 15px; font-size: 15px; vertical-align:middle;'></i>
+            Picture size is too big!
+         </div>";;
+                            }
+                        }
+                        ?>
+
+
                     </form>
-
-                    <div class="upload-fr">
-                        <h2 style="color: white;">Upload your profile photo</h2>
-                        <form class="photo-upload">
-                            <input type="file" id="myFile" name="filename">
-
-                        </form>
-                    </div>
                 </div>
-
             </section>
         </div>
     </main>
