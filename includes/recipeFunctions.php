@@ -1,7 +1,5 @@
 <?php
 
-
-
 function getIngredients($connection, $category)
 {
     $sql = "SELECT * FROM ingredients WHERE category = ? ORDER BY name ASC;";
@@ -170,6 +168,199 @@ function addRecipeSteps($connection,$name,$authorid,$count,$step_detail){
 }
 
 
+
+
+
+//pentru paginile de retete
+
+function getRecipeById($connection,$recipeId){
+
+    $result=1;
+
+    $sql = "SELECT * FROM recipe WHERE id = ?;";
+    $stmt = mysqli_stmt_init($connection);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        $result=0;
+        return $result;
+    }
+
+    mysqli_stmt_bind_param($stmt,"s",$recipeId);
+    mysqli_stmt_execute($stmt); // execute the statement
+
+    $result_data = mysqli_stmt_get_result($stmt);
+    //
+     mysqli_stmt_close($stmt);
+     if ($row = mysqli_fetch_assoc($result_data)) { //if i do get data from the DB with this username/email, we'll use it for the login
+    
+        return $row;
+    }
+    mysqli_stmt_close($stmt);
+
+}
+
+
+function getRecipeIngredientsById($connection,$recipeId){
+
+    $result=1;
+
+    $sql = "SELECT i.name, r.quantity, r.unit_measure FROM recipe_ingr r JOIN ingredients i ON r.ingr_id=i.id WHERE r.recipe_id=?;";
+    $stmt = mysqli_stmt_init($connection);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        $result=0;
+        return $result;
+    }
+
+    mysqli_stmt_bind_param($stmt,"s",$recipeId);
+    mysqli_stmt_execute($stmt); // execute the statement
+
+    $result_data = mysqli_stmt_get_result($stmt);
+    //
+   ;
+   
+   return $result_data;
+   mysqli_stmt_close($stmt);
+
+}
+
+
+// function getRecipeIngredientsName($connection,$recipeIngrediets){
+
+//     $result=1;
+
+//     $sql = "SELECT name FROM ingredients WHERE id = ?;";
+//     $stmt = mysqli_stmt_init($connection);
+//     if (!mysqli_stmt_prepare($stmt, $sql)) {
+//         $result=0;
+//         return $result;
+//     }
+
+//     mysqli_stmt_bind_param($stmt,"s",$recipeIngrediets['ingr_id']);
+//     mysqli_stmt_execute($stmt); // execute the statement
+
+//     $result_data = mysqli_stmt_get_result($stmt);
+//     //
+//     mysqli_stmt_close($stmt);
+//     if ($row = mysqli_fetch_assoc($result_data)) { //if i do get data from the DB with this username/email, we'll use it for the login
+        
+//         return $row;
+//     }
+//     mysqli_stmt_close($stmt);
+
+// }
+
+
+function getRecipeStepsById($connection,$recipeId){
+
+    $result=1;
+
+    $sql = "SELECT step_nr,step_details FROM steps WHERE recipe_id = ?;";
+    $stmt = mysqli_stmt_init($connection);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        $result=0;
+        return $result;
+    }
+
+    mysqli_stmt_bind_param($stmt,"s",$recipeId);
+    mysqli_stmt_execute($stmt); // execute the statement
+
+
+    $result_data = mysqli_stmt_get_result($stmt);
+   
+    return $result_data;
+
+    mysqli_stmt_close($stmt);
+
+}
+
+
+
+function getRecipeAuthor($connection,$recipeId){
+
+    $result=1;
+
+    $authorID=getAuthorId($connection,$recipeId);
+    $sql = "SELECT username FROM users WHERE id = ?;";
+    $stmt = mysqli_stmt_init($connection);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        $result=0;
+        return $result;
+    }
+
+    mysqli_stmt_bind_param($stmt,"s",$authorID);
+    mysqli_stmt_execute($stmt); // execute the statement
+
+
+    $result_data = mysqli_stmt_get_result($stmt);
+    //
+     if ($row = mysqli_fetch_assoc($result_data)) { //if i do get data from the DB with this username/email, we'll use it for the login
+    
+        return $row['username'];
+    }
+
+    mysqli_stmt_close($stmt);
+
+}
+
+//ID UL AUTORULUI
+
+function getAuthorId($connection,$recipeId){
+
+$sql = "SELECT author_id FROM recipe WHERE id = ?;";
+$stmt = mysqli_stmt_init($connection);
+
+if (!mysqli_stmt_prepare($stmt, $sql)) {
+    $result = 0;
+    return $result;
+}
+
+mysqli_stmt_bind_param($stmt,"s", $recipeId); //bind the data from the user to the actual user
+mysqli_stmt_execute($stmt); // execute the statement
+
+$result_data = mysqli_stmt_get_result($stmt);
+//
+ mysqli_stmt_close($stmt);
+ if ($row = mysqli_fetch_assoc($result_data)) { //if i do get data from the DB with this username/email, we'll use it for the login
+
+    return $row['author_id'];
+}
+}
+//FINAL ID UL AUTORULUI
+
+//POPULARITATEA POZEI
+function getScorePhoto($connection,$recipeId){
+
+    $sql = "SELECT COUNT(ingr_id) FROM recipe_pictures WHERE recipe_id = ? GROUP BY recipe_id";
+    $stmt = mysqli_stmt_init($connection);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        $result=0;
+        return $result;
+    }
+
+    mysqli_stmt_bind_param($stmt,"s",$recipeId);
+    mysqli_stmt_execute($stmt); // execute the statement
+
+
+    $result_data = mysqli_stmt_get_result($stmt);
+    //
+     mysqli_stmt_close($stmt);
+     if ($row = mysqli_fetch_array($result_data, MYSQLI_NUM)) { //if i do get data from the DB with this username/email, we'll use it for the login
+    
+        return $row[0];
+    }
+
+    mysqli_stmt_close($stmt);
+
+
+}
+//FINAL POPULARITATE POZA
+
+
+
+
+
+//functii de luat imaginile
+
+// final pagini retete
 
 
 function debug_to_console($data) {
