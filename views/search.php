@@ -1,3 +1,9 @@
+<?php
+require_once '../includes/database.php';
+require_once '../includes/userFunctions.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +24,7 @@
 </head>
 <!--sort-->
 <!-- top sticky    button that takes you to top load more-->
-<!--footer when there is nothing div -->
+<!-- cookies -->
     <body>
         <!--Navigation Bar-->
         <nav>
@@ -28,10 +34,10 @@
             <div class="opnMenu">
                 <div onclick="menu()"><i class="fa fa-bars"></i></div>
                 <div class="filter-options-content">
-                    <a href="home.html">Home</a>
-                    <a href="faq.html">Help</a>
-                    <a href="popular.html">See most popular</a>
-                    <a href="addRecipe.html">Add Recipe</a>
+                    <a href="home.php">Home</a>
+                    <a href="faq.php">Help</a>
+                    <a href="popular.php">See most popular</a>
+                    <a href="addRecipe.php">Add Recipe</a>
                     <?php
                     if (isset($_SESSION["id"])) {
 
@@ -44,10 +50,10 @@
                 </div>
             </div>
             <ul class="mainMenu">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="faq.html">Help</a></li>
-                <li><a href="popular.html">See most popular</a></li>
-                <li> <a href="addRecipe.html">Add Recipe</a></li>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="faq.php">Help</a></li>
+                <li><a href="popular.php">See most popular</a></li>
+                <li> <a href="addRecipe.php">Add Recipe</a></li>
                 <?php
                 if (isset($_SESSION["id"])) {
 
@@ -81,7 +87,7 @@
                 </ul>
             </div>
             <div>
-                <div id="wanted" style="padding:2% 0 2% 0; text-align:center;">
+                <div id="wanted">
                     <h1>Enter your ingredients:</h1>
                 </div>
                 <div id="unwanted">
@@ -100,69 +106,54 @@
                 <div class="filter-container">
                     <button class="filter-menus" onclick="displayOptions(1)">Difficulty</button>
                     <div class="filter-options-content">
-                        <a href="#">Easy</a>
-                        <a href="#">Medium</a>
-                        <a href="#">Difficult</a>
+                        <a href="#" id="diff1">Easy</a>
+                        <a href="#" id="diff2">Medium</a>
+                        <a href="#" id="diff3">Difficult</a>
                     </div>
                 </div>
                 <div class="filter-container">
                     <button class="filter-menus" onclick="displayOptions(2)">Preparation Time</button>
                     <div class="filter-options-content">
-                        <a href="#">Around 2h</a>
-                        <a href="#">Around 1h</a>
-                        <a href="#">Around 30 min</a>
-                        <a href="#">Around 10 min</a>
+                        <a href="#" id="ptime1">Around 2h</a>
+                        <a href="#" id="ptime2">Around 1h</a>
+                        <a href="#" id="ptime3">Around 30 min</a>
+                        <a href="#" id="ptime4">Around 10 min</a>
                     </div>
                 </div>
                 <div class="filter-container">
                     <button class="filter-menus" onclick="displayOptions(3)">Cooking Time</button>
                     <div class="filter-options-content">
-                        <a href="#">Around 2h</a>
-                        <a href="#">Around 1h</a>
-                        <a href="#">Around 30 min</a>
-                        <a href="#">Around 10 min</a>
+                        <a href="#" id="ctime1">Around 2h</a>
+                        <a href="#" id="ctime2">Around 1h</a>
+                        <a href="#" id="ctime3">Around 30 min</a>
+                        <a href="#" id="ctime4">Around 10 min</a>
                     </div>
                 </div>
                 <div class="filter-container">
                     <button class="filter-menus" onclick="displayOptions(4)">Servings</button>
                     <div class="filter-options-content">
-                        <a href="#">1 servings</a>
-                        <a href="#">2-3 servings</a>
-                        <a href="#">4-5 servings</a>
-                        <a href="#">6-8 servings</a>
+                        <a href="#" id="serv1">1 servings</a>
+                        <a href="#" id="serv2">2-3 servings</a>
+                        <a href="#" id="serv3">4-5 servings</a>
+                        <a href="#" id="serv4">6-8 servings</a>
+                        <a href="#" id="serv5">More</a>
+                    </div>
+                </div>
+                <div class="filter-container">
+                    <button class="filter-menus" style="display: inline; float:right;" onclick="displayOptions(5)">Sort<i class="fas fa-sort"></i></button>
+                    <div class="filter-options-content" style="margin-top:50px;">
+                        <a href="#" id="sort1">By Popularity</a>
+                        <a href="#" id="sort2">By Preparation Time</a>
+                        <a href="#" id="sort3">By Cooking time</a>
+                        <a href="#" id="sort4">By Servings</a>
                     </div>
                 </div>
             </div>
 
             <section id="user-src">
-                <h1>You Searched For:</h1>
-                <div class="tag">
-                    <p>
-                        <a href="#"> <i class="fas fa-times"></i></a>
-                        tomato
-                    </p>
-                </div>
-                <div class="tag">
-                    <p>
-                        <a href="#"> <i class="fas fa-times"></i></a>
-                        potato
-                    </p>
-                </div>
-                <div class="tag">
-                    <p>
-                        <a href="#"> <i class="fas fa-times"></i></a>
-                        milk
-                    </p>
-                </div>
-                <div class="tag">
-                    <p>
-                        <a href="#"> <i class="fas fa-times"></i></a>
-                        Easy
-                    </p>
-                </div>
             </section>
             <section id="result">
-                <div class="result-wrapper">
+                <div class="result-wrapper" id="result-div">
                    
                 </div>
             </section>
