@@ -210,6 +210,12 @@ aside li:hover {
     display: none;
 }
 
+#wanted {
+    padding: 2% 0 2% 0;
+    text-align: center;
+    display: block;
+}
+
 .src-ingredients {
     width: 100%;
     padding: 2px 0 20px 0;
@@ -545,7 +551,7 @@ main {
 /*Footer*/
 
 .footer {
-    position: relative;
+    position: fixed;
     height: 5%;
     Width: 100%;
     bottom: 0;
