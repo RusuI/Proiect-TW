@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +16,8 @@
 
     <style>
         main {
-            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../images/bg.jpeg') center/cover no-repeat fixed;
+            /* background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../images/bg.jpeg') center/cover no-repeat fixed;*/
+            background-color: wheat;
         }
     </style>
 </head>
@@ -31,12 +33,12 @@
             </div>
             <div class="openMenu"><i class="fa fa-bars"></i></div>
             <ul class="mainMenu">
-                <li><a href="../views/home.php">Home</a></li>
-                <li><a href="../views/faq.php">Help</a></li>
-                <li><a href="../views/popular.php">See most popular</a></li>
-                <li><a href="../views/search.php">Search</a></li>
-                <li><a href="../views/search.php">Add recipe</a></li>
-                <li><a href="../views/profile.php">My Profile</a></li>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="faq.php">Help</a></li>
+                <li><a href="popular.php">See most popular</a></li>
+                <li><a href="search.php">Search</a></li>
+                <li><a href="addRecipe.php">Add Recipe</a></li>
+                <li><a href="profile.php">My Profile</a></li>
                 <li>
                     <div class="closeMenu"><i class="fa fa-times"></i></div>
                     <span class="icons">
@@ -49,149 +51,15 @@
             </ul>
         </nav>
 
+
         <!--End of Navigation Bar-->
 
         <main>
-            <section id="result">
-                <div class="result-wrapper">
-                    <!-- single item -->
-                    <div class="single-result">
-                        <div class="container">
-                            <img src="../images/about-img.jpg" alt="result image" class="result-img">
-
-                            <a href="javascript:void();"><i class="fas fa-trash-alt"></i></a>
-
-                        </div>
-                        <div class="single-result-content">
-                            <div class="single-result-top">
-                                <span>
-                                    <i class="fas fa-star" style="margin-right: -0.5rem; margin-left:-0.4rem;"></i>
-                                    <i class="fas fa-star" style="margin-right: -0.5rem;"></i>
-                                    <i class="fas fa-star" style="margin-right: -0.5rem;"></i>
-                                    <i class="far fa-star" style="margin-right: -0.5rem;"></i>
-                                    <i class="far fa-star" style="margin-right: -0.5rem;"></i>
-                                </span>
-                                <span>
-                                    <i class="fas fa-user"></i> John Doe
-                                </span>
-                                <span>
-                                    <i class="fas fa-clock"></i> 18 Oct
-                                </span>
-                                <span>
-                                    <i class="fas fa-comment"></i> 57
-                                </span>
-                            </div>
-
-                            <h2 class="text-large">Lemon-Ricotta Pancakes</h2>
-                            <p class="text-light">If These Pancakes Were Any Lighter, They Would Float Off The Plate--And I Didn't Even Separate The Eggs And Whip The Whites. Also, I Used Water Instead Of Milk--And I Liked Them Better That Way. I Like To Serve These With A
-                                Pat Of Butter, A Pinch Of Lemon Zest, And A Drizzle Of Maple Syrup.</p>
-                            <a href="recipe.html" class="btn-link">Read More</a>
-                        </div>
-                    </div>
-                    <!-- end of single item -->
-                    <!-- single item -->
-                    <div class="single-result">
-                        <div class="container">
-                            <img src="../images/about-img.jpg" alt="result image" class="result-img">
-                            <a href="javascript:void();"><i class="fas fa-trash-alt"></i></a>
-
-                        </div>
-                        <div class="single-result-content">
-                            <div class="single-result-top">
-                                <span>
-                                    <i class="fas fa-star" style="margin-right: -0.5rem; margin-left:-0.4rem;"></i>
-                                    <i class="fas fa-star" style="margin-right: -0.5rem;"></i>
-                                    <i class="fas fa-star" style="margin-right: -0.5rem;"></i>
-                                    <i class="far fa-star" style="margin-right: -0.5rem;"></i>
-                                    <i class="far fa-star" style="margin-right: -0.5rem;"></i>
-                                </span>
-                                <span>
-                                    <i class="fas fa-user"></i> John Doe
-                                </span>
-                                <span>
-                                    <i class="fas fa-clock"></i> 18 Oct
-                                </span>
-                                <span>
-                                    <i class="fas fa-comment"></i> 57
-                                </span>
-                            </div>
-
-                            <h2 class="text-large">Lemon-Ricotta Pancakes</h2>
-                            <p class="text-light">If These Pancakes Were Any Lighter, They Would Float Off The Plate--And I Didn't Even Separate The Eggs And Whip The Whites. Also, I Used Water Instead Of Milk--And I Liked Them Better That Way. I Like To Serve These With A
-                                Pat Of Butter, A Pinch Of Lemon Zest, And A Drizzle Of Maple Syrup.</p>
-                            <a href="recipe.html" class="btn-link">Read More</a>
-                        </div>
-                    </div>
-                    <!-- end of single item -->
-                    <!-- single item -->
-                    <div class="single-result">
-                        <div class="container">
-                            <img src="../images/about-img.jpg" alt="result image" class="result-img">
-                            <a href="javascript:void();"><i class="fas fa-trash-alt"></i></a>
-
-                        </div>
-                        <div class="single-result-content">
-                            <div class="single-result-top">
-                                <span>
-                                    <i class="fas fa-star" style="margin-right: -0.5rem; margin-left:-0.4rem;"></i>
-                                    <i class="fas fa-star" style="margin-right: -0.5rem;"></i>
-                                    <i class="fas fa-star" style="margin-right: -0.5rem;"></i>
-                                    <i class="far fa-star" style="margin-right: -0.5rem;"></i>
-                                    <i class="far fa-star" style="margin-right: -0.5rem;"></i>
-                                </span>
-                                <span>
-                                    <i class="fas fa-user"></i> John Doe
-                                </span>
-                                <span>
-                                    <i class="fas fa-clock"></i> 18 Oct
-                                </span>
-                                <span>
-                                    <i class="fas fa-comment"></i> 57
-                                </span>
-                            </div>
-
-                            <h2 class="text-large">Lemon-Ricotta Pancakes</h2>
-                            <p class="text-light">If These Pancakes Were Any Lighter, They Would Float Off The Plate--And I Didn't Even Separate The Eggs And Whip The Whites. Also, I Used Water Instead Of Milk--And I Liked Them Better That Way. I Like To Serve These With A
-                                Pat Of Butter, A Pinch Of Lemon Zest, And A Drizzle Of Maple Syrup.</p>
-                            <a href="recipe.html" class="btn-link">Read More</a>
-                        </div>
-                    </div>
-                    <!-- end of single item -->
-                    <!-- single item -->
-                    <div class="single-result">
-                        <div class="container">
-                            <img src="../images/about-img.jpg" alt="result image" class="result-img">
-
-                            <a href="javascript:void();"><i class="fas fa-trash-alt"></i></a>
-
-                        </div>
-                        <div class="single-result-content">
-                            <div class="single-result-top">
-                                <span>
-                                    <i class="fas fa-star" style="margin-right: -0.5rem; margin-left:-0.4rem;"></i>
-                                    <i class="fas fa-star" style="margin-right: -0.5rem;"></i>
-                                    <i class="fas fa-star" style="margin-right: -0.5rem;"></i>
-                                    <i class="far fa-star" style="margin-right: -0.5rem;"></i>
-                                    <i class="far fa-star" style="margin-right: -0.5rem;"></i>
-                                </span>
-                                <span>
-                                    <i class="fas fa-user"></i> John Doe
-                                </span>
-                                <span>
-                                    <i class="fas fa-clock"></i> 18 Oct
-                                </span>
-                                <span>
-                                    <i class="fas fa-comment"></i> 57
-                                </span>
-                            </div>
-
-                            <h2 class="text-large">Lemon-Ricotta Pancakes</h2>
-                            <p class="text-light">If These Pancakes Were Any Lighter, They Would Float Off The Plate--And I Didn't Even Separate The Eggs And Whip The Whites. Also, I Used Water Instead Of Milk--And I Liked Them Better That Way. I Like To Serve These With A
-                                Pat Of Butter, A Pinch Of Lemon Zest, And A Drizzle Of Maple Syrup.</p>
-                            <a href="recipe.html" class="btn-link">Read More</a>
-                        </div>
-                    </div>
-                    <!-- end of single item -->
+            <section id="favorites">
+                <div class="result-wrapper" id="results">
+                    <?php
+                    require '../includes/favorites.inc.php';
+                    ?>
                 </div>
             </section>
         </main>
@@ -206,6 +74,34 @@
         </div>
     </footer>
     <script src="../javascript/app.js"></script>
+    <script>
+        let userId = "<?php echo $_SESSION["id"] ?>";
+        let recipeId = "<?php echo $recipeId ?>";
+
+        function removeFromFavorites() {
+            const endpoint = "../includes/removeFavorites.inc.php";
+            const formData = new FormData();
+
+            formData.append("userId", userId);
+            formData.append("recipeId", recipeId);
+
+            fetch(endpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                    },
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(function(html) {
+                    recipe = document.getElementById("recipe" + recipeId);
+                    results = document.getElementById("results");
+                    results.removeChild(recipe);
+                    console.log("good");
+                });
+
+        }
+    </script>
 </body>
 
 </html>

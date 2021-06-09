@@ -1,3 +1,7 @@
+<?php
+session_start();
+include("../includes/recipe.inc.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,23 +31,27 @@
 <body>
 
     <!--Navigation Bar-->
-
-
     <nav>
         <div class="logo">
-            <h1>Welcome!</h1>
+            <h2>Welcome!</h2>
         </div>
         <div class="openMenu"><i class="fa fa-bars"></i></div>
         <ul class="mainMenu">
-        <li><a href="../views/home.php">Home</a></li>
-            <li><a href="../views/faq.php">Help</a></li>
-            <li><a href="../views/popular.php">See most popular</a></li>
-            <li><a href="../views/search.php">Search</a></li>
-            <li><a href="../views/login.php">Join us</a></li>
+            <li><a href="#">Home</a></li>
+            <li><a href="faq.php">Help</a></li>
+            <li><a href="popular.php">See most popular</a></li>
+            <li><a href="search.php">Get started</a></li>
+            <?php
+            if (isset($_SESSION["id"])) {
+                echo "<li><a href='addRecipe.php'>Add Recipe</a></li>";
+                echo "<li><a href='profile.php'>My Profile</a></li>";
+            } else {
+                echo "<li><a href='login.php'>Join Us</a></li>";
+            }
+            ?>
             <li>
                 <div class="closeMenu"><i class="fa fa-times"></i></div>
-            </li>
-            <li> <span class="icons">
+                <span class="icons">
                     <i class="fab fa-facebook"></i>
                     <i class="fab fa-instagram"></i>
                     <i class="fab fa-twitter"></i>
@@ -52,7 +60,6 @@
             </li>
         </ul>
     </nav>
-
     <!--End of Navigation Bar-->
     <div class="container">
         <div class="box-container">
@@ -65,38 +72,31 @@
                 <section class="about" id="about">
                     <div class="image" data-aos="fade-right"></div>
                     <div class=line>
-
                         <span class="user">
-                            <a class="user" href="#"><i class="fas fa-user" aria-hidden="true"></i> John Doe</a>
+                            <a class="user" href="#"><i class="fas fa-user" aria-hidden="true"></i><?php echo $recipeAuthor;  ?></a>
                         </span>
                         <!--review -->
                         <div class="recipereview">
-                            <div class="recipeRating">
-                                <span class="fa fa-star checked star"></span>
-                                <span class="fa fa-star checked star"></span>
-                                <span class="fa fa-star checked star"></span>
-                                <span class="fa fa-star star"></span>
-                                <span class="fa fa-star star"></span>
 
-                            </div>
                             <h3 class="numberPhotos"><a class="numberPhotos" href="#gallery"> 3 Photos</a></h3>
+
                         </div>
                         <!-- End review -->
                         <!--heart button-->
-                        <div class="heart"><a href="#" class="heart"><i class="far fa-heart"></i></a> <span class="label-heart">Save</span></div>
-                        <!--End of heart button-->
+                        <?php
+                        if (isset($_SESSION['id'])) {
+                            echo " <div id='add-fav' class='heart'><a href='javascript:void(0)' onclick='addToFavorites()'><i class='far fa-heart'></i></a> <span class='label-heart'>Add to favorites</span></div>";
+                            echo " <div id='is-fav' class='heart' style='display: none;'><a href='javascript:void(0)'><i class='fas fa-heart'></i></a></div>";
+                        }
+                        ?>
                     </div>
 
                     <div class="steps" data-aos="fade-left">
-                        <h3>Strawberry Pretzel Salad</h3>
-                        <p>It is a dessert, but isn't too sweet, nor too salty. It is really pretty when you put it in a clear ovenproof dish.
+                        <h3><?php echo $recipeInfo['name'] ?></h3>
+                        <p><?php echo $recipeInfo['description'] ?>
                         </p>
 
                     </div>
-
-
-
-
                 </section>
 
             </div>
@@ -108,25 +108,25 @@
 
                 <article class="number">
                     <i class="fas fa-utensils"></i>
-                    <p>35 mins</p>
+                    <p><?php echo $recipeInfo['prep_time'] ?>mins</p>
                     <h3>Preparation Time</h3>
                 </article>
 
                 <article class="number">
                     <i class="fas fa-cheese"></i>
-                    <p>10 mins</p>
+                    <p><?php echo $recipeInfo['cook_time'] ?>mins</p>
                     <h3>Cooking Time</h3>
 
                 </article>
                 <article class="number">
                     <i class="fas fa-user"></i>
-                    <p>12</p>
+                    <p><?php echo $recipeInfo['serv'] ?></p>
                     <h3>Serves</h3>
 
                 </article>
                 <article class="number">
                     <i class="fas fa-circle"></i>
-                    <p>Easy</p>
+                    <p><?php echo $recipeInfo['diff'] ?></p>
                     <h3>Difficulty</h3>
 
                 </article>
@@ -138,25 +138,14 @@
 
             <!--Ingredients and prepare -->
 
-
-
-
             <section class="ingredients" id="ingredients">
 
                 <h1 class="heading"> <span>Ingredients & Preparation </span> </h1>
 
                 <ul class="list" data-aos="fade-down">
-                    <li class="btn" data-src="../images/menu1.jpg">2 (10 ounce) packages frozen strawberries</li>
-                    <li class="btn" data-src="../images/menu1.jpg">2 cups crushed pretzels</li>
-                    <li class="btn" data-src="../images/menu1.jpg">¾ cup butter, melted</li>
-                    <li class="btn" data-src="../images/menu1.jpg">3 tablespoons white sugar</li>
-                    <li class="btn" data-src="../images/menu1.jpg">1 (8 ounce) package cream cheese, softened</li>
-                    <li class="btn" data-src="../images/menu1.jpg">1 cup white sugar</li>
-                    <li class="btn" data-src="../images/menu1.jpg">1 (8 ounce) container frozen whipped topping, thawed
-                    </li>
-                    <li class="btn" data-src="../images/menu1.jpg">2 (3 ounce) packages strawberry flavored Jell-O®</li>
-                    <li class="btn" data-src="../images/menu1.jpg">2 cups boiling water</li>
-                    <li class="btn" data-src="../images/menu1.jpg">1 cup self-rising flour</li>
+                    <?php while ($row = mysqli_fetch_array($recipeIngredients, MYSQLI_NUM)) { ?>
+                        <li class="btn" data-src="../images/menu1.jpg"><?php echo $row[0] . " " . $row[1] . " " .  "" . $row[2] ?> </li>
+                    <?php } ?>
                 </ul>
 
                 <div class="row" data-aos="fade-right">
@@ -167,44 +156,20 @@
 
                     <div class="steps">
                         <div class="info">
-                            <h3> <span>01.</span> Step 1 </h3>
-                            <p>Preheat oven to 400 degrees F (200 degrees C).</p>
-                        </div>
-                        <div class="info">
-                            <h3> <span>02.</span> Step 2</h3>
-                            <p>Stir together crushed pretzels, melted butter and 3 tablespoons sugar; mix well and press mixture into the bottom of a 9x13 inch baking dish.</p>
-                        </div>
-                        <div class="info">
-                            <h3> <span>03.</span>Step 3</h3>
-                            <p>Bake 8 to 10 minutes, until set. Set aside to cool.</p>
-                        </div>
-                        <div class="info">
-                            <h3> <span>04.</span>Step 4</h3>
-                            <p>In a large mixing bowl cream together cream cheese and 1 cup sugar. Fold in whipped topping. Spread mixture onto cooled crust.</p>
-                        </div>
-                        <div class="info">
-                            <h3> <span>05.</span>Step 5</h3>
-                            <p>Dissolve gelatin in boiling water. Stir in still frozen strawberries and allow to set briefly. When mixture is about the consistency of egg whites, pour and spread over cream cheese layer. Refrigerate until set.</p>
+                            <?php while ($row = mysqli_fetch_array($recipeSteps)) { ?>
+                                <h3> <span> Step <?php echo $row['step_nr']; ?></span> </h3>
+                                <p> <?php echo $row['step_details']; ?></p>
+
+                            <?php } ?>
                         </div>
                     </div>
-
                 </div>
-
             </section>
 
-
-
-
             <!--Ingredients and prepare -->
-
-
-
-
-
             <!-- gallery section starts  -->
 
             <section class="gallery" id="gallery">
-
                 <h1 class="heading"> Recipe <span>gallery</span> </h1>
 
                 <div class="box-container">
@@ -275,11 +240,6 @@
     </div>
 
 
-
-
-
-
-
     <!--Footer section-->
 
     <footer class="footer">
@@ -296,9 +256,61 @@
     <!--End of Cards Section-->
     <script src="../javascript/app.js"></script>
 
+    <script>
+        let userId = "<?php echo $_SESSION["id"] ?>";
+        let recipeId = "<?php echo $recipeId ?>";
+
+        console.log(userId);
+        console.log(recipeId);
+
+        function addToFavorites() {
+            const endpoint = "../includes/addFavorites.inc.php";
+            const formData = new FormData();
+
+            formData.append("userId", userId);
+            formData.append("recipeId", recipeId);
+
+            fetch(endpoint, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
+                    },
+                    body: formData
+                })
+                .then(response => response.text())
+                .then(function(html) {
+                    console.log(html);
+                    // alert("Successfully added to favorites!");
+                    displayHeart();
+                });
+
+        }
+
+        function display(x) {
+            if (x.style.display == "") {
+                x.style.display = "none";
+                console.log("hei");
+            }
+            if (x.style.display == "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        function displayHeart() {
+
+            fav = document.getElementById("add-fav");
+            console.log(fav.style.display);
+            display(fav);
+            isFav = document.getElementById("is-fav");
+            display(isFav);
 
 
+        }
 
+    
+    </script>
     <script>
         AOS.init({
             delay: 400,
