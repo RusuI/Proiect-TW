@@ -245,7 +245,7 @@ function update_settings($connection, $name, $email, $description, $imgContent)
     $email   = mysqli_real_escape_string($connection, $email);
     $description   = mysqli_real_escape_string($connection, $description);
     $imgContent   = mysqli_real_escape_string($connection, $imgContent);
-    
+
 
     $user_id = $_SESSION['id'];
     $query = "UPDATE users SET ";
@@ -256,16 +256,78 @@ function update_settings($connection, $name, $email, $description, $imgContent)
     $update_user = mysqli_query($connection, $query);
 
 
-    if(!$update_user ){
-      die("Query failed" . mysqli_error($connection));
-    }else{
-      $_SESSION['username'] = $name;
+    if (!$update_user) {
+        die("Query failed" . mysqli_error($connection));
+    } else {
+        $_SESSION['username'] = $name;
     }
-    //header("location: ../views/settings.php?error=none"); exit();
-
     $result = 1;
     return $result;
 }
 
 
 /* END OF SETTINGS FUNCTIONS*/
+
+/*FAQ FUNCTIONS  */
+
+
+function emptyInputFAQ($username, $question)
+{
+    $result = false;
+
+    if (empty($username) || empty($question)) {
+        $result = true;
+    }
+
+    return $result;
+}
+
+
+function sendQuestion($connection, $user, $question)
+{
+    $user = $_SESSION['id'];
+    $sql = "INSERT INTO faq (user_id,question) VALUES(?,?);";
+    $stmt = mysqli_stmt_init($connection);
+    if (!mysqli_stmt_prepare($stmt, $sql)) {
+        header("location: ../views/faq.php?error=sendQuestionfailed");
+        exit();
+    }
+
+    mysqli_stmt_bind_param($stmt, "ss", $user, $question);
+    mysqli_stmt_execute($stmt);
+
+    mysqli_stmt_close($stmt);
+
+    header("location: ../views/faq.php?error=none");
+    exit();
+}
+
+
+
+/*END OF FAQ FUNCTIONS */
+
+
+/*FAVORITES FUNCTIONS */
+
+function getFavoritesByUid($connection, $user)
+{
+    $user = $_SESSION['id'];
+    $sql = "SELECT id,name,description,author_id FROM recipe JOIN favorites ON favorites.recipe_id=recipe.id WHERE user_id=?;";
+
+    $stmt = mysqli_stmt_init($connection);
+
+    mysqli_stmt_prepare($stmt, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $user);
+    mysqli_stmt_execute($stmt);
+
+
+    $result_data = mysqli_stmt_get_result($stmt);
+    return $result_data;
+    mysqli_stmt_close($stmt);
+
+    header("location: ../views/favorites.php?error=none");
+    exit();
+}
+
+
+/*END OF FAVORITES FUNCTION */
