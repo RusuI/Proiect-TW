@@ -49,7 +49,7 @@ if ($recipes != null) {
                 <i class="fas fa-user"></i>' . $author .
             '</span>
             <span>
-                <i class="fas fa-image"></i>'. $score-2 .'
+                <i class="fas fa-image"></i>'. $score .'
             </span>
         </div>
 
