@@ -398,7 +398,7 @@ function loadCookies() {
         });
     }
     value = readCookie("difficulty");
-    if (value != "") {
+    if (value != "" && value != null) {
         difficulty = value;
         var idName = "";
         switch (value) {
@@ -418,7 +418,7 @@ function loadCookies() {
         elem.innerHTML += '<i class="fas fa-check" id="' + idName + 'checkMark"></i>';
     }
     value = readCookie("prepTime");
-    if (value != "" && value != 0) {
+    if (value != "" && value != 0 && value != null) {
         prepTime = value;
         var idName = "";
         switch (value) {
@@ -440,7 +440,7 @@ function loadCookies() {
         elem.innerHTML += '<i class="fas fa-check" id="' + idName + 'checkMark"></i>';
     }
     value = readCookie("cookTime");
-    if (value != 0 && value != "") {
+    if (value != 0 && value != "" && value != null) {
         cookTime = value;
         var idName = "";
         switch (value) {
@@ -462,7 +462,7 @@ function loadCookies() {
         elem.innerHTML += '<i class="fas fa-check" id="' + idName + 'checkMark"></i>';
     }
     value = readCookie("servings");
-    if (value != "" && value != 0) {
+    if (value != "" && value != 0 && value != null) {
         serving = value;
         var idName = "";
         switch (value) {
