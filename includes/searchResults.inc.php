@@ -32,10 +32,12 @@ if ($recipes != null) {
         $prepTime = $row[3];
         $difficulty = $row[4];
         $author = $row[5];
+        $photo = $row[7];
+        $score= $row[8];
         echo
         '<div class="single-result">
     <div class="container">
-        <img src="../images/about-img.jpg" alt="result image" class="result-img">
+        <img src="../includes/uploads/' . $photo . '"  alt="result image" class="result-img">
         <a href="#"><i class="fas fa-circle" style="color: red;font-size: 150%;margin: 2%; display:none;"></i></a>
         <a href="javascript:void();"><i class="fab fa-gratipay" onclick="liked(' . $i . ',' . $userId . ',' . $id . ')" ></i></a>
         <p class="result-time">' . $prepTime . 'min.</p>
@@ -47,13 +49,13 @@ if ($recipes != null) {
                 <i class="fas fa-user"></i>' . $author .
             '</span>
             <span>
-                <i class="fas fa-comment"></i> 57
+                <i class="fas fa-image"></i>'. $score-2 .'
             </span>
         </div>
 
         <h2 class="text-large">' . $name . '</h2>
         <p class="text-light">' . $description . '</p>
-        <a href="../views/' . $name . '.php" class="btn-link">Read More</a>
+        <a href="../views/recipe1.php?idRecipe='.$id.'" class="btn-link">Read More</a>
     </div>
 </div>';
         $i++;

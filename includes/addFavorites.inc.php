@@ -1,9 +1,10 @@
 <?php
 require_once 'database.php';
-require_once 'recipe.inc.php';
+//require_once 'recipe.inc.php';
 require_once 'userFunctions.php';
 
 $userId = $_SESSION['id'];
+$recipeId = $_POST["recipeId"];
 
 $sql_check = "SELECT * FROM favorites WHERE user_id=? AND recipe_id=?;";
 $stmt_check = mysqli_stmt_init($connection);
@@ -15,7 +16,6 @@ $stmt_check = mysqli_stmt_init($connection);
     mysqli_stmt_execute($stmt_check);
     $result_data = mysqli_stmt_get_result($stmt_check);
     mysqli_stmt_close($stmt_check);
-
 
 $nr_favorites = mysqli_num_rows($result_data);
 if ($nr_favorites == 0) {
@@ -34,3 +34,4 @@ if ($nr_favorites == 0) {
 } else {
     echo "Reteta e deja la favorite!";
 }
+
