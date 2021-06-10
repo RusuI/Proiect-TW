@@ -5,10 +5,7 @@ require_once 'recipePageFunctions.php';
 require_once 'recipeFunctions.php';
 require_once 'recipe.inc.php';
 
-$recipeID=$_POST["recipeId"];
-debug_to_console($recipeID);
-
-$recipePhoto=displayimages($connection,$recipeID);
+$recipePhoto=displayimages($connection,$recipeId);
 
 echo '<h1 class="heading"> Recipe <span>gallery</span> </h1>';
 while ($row = mysqli_fetch_assoc($recipePhoto)) {
@@ -18,6 +15,3 @@ while ($row = mysqli_fetch_assoc($recipePhoto)) {
            </div>
         </div>';
 }
-
-
-
