@@ -34,29 +34,29 @@
     <!--Navigation Bar-->
 
     <div class="section">
-    <nav>
-        <div class="logo">
-            <h2>Profile</h2>
-        </div>
-        <div class="openMenu"><i class="fa fa-bars"></i></div>
-        <ul class="mainMenu">
-            <li><a href="home.php">Home</a></li>
-            <li><a href="faq.php">Help</a></li>
-            <li><a href="popular.php">See most popular</a></li>
-            <li><a href="search.php">Search</a></li>
-            <li><a href="addRecipe.php">Add Recipe</a></li>
-            <li><a href='#'>My Profile</a></li>
-            <li>
-                <div class="closeMenu"><i class="fa fa-times"></i></div>
-                <span class="icons">
-                    <i class="fab fa-facebook"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-github"></i>
-                </span>
-            </li>
-        </ul>
-    </nav>
+        <nav>
+            <div class="logo">
+                <h2>Profile</h2>
+            </div>
+            <div class="openMenu"><i class="fa fa-bars"></i></div>
+            <ul class="mainMenu">
+                <li><a href="home.php">Home</a></li>
+                <li><a href="faq.php">Help</a></li>
+                <li><a href="popular.php">See most popular</a></li>
+                <li><a href="search.php">Search</a></li>
+                <li><a href="addRecipe.php">Add Recipe</a></li>
+                <li><a href='#'>My Profile</a></li>
+                <li>
+                    <div class="closeMenu"><i class="fa fa-times"></i></div>
+                    <span class="icons">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-github"></i>
+                    </span>
+                </li>
+            </ul>
+        </nav>
 
         <!--End of Navigation Bar-->
 
@@ -96,12 +96,8 @@
     <!--Options-->
 
     <div class="services">
-        <div class="services-text ">
-            <p>Profile Options</p>
-            <p style="font-size: 25px; line-height: 20px;">Check out the options you have below for a great experience on our website!</p>
-        </div>
         <!--Boxes-->
-        <div class="box-container">
+        <div class="box-container" style="margin-top: 80px;">
 
 
             <!--First box - Favorites-->
@@ -113,16 +109,11 @@
                 <a href="../views/favorites.php" class="my-button">See Favorites</a>
             </div>
 
-            <!--Second box - History-->
-            <div class="box-2">
-                <span><img src="../images/history.png" alt=""></span>
-                <p class="heading">History</p>
-                <p class="details">Check out your history here.</p>
-
-                <a href="../views/history.php" class="my-button">See History</a>
+            <div class="services-text ">
+                <p style='text-align:center;'>Profile Options</p>
+                <p style="font-size: 25px; line-height: 20px; text-align:center;">Check out the options you have for a great experience on our website!</p>
             </div>
-
-            <!--Third box - My recipes-->
+            <!--Second box - My recipes-->
             <div class="box-3">
                 <span><img src="../images/recipe.png" alt=""></span>
                 <p class="heading">My Recipes</p>
