@@ -1,7 +1,7 @@
-<?php
-session_start();
-include("../includes/recipe.inc.php");
-?>
+<?php include("../includes/recipe.inc.php");
+      include("../includes/score.inc.php");
+session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,42 +16,32 @@ include("../includes/recipe.inc.php");
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
     <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="../css/recipe1.css">
+    <link rel="stylesheet" href="recipe1.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/9f5ebffa29.js" crossorigin="anonymous"></script>
-
-    <style>
-        .about .image {
-            background: url('../images/1.jpg') center/cover no-repeat;
-        }
-    </style>
 </head>
 
 <body>
 
     <!--Navigation Bar-->
+
+
     <nav>
         <div class="logo">
-            <h2>Welcome!</h2>
+            <h1>Welcome!</h1>
         </div>
         <div class="openMenu"><i class="fa fa-bars"></i></div>
         <ul class="mainMenu">
-            <li><a href="#">Home</a></li>
-            <li><a href="faq.php">Help</a></li>
-            <li><a href="popular.php">See most popular</a></li>
-            <li><a href="search.php">Get started</a></li>
-            <?php
-            if (isset($_SESSION["id"])) {
-                echo "<li><a href='addRecipe.php'>Add Recipe</a></li>";
-                echo "<li><a href='profile.php'>My Profile</a></li>";
-            } else {
-                echo "<li><a href='login.php'>Join Us</a></li>";
-            }
-            ?>
+            <li><a href="../views/home.php">Home</a></li>
+            <li><a href="../views/faq.php">Help</a></li>
+            <li><a href="../views/popular.php">See most popular</a></li>
+            <li><a href="../views/search.php">Search</a></li>
+            <li><a href="../views/login.php">Join us</a></li>
             <li>
                 <div class="closeMenu"><i class="fa fa-times"></i></div>
-                <span class="icons">
+            </li>
+            <li> <span class="icons">
                     <i class="fab fa-facebook"></i>
                     <i class="fab fa-instagram"></i>
                     <i class="fab fa-twitter"></i>
@@ -60,6 +50,7 @@ include("../includes/recipe.inc.php");
             </li>
         </ul>
     </nav>
+
     <!--End of Navigation Bar-->
     <div class="container">
         <div class="box-container">
@@ -70,25 +61,25 @@ include("../includes/recipe.inc.php");
             <!-- about recipe  -->
             <div>
                 <section class="about" id="about">
-                    <div class="image" data-aos="fade-right"></div>
-                    <div class=line>
+                    <div data-aos="fade-right"> <?php $row = mysqli_fetch_assoc($recipePhoto);
+                                                echo '<img class="ingredients row image" src="../includes/uploads/' . $row['photo'] . '" alt="">' ?> </div>
+                    <div class="line">
+
                         <span class="user">
                             <a class="user" href="#"><i class="fas fa-user" aria-hidden="true"></i><?php echo $recipeAuthor;  ?></a>
                         </span>
                         <!--review -->
                         <div class="recipereview">
 
-                            <h3 class="numberPhotos"><a class="numberPhotos" href="#gallery"> 3 Photos</a></h3>
+                            <span class="score">
+                                <h3 class="numberPhotos" id="score"><a class="numberPhotos" href="#gallery"> <?php echo $score; ?> </a></h3>
+                            </span>
 
                         </div>
                         <!-- End review -->
                         <!--heart button-->
-                        <?php
-                        if (isset($_SESSION['id'])) {
-                            echo " <div id='add-fav' class='heart'><a href='javascript:void(0)' onclick='addToFavorites()'><i class='far fa-heart'></i></a> <span class='label-heart'>Add to favorites</span></div>";
-                            echo " <div id='is-fav' class='heart' style='display: none;'><a href='javascript:void(0)'><i class='fas fa-heart'></i></a></div>";
-                        }
-                        ?>
+                        <div class="heart"><a href="#" class="heart"><i class="far fa-heart"></i></a> <span class="label-heart">Save</span></div>
+                        <!--End of heart button-->
                     </div>
 
                     <div class="steps" data-aos="fade-left">
@@ -97,6 +88,7 @@ include("../includes/recipe.inc.php");
                         </p>
 
                     </div>
+
                 </section>
 
             </div>
@@ -135,7 +127,6 @@ include("../includes/recipe.inc.php");
             </div>
             <!--End of Numbers-->
 
-
             <!--Ingredients and prepare -->
 
             <section class="ingredients" id="ingredients">
@@ -151,7 +142,8 @@ include("../includes/recipe.inc.php");
                 <div class="row" data-aos="fade-right">
 
                     <div class="image" data-aos="fade-left">
-                        <img src="../images/2.jpg" id="menu-img" alt="">
+                        <?php $row = mysqli_fetch_assoc($recipePhoto);
+                        echo '<img class="menu-img" src="../includes/uploads/' . $row['photo'] . '" alt="">' ?>
                     </div>
 
                     <div class="steps">
@@ -162,86 +154,67 @@ include("../includes/recipe.inc.php");
 
                             <?php } ?>
                         </div>
+
                     </div>
+
                 </div>
+
             </section>
 
+
+
+
             <!--Ingredients and prepare -->
+
             <!-- gallery section starts  -->
 
             <section class="gallery" id="gallery">
-                <h1 class="heading"> Recipe <span>gallery</span> </h1>
 
-                <div class="box-container">
-
-
-                    <div class="box" data-aos="fade-up">
-                        <img src="../images/cake1.jfif" alt="">
-                        <span class="user-name">
-                            <i class="fas fa-user" aria-hidden="true"></i> John Doe
-                        </span>
-                        <h3>Super reteta!!</h3>
-
-                    </div>
-
-                    <div class="box" data-aos="fade-up">
-                        <img src="../images/cake2.jfif" alt="">
-
-                        <span class="user-name">
-                            <i class="fas fa-user" aria-hidden="true"></i> John Doe
-                        </span>
-                        <h3>I've tried it and it's awesome!!</h3>
-
-                    </div>
-
-                    <div class="box" data-aos="fade-up">
-                        <img src="../images/cake3.jfif" alt="">
-                        <span class="user-name">
-                            <i class="fas fa-user" aria-hidden="true"></i> John Doe
-                        </span>
-                        <h3>Awesome!!</h3>
-
-                    </div>
-
-                </div>
+                <div class="gallery"> <?php require_once "../includes/recipeGallery2.php" ?> </div>
 
             </section>
-
-            <!-- gallery section ends -->
-            <!-- add-photo section starts  -->
-
-            <section class="add-photo" id="add-photo">
-
-                <h1 class="heading"> Post your dish</h1>
-
-                <div class="row">
-
-                    <form action="/action_page.php" data-aos="fade-right">
-                        <input type="text" placeholder="your name" class="box">
-
-                        <textarea name="1" id="1" maxlength="50" cols="30" rows="10" class="box address" placeholder="your opinion"></textarea>
-                        <input type="submit" value="Post now" class="btn">
-                    </form>
-                    <div class="photo">
-                        <h2>Upload your photo</h2>
-
-                        <form action="/action_page.php" class="upload">
-                            <input type="file" id="myFile" name="filename">
-                            <input type="submit" class="btn">
-                        </form>
-                    </div>
-                </div>
-
-            </section>
-
-            <!-- add-photo section ends -->
 
         </div>
+
+        </section>
+
+        <!-- gallery section ends -->
+
+
+
+        <!-- add-photo section starts  -->
+        <?php
+        if (!isset($_SESSION['id'])) {
+            echo "<h2 class='h2-class'>Join our comunity and have the option to post your own version of the dish!</h2>";
+        } else {
+            echo
+            "<section  class='add-photo' id='add-photo'>
+ 
+                 <h1 class='heading'> Post your dish</h1>
+ 
+                 <div class='row'>
+ 
+                     <form  id='myForm'>
+                         <input type='text' placeholder='your name' class='box' id='name' name='name'>
+                         <div class='photo' style='color:black'>
+                             <h2>Upload your photo</h2>
+                             <input type='file' id='myFile' name='filename'>
+                         </div>
+                         <button type='submit' value='Post now' class='btn'> Upload your Photo</button>
+                         <div id='Error'></div>
+                     </form>
+ 
+                 </div>
+ 
+             </section>";
+        }
+
+        ?>
+
+    </div>
     </div>
 
-
     <!--Footer section-->
-
     <footer class="footer">
         <div class="section-center">
             <p class="text">
@@ -256,61 +229,78 @@ include("../includes/recipe.inc.php");
     <!--End of Cards Section-->
     <script src="../javascript/app.js"></script>
 
+
+
     <script>
-        let userId = "<?php echo $_SESSION["id"] ?>";
-        let recipeId = "<?php echo $recipeId ?>";
+        const myForm = document.getElementById("myForm");
+        const inpFile = document.getElementById("myFile");
+        const name = document.getElementById("name");
+        let userID = "<?php echo $_SESSION["id"] ?>";
+        let recipeId= "<?php echo $recipeId ?>";
 
-        console.log(userId);
-        console.log(recipeId);
+        myForm.addEventListener("submit", e => {
+            e.preventDefault();
 
-        function addToFavorites() {
-            const endpoint = "../includes/addFavorites.inc.php";
+            const endpoint = "../includes/addRecipePhoto.inc.php";
             const formData = new FormData();
 
-            formData.append("userId", userId);
-            formData.append("recipeId", recipeId);
+
+            console.log(inpFile.files);
+            formData.append("inpFile", inpFile.files[0]);
+            formData.append("name", name.value);
+            formData.append("recipeId",recipeId);
 
             fetch(endpoint, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-                    },
+                    method: "post",
                     body: formData
-                })
-                .then(response => response.text())
+                }).then(response =>
+                    response.text())
                 .then(function(html) {
                     console.log(html);
-                    // alert("Successfully added to favorites!");
-                    displayHeart();
-                });
+                    if (html == 1) { //aici vom face display la poze dupa inserare 
 
-        }
-
-        function display(x) {
-            if (x.style.display == "") {
-                x.style.display = "none";
-                console.log("hei");
-            }
-            if (x.style.display == "none") {
-                x.style.display = "block";
-            } else {
-                x.style.display = "none";
-            }
-        }
-
-        function displayHeart() {
-
-            fav = document.getElementById("add-fav");
-            console.log(fav.style.display);
-            display(fav);
-            isFav = document.getElementById("is-fav");
-            display(isFav);
-
-
-        }
-
-    
+                    } else {
+                        if (html == 2) {
+                            let Error = document.getElementById("Error");
+                            Error.innerHTML = `<div style='color: #D8000C; background-color: #FFD2D2; margin: 5px 0px; padding: 8px; border-radius:.5em; box-shadow:1px 1px 3px #888;'>
+            <i class='fa fa-times-circle' style='margin:8px 15px; font-size: 15px; vertical-align:middle;'></i>
+            Upload failed!
+         </div>`;
+                        } else {
+                            if (html == 3) {
+                                let Error = document.getElementById("Error");
+                                Error.innerHTML = `<div style='color: #D8000C; background-color: #FFD2D2; margin: 5px 0px; padding: 8px; border-radius:.5em; box-shadow:1px 1px 3px #888;'>
+            <i class='fa fa-times-circle' style='margin:8px 15px; font-size: 15px; vertical-align:middle;'></i>
+            Empty input!
+         </div>`;
+                            }
+                        }
+                    }
+                   displayImage(recipeId);
+                }).catch(console.error);
+        });
     </script>
+
+
+    <script>
+        function displayImage(recipeId) {
+            const formData = new FormData();
+            formData.append("recipeId", recipeId);
+            const endpoint = "../includes/recipeGallery.inc.php";
+            fetch(endpoint, {
+                    method: "post",
+                    body:formData
+                }).then(response =>
+                    response.text())
+                .then(function(html) {
+                    let gallery = document.getElementById("gallery");
+                    gallery.innerHTML = html;
+                    console.log(html);
+                }).catch(console.error);
+
+        }
+    </script>
+
     <script>
         AOS.init({
             delay: 400,

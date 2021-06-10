@@ -1,3 +1,6 @@
+
+<?php include("../includes/myrecipes.inc.php");
+     ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,60 +59,25 @@
 
         <div class="food-container">
             <!--Article-->
-            <article class="food-card">
-                <img src="../images/pasta.jpeg" class="food-img" alt="">
-                <div class="img-text">
-                    <h2>Shrimp Pasta</h2>
-                </div>
-                <div class="img-footer">
-                    <div class="footer-button">
-                        <a href="../views/pasta.php" class="food-button">See recipe</a>
-                    </div>
-                </div>
-            </article>
-            <!--End of Article-->
-
+            <?php  while ($row = mysqli_fetch_array($myRecipes)) { ?>
             <!--Article-->
             <article class="food-card">
-                <img src="../images/myguacamole.jpeg" class="food-img" alt="">
+               <?php 
+                   echo '<img src="../includes/uploads/' . $row[2] .'" alt="">'; ?>
                 <div class="img-text">
-                    <h2>Guacamole</h2>
+                    <h2> <?php echo $row[1];?></h2>
                 </div>
                 <div class="img-footer">
                     <div class="footer-button">
-                        <a href="../views/guacamole.php" class="food-button">See recipe</a>
+                    <a <?php echo 'href="../views/recipe1.php?idRecipe='.$row[0].'"' ?> class="food-button">See recipe</a>
                     </div>
                 </div>
             </article>
+            <!--End of Article-->
+           <?php }?>
             <!--End of Article-->
 
-            <!--Article-->
-            <article class="food-card">
-                <img src="../images/cake.jpg" class="food-img" alt="">
-                <div class="img-text">
-                    <h2>Strawberry Pretzel Cake</h2>
-                </div>
-                <div class="img-footer">
-                    <div class="footer-button">
-                        <a href="../views/cake.php" class="food-button">See recipe</a>
-                    </div>
-                </div>
-            </article>
-            <!--End of Article-->
 
-            <!--Article-->
-            <article class="food-card">
-                <img src="../images/salad.jpeg" class="food-img" alt="">
-                <div class="img-text">
-                    <h2>Chicken salad</h2>
-                </div>
-                <div class="img-footer">
-                    <div class="footer-button">
-                        <a href="../views/salad.php" class="food-button">See recipe</a>
-                    </div>
-                </div>
-            </article>
-            <!--End of Article-->
         </div>
     </section>
     <!--End of Cards Section-->
