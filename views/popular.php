@@ -56,7 +56,7 @@
                  <div class="filter-container">
                      <button class="filter-popular" style="display: inline; float:right;" onclick="displayOptions(0)">Download</button>
                      <div class="filter-options-content" style="margin-top:50px;">
-                         <a href="popular.html"  id="html" download>HTML</a>
+                         <a href="popular.html" id="html" download>HTML</a>
                          <a href="popular.csv" id="csv" download>CSV</a>
                          <a href="popular.json" id="json" download>JSON</a>
                      </div>
@@ -90,16 +90,8 @@
 
      <script>
          function menuDisplayStyle(e) {
-
-
-             //  if (e.target.style.display == "") {
-
-             //      e.target.style.display = "none";
-             //  }
-             //var x = document.getElementsByClassName("pop-category");
              var f = document.getElementsByClassName("filter-popular");
              var i;
-             //console.log(x[0]);
              for (i = 0; i < 3; i++) {
 
                  f[i].style.background = 'white';
@@ -107,39 +99,30 @@
 
              e.target.style.background = 'orange';
              var popular = document.getElementById("popular");
-             var html=document.getElementById("html");
-             var csv=document.getElementById("csv");
-             var json=document.getElementById("json");
+             var html = document.getElementById("html");
+             var csv = document.getElementById("csv");
+             var json = document.getElementById("json");
              switch (e.target.id) {
                  case "ingredients":
                      popular.innerHTML = '<?php require_once "../includes/popularIngredients.php"; ?>';
-                     html.href="popularIngredients.html";
-                      csv.href="popularIngredients.csv";
-                        json.href="popularIngredients.json";
+                     html.href = "popularIngredients.html";
+                     csv.href = "popularIngredients.csv";
+                     json.href = "popularIngredients.json";
                      break;
                  case "recipes":
                      popular.innerHTML = '<?php require_once "../includes/popular.inc.php"; ?>';
-                     csv.href="popular.csv";
-                       json.href="popular.json";
+                     html.href = "popular.html";
+                     csv.href = "popular.csv";
+                     json.href = "popular.json";
                      break;
                  case "badIngredients":
                      popular.innerHTML = '<?php require_once "../includes/unpopularIngredients.php"; ?>';
-                     json.href="unpopularIngredients.json";
-                     csv.href="unpopularIngredients.csv";
-                    html.href="unpopularIngredients.html";
+                     json.href = "UnpopularIngredients.json";
+                     csv.href = "UnpopularIngredients.csv";
+                     html.href = "UnpopularIngredients.html";
                      break;
              };
          }
-
-         //  function displayPopular(y) {
-         //      var x = document.getElementsByClassName("pop-category");
-         //      var f = document.getElementsByClassName("filter-popular");
-         //      console.log(x[y]);
-         //      if (x[y].style.display == "") {
-         //          x[y].style.display = "none";
-         //      }
-         //      menuDisplayStyle(y, x, f);D
-         //  }
 
 
          var filter = document.getElementById("recipes");

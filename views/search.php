@@ -22,10 +22,7 @@ require_once '../includes/userFunctions.php';
     <script src="https://kit.fontawesome.com/9f5ebffa29.js" crossorigin="anonymous"></script>
 
 </head>
-<!--sort-->
-<!-- top sticky    button that takes you to top load more-->
-<!-- cookies -->
-    <body>
+    <body onload="loadCookies()">
         <!--Navigation Bar-->
         <nav>
             <div class="logo">
@@ -94,7 +91,7 @@ require_once '../includes/userFunctions.php';
                     <h1>Enter ingredients you don't want:</h1>
                 </div>
                 <?php
-                require "../includes/ingredients.php"
+                require "../includes/ingredients.php";
                 ?>
             </div>
         </aside>
