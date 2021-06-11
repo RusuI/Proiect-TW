@@ -5,6 +5,7 @@ require_once 'recipe.inc.php';
 
 
     $userId = $_SESSION['id'];
+    $recipeId=$_POST['recipeId'];
     $sql = "DELETE FROM favorites WHERE user_id=? and recipe_id=?;";
 
     $stmt = mysqli_stmt_init($connection);

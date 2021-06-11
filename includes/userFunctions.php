@@ -239,7 +239,6 @@ function emptyInputSettings($username, $email, $description)
 }
 
 
-
 function update_settings($connection, $name, $email, $description)
 {
     $user_id = $_SESSION['id'];
@@ -258,6 +257,7 @@ function update_settings($connection, $name, $email, $description)
 
     mysqli_stmt_close($stmt);
 }
+
 
 /* END OF SETTINGS FUNCTIONS*/
 
@@ -305,42 +305,17 @@ function sendQuestion($connection, $user, $question)
 function getFavoritesByUid($connection, $user)
 {
     $user = $_SESSION['id'];
-    $sql = "SELECT id,name,description,author_id FROM recipe JOIN favorites ON favorites.recipe_id=recipe.id WHERE user_id=?;";
+    $sql = "SELECT id,name,description,author_id, (SELECT photo FROM recipes_pictures join recipe on recipes_pictures.recipe_id = recipe.id LIMIT 1) FROM recipe r JOIN favorites f ON f.recipe_id=r.id WHERE user_id=?;";
 
 
     $stmt = mysqli_stmt_init($connection);
     mysqli_stmt_prepare($stmt, $sql);
     mysqli_stmt_bind_param($stmt, "s", $user);
     mysqli_stmt_execute($stmt);
-
-
     $result_data = mysqli_stmt_get_result($stmt);
     return $result_data;
     mysqli_stmt_close($stmt);
 }
 
-
-
-
-function getFavoritesPhotos($connection, $recipe)
-{
-    $sql = "SELECT photo FROM recipes_pictures JOIN favorites ON favorites.recipe_id = recipes_pictures.recipe_id WHERE recipe_id = ? LIMIT 1;";
-    $stmt = mysqli_stmt_init($connection);
-
-    if (!mysqli_stmt_prepare($stmt, $sql)) {
-        $result = 0;
-        return $result;
-    }
-    debug_to_console($recipe);
-    debug_to_console($sql);
-
-    mysqli_stmt_bind_param($stmt, "s", $recipe);
-    mysqli_stmt_execute($stmt);
-
-    $result_data = mysqli_stmt_get_result($stmt);
-
-    return $result_data;
-    mysqli_stmt_close($stmt);
-}
 
 /*END OF FAVORITES FUNCTION */
