@@ -89,7 +89,7 @@
                                     <div class="label">
 
 
-                                        <div><label class="label-wrapper">category:</label>
+                                        <div><label class="label-wrapper">Ingredients category:</label>
 
                                             <select tabindex="1" class="select_list" id="category" name="category" onchange="categoryChange()">
                                                 <!--de modificat valorile-->
