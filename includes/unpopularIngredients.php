@@ -30,13 +30,17 @@ echo '<ol>';
 $data= array();
 while ($row = mysqli_fetch_array($unpopularIngredientsList, MYSQLI_NUM)) {
     $data[]=$row;
+    $content = '<li> ' . $row[0] . ' - ' . $row[1] . ' rejections; </li>';
+    fwrite($myfile, $content);
     echo  '<li> ' . $row[0] . ' - ' . $row[1] . ' rejections; </li>';
 }
 echo '</ol>';
 
 
 
-
+$content = '</ol></body></html>';
+fwrite($myfile, $content);
+fclose($myfile);
 
 $f = fopen("UnpopularIngredients.csv", "w");
 foreach ($data as $line) {

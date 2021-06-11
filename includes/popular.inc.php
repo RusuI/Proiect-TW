@@ -34,8 +34,7 @@ while ($row = mysqli_fetch_array($popularList, MYSQLI_NUM)) {
 
 
     echo
-    '<div class="single-result">
-    <div class="container container-rest">
+    '<div class="single-result"> <div class="container container-rest">
         <img src="../includes/uploads/' . $row[6] . '" alt="result image" class="result-img">
         <p class="result-time">' . $row[3] . 'min</p>
         <p class="result-diff">' . $row[4] . '</p>
@@ -55,7 +54,7 @@ while ($row = mysqli_fetch_array($popularList, MYSQLI_NUM)) {
 
         <h2 class="text-large">' . $row[1] . '</h2>
         <p class="text-light">' . $row[2] . '</p>
-        <a href="../views/recipe.php" class="btn-link">Read More</a>
+        <a href="../views/recipe1.php?idRecipe='.$row[0].'" class="btn-link">Read More</a>
     </div>
 </div>';
 }
