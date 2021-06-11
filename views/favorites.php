@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,7 +17,7 @@
 
     <style>
         main {
-            /* background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../images/bg.jpeg') center/cover no-repeat fixed;*/
+           /* background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)), url('../images/bg.jpeg') center/cover no-repeat fixed; */
             background-color: wheat;
         }
     </style>
@@ -75,21 +76,15 @@
     </footer>
     <script src="../javascript/app.js"></script>
     <script>
-        let userId = "<?php echo $_SESSION["id"] ?>";
-        let recipeId = "<?php echo $recipeId ?>";
 
-        function removeFromFavorites() {
+        function removeFromFavorites(recipeId) {
             const endpoint = "../includes/removeFavorites.inc.php";
             const formData = new FormData();
 
-            formData.append("userId", userId);
             formData.append("recipeId", recipeId);
 
             fetch(endpoint, {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-                    },
                     body: formData
                 })
                 .then(response => response.text())
