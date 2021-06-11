@@ -1,8 +1,5 @@
  <!DOCTYPE html>
  <html lang="en">
-
- <!--<div>Icons made by <a href="https://www.flaticon.com/authors/ultimatearm" title="ultimatearm">ultimatearm</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>-->
-
  <head>
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -111,6 +108,7 @@
                      break;
                  case "recipes":
                      popular.innerHTML = '<?php require_once "../includes/popular.inc.php"; ?>';
+                     console.log("hey");
                      html.href = "popular.html";
                      csv.href = "popular.csv";
                      json.href = "popular.json";
