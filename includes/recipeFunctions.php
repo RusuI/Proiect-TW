@@ -1,4 +1,5 @@
 <?php
+error_reporting(0);
 function getIngredients($connection, $category)
 {
     $sql = "SELECT * FROM ingredients WHERE category = ? ORDER BY name ASC;";
@@ -39,9 +40,9 @@ function getRecipes($connection, $ingredients, $badIngredients, $difficulty, $pr
     $ingredientsArray = explode(",", $ingredients);
     $ingredientsBadArray = explode(",", $badIngredients);
     if (!empty($ingredients) || !empty($badIngredients)) {
-        $sql = "SELECT DISTINCT r.id, r.name, r.description, r.prep_time, r.diff, u.username, GROUP_CONCAT(i.name) AS ingr, (SELECT photo FROM recipes_pictures JOIN recipe on recipes_pictures.recipe_id=recipe.id WHERE recipe_id=r.id LIMIT 1), ";
-        $sql = $sql . "(SELECT COUNT(photo) FROM recipes_pictures JOIN recipe ON recipes_pictures.recipe_id = recipe.id WHERE recipe_id = r.id) AS popular FROM recipe r ";
-        $sql = $sql . "JOIN recipe_ingr ri on r.id=ri.recipe_id join ingredients i on ri.ingr_id=i.id JOIN users u on r.author_id = u.id JOIN recipes_pictures rp on r.id = rp.recipe_id ";
+        $sql = "SELECT DISTINCT r.id, r.name, r.description, r.prep_time, r.diff, u.username, GROUP_CONCAT(i.name) AS ingr, (SELECT photo FROM recipes_pictures RIGHT JOIN recipe on recipes_pictures.recipe_id=recipe.id WHERE recipe_id=r.id LIMIT 1), ";
+        $sql = $sql . "(SELECT COUNT(photo) FROM recipes_pictures RIGHT JOIN recipe ON recipes_pictures.recipe_id = recipe.id WHERE recipe_id = r.id) AS popular FROM recipe r ";
+        $sql = $sql . "JOIN recipe_ingr ri on r.id=ri.recipe_id join ingredients i on ri.ingr_id=i.id JOIN users u on r.author_id = u.id ";
         $sql = $sql . prepSql($difficulty, $prepTime, $cookTime, $servings);
         $sql = $sql . " GROUP BY r.id Having ";
 
@@ -450,9 +451,13 @@ function addRecipePhotos($connection, $name, $authorID, $file1)
     mysqli_stmt_close($stmt);
     return $result; //adica succes
 }
-//ADD TO RECIPE
 
-//RECIPE
+
+
+
+
+//pentru paginile de retete
+
 function getRecipeById($connection, $recipeId)
 {
 
@@ -500,6 +505,33 @@ function getRecipeIngredientsById($connection, $recipeId)
     return $result_data;
     mysqli_stmt_close($stmt);
 }
+
+
+// function getRecipeIngredientsName($connection,$recipeIngrediets){
+
+//     $result=1;
+
+//     $sql = "SELECT name FROM ingredients WHERE id = ?;";
+//     $stmt = mysqli_stmt_init($connection);
+//     if (!mysqli_stmt_prepare($stmt, $sql)) {
+//         $result=0;
+//         return $result;
+//     }
+
+//     mysqli_stmt_bind_param($stmt,"s",$recipeIngrediets['ingr_id']);
+//     mysqli_stmt_execute($stmt); // execute the statement
+
+//     $result_data = mysqli_stmt_get_result($stmt);
+//     //
+//     mysqli_stmt_close($stmt);
+//     if ($row = mysqli_fetch_assoc($result_data)) { //if i do get data from the DB with this username/email, we'll use it for the login
+
+//         return $row;
+//     }
+//     mysqli_stmt_close($stmt);
+
+// }
+
 
 function getRecipeStepsById($connection, $recipeId)
 {
@@ -582,6 +614,11 @@ function getAuthorId($connection, $recipeId)
 }
 //FINAL ID UL AUTORULUI
 
+
+//functii de luat imaginile
+
+// final pagini retete
+
 // pagina cu retele utilizatorului
 
 function getUserRecipes($connection, $authorID)
@@ -624,5 +661,7 @@ function getUserRecipesPhoto($connection, $recipeId)
     return $result_data;
     mysqli_stmt_close($stmt);
 }
+
+//
 
 //end my recipes

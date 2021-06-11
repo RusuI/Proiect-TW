@@ -1,5 +1,5 @@
-
 <?php
+error_reporting(0);
 function emptyInputSendPicture($name)
 {
     $result = true;
@@ -14,7 +14,7 @@ function emptyInputSendPicture($name)
 
 function displayimages($connection,$recipeId){
 
-    
+
     $result=1;
 
     $sql = "SELECT photo FROM recipes_pictures WHERE recipe_id = ?;";
@@ -54,7 +54,7 @@ function getScorePhoto($connection,$recipeId){
     //
      mysqli_stmt_close($stmt);
      if ($row = mysqli_fetch_array($result_data, MYSQLI_NUM)) { 
-    
+
         return $row[0];
     }
 }

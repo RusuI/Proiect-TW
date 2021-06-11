@@ -1,5 +1,6 @@
 <?php
 session_start();
+error_reporting(0);
 require_once 'database.php';
 require_once 'recipePageFunctions.php';
 function debug_to_console($data)
@@ -18,13 +19,10 @@ move_uploaded_file($_FILES["inpFile"]["tmp_name"], $targetPath);
 
 
 $recipeId=$_POST["recipeId"];
-debug_to_console("mama");
-debug_to_console($recipeId);
-debug_to_console("mama");
 
 $name = $_POST["name"];
 $post_image = $_FILES["inpFile"]["name"];
-// debug_to_console($recipeId);
+
 
 
 $result = emptyInputSendPicture($name);
@@ -44,6 +42,6 @@ if ($result == true) {
       echo 1;
     }
     else echo 2;
-    
+
 }
 else echo 3;

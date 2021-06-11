@@ -1,5 +1,5 @@
 <?php
-
+error_reporting(0);
 require_once 'database.php';
 require_once 'recipePageFunctions.php';
 require_once 'recipeFunctions.php';
