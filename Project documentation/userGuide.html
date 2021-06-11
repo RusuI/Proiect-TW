@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>WhaF - User guide</title>
+    <link rel="icon" href="images/pizza.png">
+
+    <link rel="stylesheet" href="css/scholarly.min.css">
+    <script src="js/scholarly.min.js"></script>
+    <script src="https://kit.fontawesome.com/9f5ebffa29.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <h1>What The Food - Project</h1>
+    </header>
+
+    <div role="contentinfo">
+        <ol><a href="#description">General description</a>
+            <ol role="directory">
+                <li><a href="#functions">Product functions</a></li>
+                <li><a href="#users">User classes and features</a>
+                    <ol role="directory">
+                        <li> <a href="#unlogged">Users without an account</a></li>
+                        <li><a href="#logged">Users that have an account</a></li>
+                    </ol>
+                </li>
+                <li><a href="#operating">Operating envinronment</a></li>
+            </ol>
+        </ol>
+        <ol><a href="#interface">Requirements for external interface</a>
+            <ol role="directory">
+                <li><a href="#interfeteutil">User Interface</a>
+                    <ol role="directory">
+                        <li><a href="#home">Home Page</a></li>
+                        <li><a href="#help">Help Page</a></li>
+                        <li><a href="#popular">See Most Popular</a></li>
+                        <li><a href="#search">Search</a></li>
+                        <li><a href="#recipe">Recipe</a></li>
+                        <li><a href="#login">Log In and Register</a></li>
+                        <li><a href="#profile">Profile</a></li>
+                        <li><a href="#addrecipe">Add Recipe</a></li>
+                        <li><a href="#favorites">Favorites</a></li>
+                        <li><a href="#myrecipes">My Recipes</a></li>
+                        <li><a href="#settings">Profile Settings</a></li>
+
+                    </ol>
+                </li>
+            </ol>
+            </li>
+
+    </div>
+
+    <section id="description">
+        <h2>General description</h2>
+        <section id="functions">
+            <h3>Product functions:</h3>
+
+            <p>WhaF comes with a suite of features such as: </p>
+            <ul>
+                <li>Search for recipes according to a list of ingredients and other criteria;</li>
+                <li>The possibility of creating an account, which offers additional benefits to the user;</li>
+                <li>Saving some recipes in the favorites section;</li>
+                <li>Viewing a section of popular recipes / ingredients as well as a section of avoided ingredients;</li>
+                <li>Possibility to ask questions regarding the questions related to the application;</li>
+                <li>Posibilitatea adaugarii unei retete proprii;</li>
+                <li>Possibility to add your own recipe;</li>
+            </ul>
+            <img src="imaginiDocumentatie/diagrama_TW.png" alt="">
+
+        </section>
+        <section id="users">
+            <h3>User classes and features</h3>
+
+            <p>Users are divided into two main classes:</p>
+            <ol>
+                <li id="unlogged">Users without an account
+                    <ul>
+                        <li>These users do not want to create an account because their main purpose is only to search for recipes based on ingredients;</li>
+                        <li>From the point of view of using the application, the frequency of users on the site is low;</li>
+                        <li>The results and preferences of the last search will be saved at the browser level;</li>
+                    </ul>
+                </li>
+                <li id="logged">Users who have an account - accessing the account on the web application offers benefits that can differentiate users into other classes:
+                    <ul>
+                        <li>the class of users who are just looking for recipes, who can save their networks in a favorites section, can recreate networks posted by other users and can post personal networks;</li>
+                        <li>the class of experienced users in the field, such as professional chefs, who can promote their networks and possibly a business or a personal blog through our platform.</li>
+                    </ul>
+                </li>
+            </ol>
+
+        </section>
+        <section id="operating">
+            <h3>Operating envinronment</h3>
+
+            <p>The application is in the first phase intended for use in the browser, on a Windows operating system, on any version.</p>
+
+        </section>
+    </section>
+    <section id="interface">
+        <h2>Requirements for external interface</h2>
+        <section id="interfeteutil">
+            <h3>User Interface</h3>
+            <section id="home">
+                <h3>Home Page</h3>
+                <img src="imaginiDocumentatie/home1.png" alt="" style="height: 80%; width: 60%;">
+                <p>The HomePage is the user's first interaction with the "WhaF" application. The display contains a navigation bar (which will later be present on the rest of the associated pages) with the following features:</p>
+
+                <ul>
+                    <li>HELP – button that leads the user to the "Frequently Asked Questions" page</li>
+                    <li>SEE MOST POPULAR – button that leads the user to the page with the same name</li>
+                    <li>GET STARTED – the button that gives the user the main functionality of the application: searching for recipes based on ingredients</li>
+                    <li>JOIN US – the button that leads the user to the Sign In / Sign Up form for authentication within the application, respectively, the registration to it</li>
+                    <li>PICK INGREDIENTS is an interactive button that has the same functionality as the "GET STARTED" option. The latter is present several times on the Home page, to give the user the ability to search of ingredients from several parts</li>
+                </ul>
+                <img src="imaginiDocumentatie/home2.png" alt="" style="height: 80%; width: 60%;">
+                <img src="imaginiDocumentatie/home3.png" alt="" style="height: 80%; width: 60%;">
+            </section>
+            <section id="help">
+                <h3>Help Page - Frequently asked questions</h3>
+                <img src="imaginiDocumentatie/faq1.png" alt="" style="height: 80%; width: 60%;">
+                <img src="imaginiDocumentatie/faq2.png" alt="" style="height: 80%; width: 60%;">
+
+                <ul>
+                    <li>In the FAQ section, the user can view the questions and answers corresponding to the existing ones.</li>
+                    <li>If the user is logged into their account,then they can upload his own questions by filling in a field with his name and another with the question itself.</li>
+
+                </ul>
+            </section>
+            <section id="popular">
+                <h3>See Most Popular</h3>
+                <img src="imaginiDocumentatie/popular1.png" alt="" style="height: 80%; width: 60%;">
+                <p>This page can be accessed by any user. Here it is possible to:</p>
+
+                <ul>
+                    <li>See popular recipes / ingredients and unpopular ingredients</li>
+                    <li>Download the ranking in HTML, CSV, and JSON format</li>
+                    <li>Add a recipe to favorites: <i class="fab fa-gratipay" style="color: black;"></i></li>
+
+                </ul>
+            </section>
+            <section id="search">
+                <h3>Search</h3>
+                <img src="imaginiDocumentatie/search1.png" alt="" style="height: 80%; width: 60%;">
+                <p>To search for a recipe a user can:</p>
+
+                <ul>
+                    <li>Select the ingredients you want (Wanted) and not (Unwanted) from the Side Bar. For a more complex filtration he can select the level of difficulty, the preparation time, the cooking time and the number of servings.</li>
+                    <li>Remove some previously added criteria by clicking x on the tag.</li>
+                </ul>
+                <img src="imaginiDocumentatie/search2.png" alt="" style="height: 50%; width: 30%;">
+                <p>In the main part there are recipes that match the search, the user can:</p>
+                <ul>
+                    <li>Add a recipe to favorites: <i class="fab fa-gratipay" style="color: black;"></i></li>
+                    <li>Add a photo with that recipe,marking it as prepared: <i class="fas fa-plus-circle" style="color: black;"></i></li>
+                    <li>Access the recipe page (Read more)</li>
+                </ul>
+            </section>
+            <section id="recipe">
+                <h3>Recipe</h3>
+                <img src="imaginiDocumentatie/recipe1.png" alt="" style="height: 80%; width: 60%;">
+                <p>When the user accesses the profile page of a recipe, he has access to the following functionalities:</p>
+
+                <ul>
+                    <li>You can mark a recipe as "saved" for later access to it from the favorite recipes section</li>
+                    <li>Sectiunea de review care indica si numarul de poze incarcare cu rezultatul retetei</li>
+                </ul>
+                <img src="imaginiDocumentatie/recipe2.png" alt="" style="height: 80%; width: 60%;">
+                <img src="imaginiDocumentatie/recipe3.png" alt="" style="height: 80%; width: 60%;">
+                <p>In aceasta sectiune, utilizatorul logat poate incarca o poza cu rezultatul final al retetei, introducand numele. Acesta selecteaza poza de pe propriul dispozitiv.</p>
+
+            </section>
+            <section id="login">
+                <h3>Log In and Register</h3>
+                <img src="imaginiDocumentatie/login1.png" alt="" style="height: 80%; width: 60%;">
+                <img src="imaginiDocumentatie/login2.png" alt="" style="height: 80%; width: 60%;">
+                <ul>
+                    <li>It is accessible to the user via the JOIN US button in the navigation bar and contains a login form if the user already has an account created, or a registration form otherwise.</li>
+                    <li>The "Log In" button redirects the user to the home page</li>
+                    <li>The "Sign Up" button redirects the user to the login page to get into their account.</li>
+                </ul>
+
+            </section>
+            <section id="profile">
+                <h3>Profile</h3>
+                <img src="imaginiDocumentatie/profile1.png" alt="" style="height: 80%; width: 60%;">
+                <img src="imaginiDocumentatie/profile2.png" alt="" style="height: 80%; width: 60%;">
+                <ul>
+                    <li>Once the user accesses his account and implicitly the profile, he will also have the possibility to add his own recipe based on a form indicated by the ADD RECIPE button.</li>
+                    <li>PROFILE SETTINGS - the button gives the user the possibility to change the settings regarding the information about his account.</li>
+                    <li>LOG OUT – logging out of the application</li>
+                    <li>SEE FAVORITES – offers the possibility to view a list of recipes saved to favorites </li>
+                    <li>SEE RECIPES - offers the possibility to access a section in which the recipes that the user uploads in the application will be saved</li>
+                </ul>
+
+            </section>
+            <section id="addrecipe">
+                <h3>Add Recipe</h3>
+                <img src="imaginiDocumentatie/addrecipe1.png" alt="" style="height: 80%; width: 60%;">
+                <img src="imaginiDocumentatie/addrecipe2.png" alt="" style="height: 80%; width: 60%;">
+                <img src="imaginiDocumentatie/addrecipe3.png" alt="" style="height: 80%; width: 60%;">
+                <ul>
+                    <li>A user can upload his own recipe, filling in the fields with different information such as name, description, cooking time, etc.</li>
+                    <li>It is also mandatory to upload one or more pictures with the product. </li>
+                    <li>The list of ingredients and preparation steps will be made by adding them via the Add To List button.</li>
+                    <li>The recipe will be uploaded via the Post Now button.</li>
+                </ul>
+
+            </section>
+            <section id="favorites">
+                <h3>Favorites</h3>
+                <img src="imaginiDocumentatie/favorites.png" alt="" style="height: 80%; width: 60%;">
+                <p>Pagina de favorite : </p>
+                <ul>
+                    <li>Strictly represents a list of recipes that the user has saved for later viewing, with the ability to remove them from this list at any time.</li>
+                    <li>The "Read More" option will lead him to the recipe page.</li>
+                </ul>
+
+            </section>
+            <section id="myrecipes">
+                <h3>My Recipes</h3>
+                <img src="imaginiDocumentatie/myrecipes.png" alt="" style="height: 80%; width: 60%;">
+                <p>This page can be accessed by a logged in user. Here a user can:</p>
+                <ul>
+                    <li>Similar to the Favorites page, a series of recipes that the user uploads within the application and that become available to other users.</li>
+                    <li>The "See Recipe" button will contain a link to the recipe page.</li>
+                </ul>
+
+            </section>
+            <section id="settings">
+                <h3>Account Settings</h3>
+                <img src="imaginiDocumentatie/settings.png" alt="" style="height: 80%; width: 60%;">
+                <p>This page can be accessed by a logged in user. Here a user can change their profile settings, such as name, description, email and profile picture. To analyze the operation you must click on the button Upload.
+                </p>
+
+            </section>
+
+        </section>
+</body>
+
+</html>

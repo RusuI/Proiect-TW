@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>WhaF | Raport</title>
+    <link rel="icon" href="images/pizza.png">
+
+    <link rel="stylesheet" href="css/scholarly.min.css">
+    <script src="js/scholarly.min.js"></script>
+    <script src="https://kit.fontawesome.com/9f5ebffa29.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <h1>What The Food - Project</h1>
+    </header>
+
+    <div role="contentinfo">
+
+        <ol role="directory">
+            <li><a href="#introduction">Introduction</a>
+                <ol role="directory">
+                    <li><a href="#scope">Scope</a>
+                        <li><a href="#conventions">Documents convension</a></li>
+                        <li><a href="#domain">The intended audience</a></li>
+                        <li><a href="#application">Application domain</a></li>
+
+                </ol>
+                </li>
+                <li><a href="#description">General description</a>
+                    <ol role="directory">
+                        <li><a href="#perspective">Product perspective</a></li>
+                        <li><a href="#features">System features</a></li>
+                        <li><a href="#specifications">Technical specifications and technologies</a></li>
+                    </ol>
+                </li>
+                <li><a href="#enhance">Enhancements</a></li>
+                <li><a href="#references">Bibliography</a></li>
+        </ol>
+        <h3>Authors</h3>
+
+        <h4>Izvoreanu Valeria & Murariu Cristina-Andreea & Rusu Ioana - An 2 , Grupa B4</h4>
+
+
+    </div>
+
+    <section id="introduction">
+
+        <h2>Introduction</h2>
+        <section id="scope">
+            <h3>Scope</h3>
+
+            <p>The product whose specifications are presented in this document consists of a web application which generates recipes based on the filtering the ingredients chosen by the user, depending on other specifications such as cooking time, difficulty,
+                unwanted ingredients.</p>
+            <p>Currently, the application is in its starting phase, which is why this is the first version of use. The purpose of the application is to provide its users with a simple and efficient way to search, save, and create various recipes based on
+                the selected criteria.</p>
+
+        </section>
+
+        <section id="conventions">
+            <h3>Documents conventions</h3>
+
+            <p>The main convention for making this document is to use the Scholarly HTML template. [1]</p>
+
+        </section>
+        <section id="domain">
+            <h3>The intended audience</h3>
+
+            <p>The present document is addressed mainly to the teachers responsible for the evaluation of the project within the Web Technology discipline. By expanding the area, it can be transformed into a document addressed to potential users, or even
+                investors who would like to use the application in the long run.</p>
+
+        </section>
+        <section id="aplication">
+            <h3>Aplication domain</h3>
+
+            <p>The “WhaF” web application described in this document aims to make it easier to search for specific recipes for its users.</p>
+            <p>One of the great advantages of this application is the efficiency of filtering recipes and reducing the search time available to the user, as they can choose the specifications they want for the recipes they are looking for.</p>
+            <p>Basically, the main goal is for the user to use their time to prepare a fixed recipe based on the ingredients they want, instead of looking for one online. Regarding possible bussines strategies, the application it could be an intermediary
+                between brands and suppliers of certain foods, utensils, restaurants relevant to the content they are looking for.</p>
+
+        </section>
+    </section>
+    <section id="description">
+        <h2>General description</h2>
+        <section id="perspective">
+            <h3>Product perspective</h3>
+
+            <p>The WhaF project is a new, individual product, appeared in the context of the evaluation of the Web Technologies discipline. The idea was chosen after consulting the list of projects provided by the laboratory coordinator, Amaria Ciprian.</p>
+            <p>Basically, our project comes with an innovative idea and as a replacement for the already existing recipe search services, such as culinary blogs, websites that offer as a content a suite of recipes, offering methods more effective based on
+                recommendations.
+            </p>
+
+        </section>
+    </section>
+    <section id="features">
+        <h2>System features</h2>
+        <ul>
+            <li>The ability to <b> create an account </b> is one of the main features of the system, as it offers the user additional features (the option to add a recipe, a list of favorites,etc.). Information about a user who creates their account is saved
+                in a database server, while the preferences of the last search of an unauthenticated user are saved at the browser level. The registration of a new user into the system will lead to the population of the database.</li>
+            <li>In a user's <b> profile page </b>,the ability of changing account settings will change certain data on the database server and will provide the user with the option to update their informations anytime they want.</li>
+            <li><b> Recipe Search </b>: This feature has top priority, representing the essence of the application. The user (logged in or not logged in) can select the ingredients they want and those that they do not like, the level of difficulty, the time
+                food preparation and cooking and number of servings. In order for the application to work as fast as possible, Ajax will be used, so it will not reload the page, but only add or delete new recipes that meet the criteria. The preferences
+                of the last search will be saved at the browser level, with the help of cookies.</li>
+            <li><b> Popular </b>: The user (logged in / logged out) can access this page to see the most popular recipes / ingredients and the most unwanted ingredients. Popular recipes will be identified by the number of people who prepared the recipe. Popular
+                / unpopular ingredients will be determined by the number of times it was marked as desirable or undesirable in the search operation. It will also be possible to download the rankings in HTML, CSV and JSON format.
+            </li>
+            <li><b>Posting a photo with your own preparation </b>: The functionality of posting a photo with the product has a high priority, as the popularity of a recipe is determined by the number of photos uploaded by users on the page of a recipe.</li>
+            <li><b> Send a question </b>: The priority of this feature is average. It comes as a service addressed to users who have questions about the web page or any type of problem reported. </li>
+            <li>When modifying the <b> list of favorites </b> (adding / deleting the recipe) Ajax will be used, as in the case of <b> searching for a recipe </b>, for the fast, efficient modifications of the respective page.</li>
+            <li><b>Add recipe</b> : Probably one of the most interesting features,this functionality provides the user with the ability to add their own recipe that will be available on the site for other users to prepare. The users who chooses to add a recipe
+                will be able to select from numerous ingredients,categories,times of preparatios etc.</li>
+            <li>After adding a recipe, the user will be provided with the ability to see their own recipes loaded on the website by going to the <b>My Recipes</b> option available on their profile page.</li>
+        </ul>
+
+    </section>
+    <section id="specifications">
+        <h2>Technical specifications and technologies</h2>
+
+        <p>As software components and additional services for the "WhaF" application, we will use:</p>
+        <ol>
+
+
+            <li><b>HTML</b> : The markup language that is used to display every document of the app on the browser,beging used for the <b>front-end</b> side of the application;</li>
+            <li><b>CSS</b> : The style sheet language used to display the application content in a user-friendly manner;</li>
+            <li><b>JavaScript</b> : Used in the big majority of our application, especially;</li>
+
+
+            <li><b>XAMPP for Windows 8.0.3. </b> - free software, open-source and cross-platform web server software package containing an HTTP server (respectively Apache), a MySQL database and an interpreter for scripts written in PHP . [2]</li>
+            <li><b>AOS (Animate On Scroll Library) </b> - a scrolling animation library used in CSS3, useful for animating any element of the website during scrolling. In order to use this library, stylesheet along with JS files, using a CDN. After initializing
+                the library, using the specific function AOS.init (), we need to add the specific attributes. To use basic animations just add data-aos = "animation_name" to your HTML elements. There are several types of animations to choose from. For
+                example, you can add blur animations such as "fade", "fade-up" and "fade-down-left". Similarly, you can add flip and slide animations as well they would be "flip-up", "flip-left", "slide-down" and "slide-right". [3][5]</li>
+            <li><b>AJAX </b>– used on the client-side to create asynchronous web applications, AJAX is a set of web development techniques using many web technologies . With Ajax, web applications can send and retrieve data from a server asynchronously without
+                interfering with the display and behaviour of the existing page. In WhaF web application, AJAX is used for searching the ingredients,adding a recipe, adding and deleting to favorites,etc. [4]</li>
+            <li>To save the last searches of users, <b> cookies </b> will be used to store their data at the browser level. </li>
+            <li>For rankings related to preferences, the most popular ingredients / recipes (or the most avoided) the web application will display rankings in <b>HTML</b>, <b>CSV</b> and <b>JSON</b> formats.</li>
+            <li>As the main programming language, the application uses <b>PHP</b>, for managing the communication with the database,tracking user sessions and other verifications that require a scripting language.</li>
+            <li><b>SQL</b> statements are used to manipulate data from the database.</li>
+            <li>MySQL is the DBMS used by the application to store and manage every data that the application uses.Our tables are:
+                <ol>
+                    <li>"faq" - it stores the data related to the questions about the application;</li>
+                    <li>"favorites" - keeps the relationship between a user and their favorite recipes;</li>
+                    <li>"ingredients" - a table with all the ingredients available for the available recipes;</li>
+                    <li>"recipe" - stores all the recipes available on the website;</li>
+                    <li>"recipe_pictures" - stores all the pictures for a recipe;</li>
+                    <li>"recipe_ingr" - for every recipe, it keeps a list with all the ingredients of that recipe;</li>
+                    <li>"votes" - keeps the track of the score of every recipe;</li>
+                </ol>
+            </li>
+            <li>The communication protocol for the network server used is the HTTP protocol.</li>
+        </ol>
+
+    </section>
+    </section>
+    <section id="enhance">
+        <h2>To improve this project, the following aspects could be implemented:</h2>
+        <ul>
+            <li>Improving the security level - with the creation of an account, it will be necessary to activate it based on a validation email sent automatically.</li>
+            <li>Adding features such as: comments section, personal chat / sending private messages, a user's "follow" option to receive notifications when they upload new recipes.</li>
+            <li>Improving the front-end part by creating interactive aspects.</li>
+            <li>Creating the mobile version of the application.</li>
+            <li>Adding ads.</li>
+        </ul>
+    </section>
+    <section id="references">
+        <h2>Text references :</h2>
+        <ul>
+            <li><a href="https://w3c.github.io/scholarly-html/"> [1] </a>Scholarly HTML</li>
+            <li><a href="https://www.apachefriends.org/ro/index.html"> [2] </a>XAMPP</li>
+            <li><a href="https://michalsnik.github.io/aos/"> [3] </a>AOS</li>
+            <li><a href="https://www.w3schools.com/xml/ajax_intro.asp"> [4] </a>AJAX</li>
+            <li><a href="https://www.sitepoint.com/cool-scroll-animations-made-easy-aos-library/"> [5] </a>AOS Tutorial</li>
+        </ul>
+
+        <h2>Others</h2>
+        <ul>
+            <li>
+                <a href="https://github.com/rick4470/IEEE-SRS-Tempate#revision-history"> SRS-Template</a>
+
+            </li>
+            <li>
+                <a href="hhttps://w3c.github.io/scholarly-html/"> Scholarly HTML</a>
+
+            </li>
+            <li>
+                <a href="https://developer.mozilla.org/en-US/"> Developer Mozilla</a>
+
+            </li>
+        </ul>
+    </section>
+
+
+</body>
+
+</html>
